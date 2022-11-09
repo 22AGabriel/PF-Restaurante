@@ -10,7 +10,7 @@ const ItemUsuario = () => {
       <td>
         <Form>
           <Form.Group>
-            <Form.Select id="id" className="w-select" disabled>
+            <Form.Select className="w-select" disabled>
                 <option value="Activo">Activo</option>
                 <option value="Suspendido">Suspendido</option>
             </Form.Select>

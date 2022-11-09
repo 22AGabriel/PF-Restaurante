@@ -1,6 +1,7 @@
 import { Container, Tab, Table, Tabs } from 'react-bootstrap';
 import ItemProducto from './producto/ItemProducto';
 import ItemUsuario from './usuario/ItemUsuario';
+import ItemPedido from './producto/ItemPedido';
 
 const Admin = () => {
     return (
@@ -33,11 +34,11 @@ const Admin = () => {
                     </Table>
                 </Tab>
                 <Tab eventKey="usuarios" title="Usuarios">
-                <Table striped responsive hover>
+                    <Table striped responsive hover>
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nombre de usuario</th>
+                                <th>Usuario</th>
                                 <th>Email</th>
                                 <th>Perfil</th>
                                 <th>Estado</th>
@@ -51,6 +52,19 @@ const Admin = () => {
                     </Table>
                 </Tab>
                 <Tab eventKey="pedidos" title="Pedidos">
+                    <Table striped responsive hover>
+                        <thead>
+                            <tr>
+                                <th>Pedido</th>
+                                <th>Usuario</th>
+                                <th>Fecha</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ItemPedido></ItemPedido>
+                        </tbody>
+                    </Table>
 
                 </Tab>
             </Tabs>
