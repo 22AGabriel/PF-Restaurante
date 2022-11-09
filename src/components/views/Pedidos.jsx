@@ -22,7 +22,7 @@ const Pedidos = () => {
                 <Card.Title className='bolder'>Pure de garbanzos</Card.Title>
                 <Card.Text className='mt-4'>
                   Pure de garbanzos realizados con garbanzos frescos, ajo, limon, sal, pimienta y pimentón rojo. Vienen acompañados con 3 pancitos arabes para disfrutar!
-                  <article className="d-flex justify-content-end align-items-start">
+                  <article className="d-flex justify-content-end mt-4">
                 <i class="bi bi-bag-plus fs-2 me-3"></i>
                 <i class="bi bi-arrow-repeat fs-2"></i>
                   </article>
