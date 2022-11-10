@@ -14,8 +14,10 @@ import AgregarProducto from './components/views/producto/AgregarProducto';
 import EditarProducto from './components/views/producto/EditarProducto';
 import Error404 from './components/views/Error404';
 
+
 function App() {
   return (
+  
     <BrowserRouter>
      <NavBar></NavBar>
      <Routes>
@@ -32,6 +34,7 @@ function App() {
      </Routes>
      <Footer></Footer>
     </BrowserRouter>
+
 
   );
 }

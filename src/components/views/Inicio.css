@@ -1,0 +1,158 @@
+.portada{
+    background-image: url(https://www.serargentino.com/public/images/2020/02/comida-arabe-773x458.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    border-radius: 0px 0px 450px  450px;
+    
+}
+
+
+
+.menuCard{
+    position: relative;
+   bottom: 100px;
+  
+   
+  
+}
+
+
+
+.subPortada{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(3, 3, 3, 0.527);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 440px  440px;
+}
+
+.portada2{
+    height: 500px;
+    width: 100%;
+   background-image: url(https://www.serargentino.com/public/images/2020/02/comida-arabe-773x458.jpeg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+}
+
+.divPortada2{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.514);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.divPortada2 h2{
+    display: none;
+}
+
+
+.divPortada2 .tituloCel{
+    display: none;
+}
+
+
+
+
+
+.imgCardP{
+    background-color: rgb(44, 42, 42);
+    height: 250px;
+    border-radius: 100%;
+}
+
+
+.cardCirculo{
+    background-color: rgba(255, 255, 255, 0.034);
+    border: 2px solid rgba(255, 255, 255, 0);
+    color: black;
+}
+
+
+.bodyCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+
+@media all and (max-width:540px){
+    .portada{
+        display: none;
+    }
+
+    .subPortada{
+        display: none;
+    }
+
+   .divPortada2 h1{
+    display: none;
+    font-size: 2px;
+   }
+
+    .divPortada2{
+        /* display: none; */
+        flex-direction: column;
+    }
+
+    .divPortada2 h2{
+        display: block;
+        color: white;
+        font-size: 40px;
+    }
+
+
+    .divPortada2 .tituloCel{
+        display: block;
+        font-size: 40px;
+    }
+    
+    .menuCard{
+        display: none;
+    }
+}
+
+
+
+
+@media all and (max-width:991px){
+    .portada{
+        display: none;
+    }
+
+    .subPortada{
+        display: none;
+    }
+
+   .divPortada2 h1{
+    font-size: 50px;
+   }
+
+    /* .divPortada2{
+        display: none;
+    } */
+    
+
+    
+ 
+
+    
+    .menuCard{
+        display: none;
+    }
+}
+
+
+
+
