@@ -16,6 +16,9 @@ const Inicio = () => {
             <Col md={4}>
               <Card style={{ width: "18rem" }} className="cardCirculo ms-5">
                 <div className="imgCardP">
+                  <div>
+                   <button className="btnMenu"><i class="bi bi-file-person text-light display-4 iconMenu"></i></button>
+                  </div>
                   <Card.Img variant="top" src="" />
                 </div>
                 <Card.Body className="bodyCard">
@@ -27,7 +30,9 @@ const Inicio = () => {
             <Col md={4}>
               <Card style={{ width: "18rem" }} className="cardCirculo ms-5">
                 <div className="imgCardP">
-                  <Card.Img variant="top" src="" />
+                 <div>
+                   <button className="btnMenu"><i class="bi bi-book text-light display-4 iconMenu"></i></button>
+                  </div>
                 </div>
                 <Card.Body className="bodyCard">
                   <Card.Title>Categorias</Card.Title>
@@ -38,7 +43,9 @@ const Inicio = () => {
             <Col md={4}>
               <Card style={{ width: "18rem" }} className="cardCirculo ms-3">
                 <div className="imgCardP">
-                  <Card.Img variant="top" src="" />
+                <div>
+                   <button className="btnMenu"><i class="bi bi-cart text-light display-4 iconMenu"></i></button>
+                  </div>
                 </div>
                 <Card.Body className="bodyCard">
                   <Card.Title>Pedidos</Card.Title>

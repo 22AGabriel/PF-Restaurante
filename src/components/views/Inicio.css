@@ -68,6 +68,45 @@
     border-radius: 100%;
 }
 
+.imgCardP div{
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.imgCardP:hover div .iconMenu{
+    font-size: 80px;
+    transition: 0.5s ease;
+    color: rgb(0, 0, 0);
+}
+
+
+.btnMenu{
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    background-color: black;
+}
+
+.btnMenu:hover{
+    background-color: rgb(51, 51, 51);
+    transition: 1s ease;
+}
+
+
+
+
+.imgCardP:hover div{
+   width: 100%;
+   height: 100%;
+  background-color: rgba(251, 255, 0, 0.76);
+  border-radius: 100%;
+  transition: 1s ease;
+}
+
 
 .cardCirculo{
     background-color: rgba(255, 255, 255, 0.034);
