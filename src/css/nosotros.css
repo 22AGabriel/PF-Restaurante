@@ -1,0 +1,72 @@
+.redes {
+  color: #c96752;
+}
+
+.imgNosotros {
+  border-radius: 50%;
+  border: solid 4px;
+  border-color: #c96752;
+}
+
+.card-fondo {
+  background-color: #c96752;
+}
+
+.bg-contacto {
+  background-color: #c96752;
+  border-color: white;
+  border-width: 2px;
+  color: white;
+}
+
+.bg-contacto::placeholder {
+  color: white;
+}
+
+.bg-contacto:focus {
+  background-color: #db8d7b;
+  border: 0;
+}
+
+.Card {
+  transition: all 400ms ease-out;
+  overflow: hidden;
+  position: relative;
+}
+
+.Card img {
+  transition: all 400ms ease-out;
+}
+
+.Card:hover img {
+  filter: brightness(0.5);
+  transition: all 400ms ease-out;
+}
+
+.description {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.description div {
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+.Card:hover .description div {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 400ms ease-out 200ms;
+}
+
+.w-form {
+  width: 50%;
+}
+
+@media all and (max-width: 991px) {
+  .w-form {
+    width: 100%;
+  }
+}
