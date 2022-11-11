@@ -9,6 +9,15 @@ const Pedidos = () => {
     <Popover id="popover-basic" className="text-dark">
       <Popover.Header as="h3">Agregar al carrito</Popover.Header>
       <Popover.Body>
+        Poder agregar al carrito haciendo click <strong>aquí</strong>.
+      </Popover.Body>
+    </Popover>
+  );
+
+  const popover2 = (
+    <Popover id="popover-basic" className="text-dark">
+      <Popover.Header as="h3">Volver a pedir</Popover.Header>
+      <Popover.Body>
         Si te gustó podes volver a pedir haciendo click <strong>aquí</strong>.
       </Popover.Body>
     </Popover>
@@ -38,7 +47,7 @@ const Pedidos = () => {
                   <OverlayTrigger trigger="click" placement="top" overlay={popover}>
     <Button className='text-rojo1 btn-light' size="sm"><i class="bi bi-bag-plus fs-2"></i></Button>
   </OverlayTrigger>
-  <OverlayTrigger trigger="click" placement="top" overlay={popover}>
+  <OverlayTrigger trigger="click" placement="top" overlay={popover2}>
     <Button className='text-rojo1 btn-light ms-2' size="sm"> <i class="bi bi-arrow-repeat fs-2"></i></Button>
   </OverlayTrigger>
                   </article>
