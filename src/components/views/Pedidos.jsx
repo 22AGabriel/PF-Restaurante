@@ -36,10 +36,10 @@ const Pedidos = () => {
                   Pure de garbanzos realizados con garbanzos frescos, ajo, limon, sal, pimienta y pimentón rojo. Vienen acompañados con 3 pancitos arabes para disfrutar!
                   <article className="d-flex justify-content-end mt-4">
                   <OverlayTrigger trigger="click" placement="top" overlay={popover}>
-    <Button variant="outline-success" size="sm"><i class="bi bi-bag-plus fs-2"></i></Button>
+    <Button className='text-rojo1 btn-light' size="sm"><i class="bi bi-bag-plus fs-2"></i></Button>
   </OverlayTrigger>
   <OverlayTrigger trigger="click" placement="top" overlay={popover}>
-    <Button variant="outline-dark" size="sm" className='ms-2'> <i class="bi bi-arrow-repeat fs-2"></i></Button>
+    <Button className='text-rojo1 btn-light ms-2' size="sm"> <i class="bi bi-arrow-repeat fs-2"></i></Button>
   </OverlayTrigger>
                   </article>
                   <i class="bi bi-basket2-fill fs-5"> Cantidad: 1</i> 
