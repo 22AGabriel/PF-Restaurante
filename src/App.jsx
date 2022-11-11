@@ -13,6 +13,7 @@ import Registro from './components/views/Registro';
 import AgregarProducto from './components/views/producto/AgregarProducto';
 import EditarProducto from './components/views/producto/EditarProducto';
 import Error404 from './components/views/Error404';
+import "./css/app.css"
 
 function App() {
   return (
