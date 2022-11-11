@@ -1,10 +1,11 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import '../../css/app.css';
 
 
 const Footer = () => {
     return (
-        <section class='py-5 bg-dark text-light'>
+        <section class='py-5 bg-footer text-light'>
             <Container>
                 <Row className='d-flex'>
                     <Col md={4} className='d-flex flex-column align-items-center'>

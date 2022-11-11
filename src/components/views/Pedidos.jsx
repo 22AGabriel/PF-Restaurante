@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, Card, Row, Col, Button } from "react-bootstrap";
-import '../../footer.css';
+import '../../css/app.css';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
 
 const Pedidos = () => {
   const popover = (
-    <Popover id="popover-basic">
+    <Popover id="popover-basic" className="text-dark">
       <Popover.Header as="h3">Agregar al carrito</Popover.Header>
       <Popover.Body>
         Si te gustó podes volver a pedir haciendo click <strong>aquí</strong>.
@@ -30,7 +30,7 @@ const Pedidos = () => {
               />
             </Col>
             <Col md={8}>
-              <Card.Body>
+              <Card.Body className='text-dark'>
                 <Card.Title className='bolder'>Pure de garbanzos</Card.Title>
                 <Card.Text className='mt-4'>
                   Pure de garbanzos realizados con garbanzos frescos, ajo, limon, sal, pimienta y pimentón rojo. Vienen acompañados con 3 pancitos arabes para disfrutar!
