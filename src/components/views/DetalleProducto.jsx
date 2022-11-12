@@ -11,7 +11,7 @@ const DetalleProducto = () => {
           <Row>
             <Col md={4}>
               <Card.Img
-                src="https://images.pexels.com/photos/6275163/pexels-photo-6275163.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src="https://images.pexels.com/photos/6252729/pexels-photo-6252729.jpeg?auto=compress&cs=tinysrgb&w=600"
                 className="w-100 mt-5 m-2"
                 alt="salsa arabe"
               ></Card.Img>
