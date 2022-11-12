@@ -1,0 +1,51 @@
+body{
+    background-color: black;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.bajarFooter{
+    flex-grow: 1;
+}
+
+.text-rojo1{
+    color: #9d0105;
+}
+
+.bg-rojo1{
+    background-color: #9d0105;
+}
+
+.text-rojo2{
+    color: #c96752;
+}
+
+.bg-rojo2{
+    background-color: #c96752;
+}
+
+.text-rojo3{
+    color: #db8d7b;
+}
+
+.bg-rojo3{
+    background-color: #db8d7b;
+}
+
+.bg-rojo4{
+    color: #f6d8d1;
+}
+
+.bg-rojo4{
+    background-color: #f6d8d1;
+}
+
+.bg-footer{
+    background-color: rgb(0, 0, 0);
+}

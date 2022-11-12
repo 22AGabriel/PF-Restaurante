@@ -3,6 +3,7 @@ import ItemProducto from "./producto/ItemProducto";
 import ItemUsuario from "./usuario/ItemUsuario";
 import ItemPedido from "./producto/ItemPedido";
 import { Link } from "react-router-dom";
+import "../../css/admin.css"
 
 const Admin = () => {
   return (
