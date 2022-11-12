@@ -1,12 +1,4 @@
-import {
-  Card,
-  Container,
-  Col,
-  Row,
-  Button,
-  Badge,
-  Form,
-} from "react-bootstrap";
+import { Card, Container, Col, Row, Button, Form } from "react-bootstrap";
 import { useState } from "react";
 
 const DetalleProducto = () => {
@@ -19,8 +11,8 @@ const DetalleProducto = () => {
           <Row>
             <Col md={4}>
               <Card.Img
-                className="w-100"
                 src="https://images.pexels.com/photos/6275163/pexels-photo-6275163.jpeg?auto=compress&cs=tinysrgb&w=600"
+                className="w-100 mt-5 m-2"
                 alt="salsa arabe"
               ></Card.Img>
             </Col>
