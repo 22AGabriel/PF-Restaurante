@@ -19,11 +19,11 @@ const ItemUsuario = () => {
       </td>
       <td>
       <div className="d-flex">
-        <Button className="bg-transparent border-0">
-          <i className="bi bi-pencil-square text-dark"></i>
+        <Button className="bg-transparent me-1 border">
+          <i className="bi bi-pencil-square text-rojo4"></i>
         </Button>
-        <Button className="bg-transparent border-0">
-          <i className="bi bi-trash text-dark"></i>
+        <Button className="bg-transparent border">
+          <i className="bi bi-trash text-rojo2"></i>
         </Button>
       </div>
       </td>

@@ -1,4 +1,46 @@
 .w-select{
-    min-width: 120px;
-    max-width: 150px;
+    width: 150px;
+}
+
+.tab-content{
+    padding: 0 5px 5px 5px;
+}
+
+.nav-tabs .nav-link {
+    color: white;
+    border: 0;
+}
+
+.nav-tabs .nav-link.active{
+    background-color: #c96752;
+    color: white;
+}
+
+.table-hover.active{
+    color: white;
+    border: solid #c96752;
+}
+
+.form-select{
+    background-color: black;
+    border: solid 1px white;
+    color: white;
+}
+
+.form-select-disabled{
+    background-color: #db8d7b;
+} 
+
+.form-select:focus{
+    border: #c96752;
+    box-shadow: 0 0 0 2px #db8d7b;
+}
+
+.form-select:disabled{
+    color: black;
+    background-color: rgb(163, 163, 163);
+}
+
+.w-url{
+    max-width: 250px;
 }

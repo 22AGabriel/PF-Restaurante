@@ -9,16 +9,16 @@ const Admin = () => {
   return (
     <Container className="my-5">
       <div className="d-flex justify-content-center mb-4">
-        <h1>Administrar</h1>
+        <h1 className="display-4">Administrar</h1>
       </div>
-      <Tabs defaultActiveKey="productos" id="fill-tab" className="mb-3" fill>
+      <Tabs defaultActiveKey="productos" id="fill-tab" className="mt-5" fill>
         <Tab eventKey="productos" title="Productos">
-          <div className="d-flex justify-content-end my-4">
-            <Link to={"/administrar/agregar"} className="btn bg-primary">
+          <div className="d-flex justify-content-end">
+            <Link to={"/administrar/agregar"} className="my-4 btn text-white bg-rojo2">
                 Agregar
             </Link>
           </div>
-          <Table striped responsive hover>
+          <Table responsive className="text-white">
             <thead>
               <tr>
                 <th>ID</th>
@@ -37,7 +37,7 @@ const Admin = () => {
           </Table>
         </Tab>
         <Tab eventKey="usuarios" title="Usuarios">
-          <Table striped responsive hover>
+          <Table responsive className="text-white mt-5">
             <thead>
               <tr>
                 <th>ID</th>
@@ -45,7 +45,7 @@ const Admin = () => {
                 <th>Email</th>
                 <th>Perfil</th>
                 <th>Estado</th>
-                <th>Eliminar</th>
+                <th>Opciones</th>
               </tr>
             </thead>
             <tbody>
@@ -55,13 +55,14 @@ const Admin = () => {
           </Table>
         </Tab>
         <Tab eventKey="pedidos" title="Pedidos">
-          <Table striped responsive hover>
+          <Table responsive className="text-white mt-5">
             <thead>
               <tr>
                 <th>Pedido</th>
                 <th>Usuario</th>
                 <th>Fecha</th>
                 <th>Estado</th>
+                <th>Editar</th>
               </tr>
             </thead>
             <tbody>

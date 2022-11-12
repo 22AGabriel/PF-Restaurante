@@ -17,8 +17,8 @@ const ItemPedido = () => {
         </Form>
       </td>
       <td>
-        <Button className="bg-transparent border-0">
-          <i className="bi bi-pencil-square text-dark"></i>
+        <Button className="bg-transparent border">
+          <i className="bi bi-pencil-square text-rojo4"></i>
         </Button>
       </td>
     </tr>
