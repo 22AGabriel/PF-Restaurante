@@ -58,7 +58,7 @@ const AgregarProducto = () => {
             </Form.Group>
 
             <Button variant="primary" type="submit">
-              Submit
+              crear
             </Button>
           </Form>
         </div>

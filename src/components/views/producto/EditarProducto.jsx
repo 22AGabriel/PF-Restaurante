@@ -10,7 +10,7 @@ const EditarProducto = () => {
           <Form className="w-75 mx-auto">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Nombre Producto</Form.Label>
-              <Form.Control type="text" placeholder="Producto" />
+              <Form.Control type="text" placeholder="Producto" className="bg-black text-light"/>
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
@@ -18,7 +18,7 @@ const EditarProducto = () => {
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Precio</Form.Label>
-              <Form.Control type="text" placeholder="00,00" />
+              <Form.Control type="text" placeholder="00,00"  className="bg-black text-light"/>
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
@@ -26,7 +26,7 @@ const EditarProducto = () => {
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>imagen</Form.Label>
-              <Form.Control type="text" placeholder="URL" />
+              <Form.Control type="text" placeholder="URL"  className="bg-black text-light"/>
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
@@ -34,7 +34,7 @@ const EditarProducto = () => {
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Cantidad</Form.Label>
-              <Form.Control type="text" placeholder="1" />
+              <Form.Control type="text" placeholder="1"  className="bg-black text-light"/>
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
@@ -43,7 +43,7 @@ const EditarProducto = () => {
             
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Categoria</Form.Label>
-              <Form.Select aria-label="Default select example">
+              <Form.Select aria-label="Default select example"  className="bg-black text-light">
               <Form.Label>Cantidad</Form.Label>
               <option value="">Menu</option>
               <option value="Sandwich">Sandwich</option>
@@ -57,11 +57,8 @@ const EditarProducto = () => {
                 We'll never share your email with anyone else.
               </Form.Text>
             </Form.Group>
-
-           
-
-            <Button variant="primary" type="submit">
-              Submit
+            <Button variant="danger" type="submit">
+              editar
             </Button>
           </Form>
         </div>
