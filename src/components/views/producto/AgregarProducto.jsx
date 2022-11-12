@@ -10,7 +10,7 @@ const AgregarProducto = () => {
           <Form className="w-75 mx-auto">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Nombre Producto</Form.Label>
-              <Form.Control type="text" placeholder="Producto" />
+              <Form.Control type="text" placeholder="Producto" className="bg-black text-light"/>
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
@@ -18,7 +18,7 @@ const AgregarProducto = () => {
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Precio</Form.Label>
-              <Form.Control type="text" placeholder="00,00" />
+              <Form.Control type="text" placeholder="00,00" className="bg-black text-light"/>
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
@@ -26,7 +26,7 @@ const AgregarProducto = () => {
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>imagen</Form.Label>
-              <Form.Control type="text" placeholder="URL" />
+              <Form.Control type="text" placeholder="URL" className="bg-black text-light"/>
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
@@ -34,7 +34,7 @@ const AgregarProducto = () => {
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Cantidad</Form.Label>
-              <Form.Control type="text" placeholder="1" />
+              <Form.Control as="textarea" placeholder="" className="bg-black text-light"/>
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
@@ -42,7 +42,7 @@ const AgregarProducto = () => {
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Categoria</Form.Label>
-              <Form.Select aria-label="Default select example" className="w-75">
+              <Form.Select aria-label="Default select example" className=" bg-black text-light">
                 <Form.Label>Cantidad</Form.Label>
                 <option value="">Menu</option>
                 <option value="Sandwich">Sandwich</option>
@@ -57,7 +57,7 @@ const AgregarProducto = () => {
               </Form.Text>
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button variant="danger" type="submit">
               crear
             </Button>
           </Form>
