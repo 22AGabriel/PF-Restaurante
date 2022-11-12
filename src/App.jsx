@@ -15,8 +15,10 @@ import EditarProducto from './components/views/producto/EditarProducto';
 import Error404 from './components/views/Error404';
 import "./css/app.css"
 
+
 function App() {
   return (
+  
     <BrowserRouter>
      <NavBar></NavBar>
      <Routes>
@@ -33,6 +35,7 @@ function App() {
      </Routes>
      <Footer></Footer>
     </BrowserRouter>
+
 
   );
 }
