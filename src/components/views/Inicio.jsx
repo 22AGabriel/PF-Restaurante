@@ -13,12 +13,18 @@ const Inicio = () => {
         </div>
       </div>
       <div className=" mb-5 container">
-      <div className="w-75 mx-auto my-5 d-flex  divSearch">
-            <input type="search" className="form-control " />
-            <span>
-              <i class="bi bi-search display-5 ms-4"></i>
-            </span>
-          </div>
+      <div className=" mx-auto my-5 d-flex  ">
+             <form className=" mx-auto divSearch">
+              <div className="d-flex w-100 ">
+              <input type="text" className="form-control" />
+              <span>
+                <button type="submit" className="btn btn-outline-secondary px-3"> 
+                <i class="bi bi-search "></i>
+                </button>
+              </span>
+              </div>
+            </form>
+      </div>
       </div>
       <div className="container">
         <h1 className="text-center text-light display-3 my-5">Productos</h1>
@@ -39,7 +45,6 @@ const Inicio = () => {
       <div className="portada3  mt-5">
         <div className="divPortada3">
           <h1 className="display-1 text-light">
-            {" "}
             Descubri nuestras especialidades
           </h1>
           <h2 className="tituloCel display-3">Haz tu pedido</h2>

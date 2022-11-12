@@ -40,47 +40,38 @@ body{
 .CardPP{
     background-color: black;
     color: white;
+    text-decoration: none;
 }
 
 
 .CardPP:hover{
    position: relative;
    bottom: 7px;
+   color:white;
+   background-color: rgba(31, 29, 29, 0.493);
+}
+
+.divSearch{
+    height: 40px;
+    width: 500px;
 }
 
 
+.divSearch button{
+    height: 40px;
+    width: 100%;
+}
+
+
+.divSearch button .iconSearch{
+    height: 10px;
+}
 
 
 
 @media all and (max-width:540px){
     
-   .divPortada2 h1{
-    display: none;
-    font-size: 2px;
-   }
-
-    .divPortada2{
-        flex-direction: column;
-        background-image: url(https://img.freepik.com/foto-gratis/desayuno-turco-shakshuka-aceitunas-queso-fruta_2829-11305.jpg?w=1060&t=st=1668133102~exp=1668133702~hmac=fa536a96e6e727f89777e13d5c738b021581b15f9f3e40e6eceab43254c54a34);
-        background-repeat: no-repeat;
-        background-size:cover;
-        background-position: center;
-        background-attachment: fixed;
-        
-      
-    }
-
-    .divPortada2 h2{
-        display: block;
-        color: white;
-        font-size: 40px;
-    }
-
-
-    .divPortada2 .tituloCel{
-        display: block;
-        font-size: 40px;
-    }
+  
     
 
    .divSearch{
@@ -95,24 +86,29 @@ body{
     display: block;
     color: white;
    }
+
+
+   .divSearch{
+    width: 300px;
+   }
 }
 
 
 
 
 @media all and (max-width:991px){
-    .portada{
-        display: none;
+    .portada3{
+         background-image: url(https://img.freepik.com/foto-gratis/desayuno-turco-shakshuka-aceitunas-queso-fruta_2829-11305.jpg?w=1060&t=st=1668133102~exp=1668133702~hmac=fa536a96e6e727f89777e13d5c738b021581b15f9f3e40e6eceab43254c54a34);
+        background-attachment: fixed;
+        background-repeat: no-repeat; 
+        background-size: cover; 
     }
 
 
 
     
     .divPortada3{
-        background-image: url(https://img.freepik.com/foto-gratis/desayuno-turco-shakshuka-aceitunas-queso-fruta_2829-11305.jpg?w=1060&t=st=1668133102~exp=1668133702~hmac=fa536a96e6e727f89777e13d5c738b021581b15f9f3e40e6eceab43254c54a34);
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-color: rgba(0, 0, 0, 0.514);
     }
     
 
