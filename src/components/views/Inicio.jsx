@@ -4,6 +4,7 @@ import { Row, Col } from "react-bootstrap";
 import CardInicio from "./CardInicio";
 import Contacto from "./Contacto";
 import { Link } from "react-router-dom";
+import Ubicacion from "./Ubicacion";
 
 const Inicio = () => {
   return (
@@ -18,45 +19,45 @@ const Inicio = () => {
         <div className="w-75 mx-auto my-5">
           <Row>
             <Col md={4}>
-              <div className="divCirculo ms-5">
-                <button>
+              <div className="divCirculo ms-4">
+                <a href="#whats">
                   <i class="bi bi-telephone display-3"></i>
-                </button>
+                </a>
               </div>
               <div className="d-flex flex-column text-center mx-auto  mt-3">
-                <h4 className="text-center">haz tu pedido</h4>
+                <h4 className="text-center">Realiza tu pedido</h4>
                 <p>
                   Llamanos a nuestros telefonos fijos y registramos tu pedido
                 </p>
-                <button className="btn btn-primary" as={Link} to="/administrar">Nuestros telefonos</button>
+                <a href="#whats" className="btn bg-rojo1 text-light btnLink">Nuestros telefono</a>
               </div>
             </Col>
             <Col md={4}>
-              <div className="divCirculo  ms-5">
-                <button>
-                  <i class="bi bi-telephone display-3"></i>
-                </button>
+              <div className="divCirculo  ms-4">
+                 <a href="#whats">
+                  <i class="bi bi-whatsapp display-3"></i>
+                </a>
               </div>
               <div className="d-flex flex-column text-center mx-auto  mt-3">
-                <h4 className="text-center">haz tu pedido</h4>
+                <h4 className="text-center">Consultá precios</h4>
                 <p>
-                  Llamanos a nuestros telefonos fijos y registramos tu pedido
+                  sumanos a tus contactos y te asesoramos sobre los costos de envio
                 </p>
-                <button className="btn btn-primary">Nuestros telefonos</button>
+                <a href="#whats" className="btn bg-rojo1 text-light btnLink">Nuestros telefono</a>
               </div>
             </Col>
             <Col md={4}>
-              <div className="divCirculo  ms-5">
-                <button>
-                  <i class="bi bi-telephone display-3"></i>
-                </button>
+              <div className="divCirculo  ms-4">
+              <a href="#ubicacion">
+                  <i class="bi bi-geo-alt display-3"></i>
+              </a>
               </div>
               <div className="d-flex flex-column text-center mx-auto  mt-3">
-                <h4 className="text-center">haz tu pedido</h4>
+                <h4 className="text-center">Visitanos</h4>
                 <p>
-                  Llamanos a nuestros telefonos fijos y registramos tu pedido
+                 Visitanos en nuestro local y conocenos te estamos esperando
                 </p>
-                <button className="btn btn-primary">Nuestros telefonos</button>
+                <a href="#ubicacion" className="btn bg-rojo1 text-light btnLink">Ver ubucacion</a>
               </div>
             </Col>
           </Row>
@@ -104,6 +105,7 @@ const Inicio = () => {
         </div>
       </div>
       <Contacto></Contacto>
+      <Ubicacion></Ubicacion>
     </div>
   );
 };
