@@ -33,7 +33,9 @@ body{
 .text-rojo3{
     color: #db8d7b;
 }
-
+.text-black1{
+    color: #292929;
+}
 .bg-rojo3{
     background-color: #db8d7b;
 }
@@ -48,4 +50,8 @@ body{
 
 .bg-footer{
     background-color: rgb(0, 0, 0);
+}
+
+.btn-active {
+    background-color: #ffbf00;
 }
