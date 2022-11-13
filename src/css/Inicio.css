@@ -69,6 +69,45 @@ body{
 
 
 
+.divCirculo{
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divCirculo:hover button{
+    /* height: 202px;
+    width: 202px; */
+    background-color: rgb(71, 71, 71);
+    color: rgb(17, 17, 17);
+    transition: 1s ease;
+    
+}
+
+.divCirculo button{
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    background-color: rgb(23, 24, 24);
+    color: gray;
+    border: 1px solid white;
+}
+
+
+.divWhatsApp{
+    background-color: aqua;
+    height: 100px;
+    width: 100%;
+    background-image: url(https://img.freepik.com/foto-gratis/deliciosas-brochetas-comida-rapida-arabe-rodajas-pepino_23-2148651116.jpg?w=1800&t=st=1668129781~exp=1668130381~hmac=a2580021dda8d6ab21c7b510b2a0f072025b3c71dcf9fab06fe45ffa7e4833a9);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+   
+   }
+
 @media all and (max-width:540px){
     
   
@@ -91,6 +130,8 @@ body{
    .divSearch{
     width: 300px;
    }
+
+   
 }
 
 
@@ -122,6 +163,15 @@ body{
         display: block;
         color: white;
     }
+
+
+    .divPedidos{
+        display: none;
+    }
+
+
+
+    
 }
 
 
