@@ -17,7 +17,7 @@ const Contacto = () => {
         <Col md={6}>
            <div className="mt-5 ms-4 celContacto">
             <p>Sumanos a tus contactos y nos comunicamos para hablar sobre los presupuestos para eventos.Pedidos hastas las 00 hs</p>
-            <h4 className="cel">3813455667</h4>
+            <h4>3813455667</h4>
            </div>
         </Col>
       </Row>
@@ -36,7 +36,7 @@ const Contacto = () => {
         <Col md={6}>
            <div className="mt-5 ms-4 celContacto">
             <p>Llama a nuestros telefonos figos y te asesoramos sobre nuestros costos</p>
-            <h4 className="cel">3814272345</h4>
+            <h4>3814272345</h4>
            </div>
         </Col>
       </Row>
