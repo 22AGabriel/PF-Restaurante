@@ -9,12 +9,5 @@ body {
 .text-rojo4 {
   color: #f6d8d1;
 }
-#root{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
 
-.bajarFooter{
-    flex-grow: 1;
-}
+

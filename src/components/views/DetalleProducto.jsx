@@ -36,20 +36,22 @@ const DetalleProducto = () => {
                   <Form>
                     <Form.Group>
                       <div className="d-flex p-2">
-                        <Form.Label className="fs-5 p-1 me-2">
-                          Cantidad:
-                        </Form.Label>
+                        <Form.Label className="fs-5">Cantidad:</Form.Label>
 
                         <Button
-                          className="me-2 bg-rojo3 p-1"
-                          onClick={() => setNumeritos(numeritos)}
+                          className="fs-2"
+                          type="submit"
+                          variant="bg-rojo3"
+                          onClick={() => setNumeritos(numeritos + 1)}
                         >
                           +
                         </Button>
                         <h3>{numeritos}</h3>
                         <Button
-                          className="me-2 bg-rojo3 p-1"
-                          onClick={() => setNumeritos(numeritos)}
+                          className="fs-1"
+                          type="submit"
+                          variant="bg-rojo3"
+                          onClick={() => setNumeritos(numeritos - 1)}
                         >
                           -
                         </Button>
@@ -57,9 +59,9 @@ const DetalleProducto = () => {
                     </Form.Group>
                   </Form>
                 </Card>
-                <article className="d-flex justify-content-end ">
+                <article className="d-flex justify-content-end">
                   <i class="bi bi-bag-check-fill fs-1 mx-3"></i>
-                  <i class="bi bi-cart-fill fs-1 mx-3"></i>
+                  <i class="bi bi-cart-fill fs-1 mx-3 "></i>
                 </article>
               </Card.Body>
             </Col>
