@@ -3,7 +3,6 @@ import "../../css/Inicio.css";
 import { Row, Col } from "react-bootstrap";
 import CardInicio from "./CardInicio";
 import Contacto from "./Contacto";
-import { Link } from "react-router-dom";
 import Ubicacion from "./Ubicacion";
 
 const Inicio = () => {
@@ -20,9 +19,7 @@ const Inicio = () => {
           <Row>
             <Col md={4}>
               <div className="divCirculo ">
-                <a href="#whats">
-                  <i class="bi bi-telephone display-3"></i>
-                </a>
+              <a href="#whats"><i className="bi bi-telephone display-3"> </i></a>
               </div>
               <div className="d-flex flex-column text-center   mt-3">
                 <h4 className="text-center">Realiza tu pedido</h4>
@@ -35,7 +32,7 @@ const Inicio = () => {
             <Col md={4}>
               <div className="divCirculo">
                  <a href="#whats">
-                  <i class="bi bi-whatsapp display-3"></i>
+                  <i className="bi bi-whatsapp display-3"></i>
                 </a>
               </div>
               <div className="d-flex flex-column text-center mx-auto  mt-3">
@@ -49,7 +46,7 @@ const Inicio = () => {
             <Col md={4}>
               <div className="divCirculo">
               <a href="#ubicacion">
-                  <i class="bi bi-geo-alt display-3"></i>
+                  <i className="bi bi-geo-alt display-3"></i>
               </a>
               </div>
               <div className="d-flex flex-column text-center mx-auto  mt-3">
@@ -73,7 +70,7 @@ const Inicio = () => {
                   type="submit"
                   className="btn btn-outline-secondary px-3"
                 >
-                  <i class="bi bi-search "></i>
+                  <i className="bi bi-search "></i>
                 </button>
               </span>
             </div>
