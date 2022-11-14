@@ -110,6 +110,14 @@
  margin-right:15px;
 }
 
+
+.divisorContacto{
+    background-image: url(https://img.freepik.com/foto-gratis/deliciosas-brochetas-comida-rapida-arabe-rodajas-pepino_23-2148651116.jpg?w=1800&t=st=1668129781~exp=1668130381~hmac=a2580021dda8d6ab21c7b510b2a0f072025b3c71dcf9fab06fe45ffa7e4833a9);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 @media all and (max-width:540px){
     
    .divSearch{
@@ -182,6 +190,14 @@
    .divPortada3{
     height: 300px;
    }
+
+   .divisorContacto{
+    background-image: url(https://img.freepik.com/foto-gratis/desayuno-turco-shakshuka-aceitunas-queso-fruta_2829-11305.jpg?w=1060&t=st=1668133102~exp=1668133702~hmac=fa536a96e6e727f89777e13d5c738b021581b15f9f3e40e6eceab43254c54a34);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
     
 }
 

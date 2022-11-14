@@ -22,7 +22,7 @@ const Contacto = () => {
         </Col>
       </Row>
     </div>
-    <div className="bg-black py-4"></div>
+    <div className="bg-black py-4 divisorContacto"></div>
     <div className="container">
       <Row className="container">
         <Col md={6}>
