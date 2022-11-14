@@ -14,13 +14,14 @@ const Login = () => {
         handleSubmit,
         formState: { errors },
       } = useForm();
+      
     const onSubmit = (data) =>{
         Login(data);
     }
       return (
         <>
           <NavLink Name={"nav-item nav-link"} variant='dark' onClick={handleShow}>
-          <i className="bi bi-box-arrow-in-right fs-4"></i>
+          <i className="bi bi-box-arrow-in-right fs-4 text-white"></i>
           </NavLink>
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
