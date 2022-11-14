@@ -4,7 +4,7 @@ import { Row, Col } from "react-bootstrap";
 const Ubicacion = () => {
   return (
     <div>
-      <div className="container bg-black">
+      <div className="container ">
         <Row>
           <Col md={12}>
             <div className="d-flex flex-column mt-5 container" id="ubicacion">

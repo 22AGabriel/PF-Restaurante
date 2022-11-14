@@ -33,7 +33,7 @@
 
 
 .CardPP{
-    background-color: black;
+    background-color:  #292929;
     color: white;
     text-decoration: none;
 }
@@ -43,7 +43,7 @@
    position: relative;
    bottom: 7px;
    color:white;
-   background-color: rgba(31, 29, 29, 0.493);
+   background-color: rgba(92, 88, 88, 0.801);
 }
 
 .CardPP .buttonCard{
@@ -52,7 +52,9 @@
 
 
 .CardPP:hover .buttonCard{
-    background-color: red;
+    /* background-color: red; */
+    /* background-color: #db8d7b; */
+    background-color: #c96752;
 }
 
 
@@ -104,11 +106,11 @@
 
 
 .btnLink{
-    background-color:#9d0105;
+    background-color: #db8d7b;
 }
 
 .btnLink:hover{
-    background-color:#9d0105;
+    background-color: #c96752;
 }
 
 
