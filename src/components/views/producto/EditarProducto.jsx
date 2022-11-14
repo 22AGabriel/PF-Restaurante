@@ -1,88 +1,77 @@
 import React from 'react';
-import {Modal, Button, Form} from 'react-bootstrap';
-import { NavLink } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import { useState } from 'react';
+import { Button, Form,Container} from 'react-bootstrap';
 
 
-const Login = () => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true); 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-      } = useForm();
-      
-      return (
-        <>
-          <NavLink className={"nav-item nav-link"} variant='primary' onClick={handleShow}>
-          <i className="bi bi-box-arrow-in-right fs-4"></i>
-          </NavLink>
-          <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Login to our page</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formEmail">
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="usuario@sham.com"
-                    {...register("email", {
-                      required: "El email es obligatorio",
-                      minLength: {
-                        value: 8,
-                        message: "La cantidad minima debe ser 8",
-                      },
-                      maxLength: {
-                        value: 30,
-                        message: "La cantidad maxima debe ser de 30",
-                      },
-                    })}
-                    autoFocus
-                  />
-                  <Form.Text className="text-danger">
-                    {errors.email?.message}
-                  </Form.Text>
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formPassword">
-                  <Form.Label>Contraseña</Form.Label>
-                  <Form.Control
-                    type="password"
-                    placeholder="****"
-                    {...register("password", {
-                      required: "El contraseña es obligatorio",
-                      minLength: {
-                        value: 8,
-                        message: "La cantidad minima debe ser 8",
-                      },
-                      maxLength: {
-                        value: 15,
-                        message: "La cantidad maxima debe ser de 15",
-                      },
-                    })}
-                  />
-                </Form.Group>
-                <Form.Text className="text-danger">
-                  {errors.contrasenia?.message}
+
+const EditarProducto = () => {
+  
+     return (
+
+        <Container>
+        <div className=" my-5">
+          <h1 className="text-center my-5">Editar Producto</h1>
+          <div className="shadow py-5 w-100 mx-auto">
+            <Form className="w-75 mx-auto">
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Nombre Producto</Form.Label>
+                <Form.Control type="text" placeholder="Producto" className=" text-light"/>
+                <Form.Text className="text-muted">
+                  We'll never share your email with anyone else.
                 </Form.Text>
-                <hr></hr>
-                <div className="text-center">
-                  <Button variant="danger" type="submit">
-                    Ingresar
-                  </Button>
-                </div>
-              </Form>
-            </Modal.Body>
-            <Button variant="dark" onClick={handleClose}>
-              Cerrar
-            </Button>
-          </Modal>
-        </>
+              </Form.Group>
+  
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Precio</Form.Label>
+                <Form.Control type="text" placeholder="00,00" className=" text-light"/>
+                <Form.Text className="text-muted">
+                  We'll never share your email with anyone else.
+                </Form.Text>
+              </Form.Group>
+  
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>imagen</Form.Label>
+                <Form.Control type="text" placeholder="URL"/>
+                <Form.Text className="text-muted">
+                  We'll never share your email with anyone else.
+                </Form.Text>
+              </Form.Group>
+  
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Cantidad</Form.Label>
+                <Form.Control as="textarea" placeholder=""/>
+                <Form.Text className="text-muted">
+                  We'll never share your email with anyone else.
+                </Form.Text>
+              </Form.Group>
+  
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Categoria</Form.Label>
+                <Form.Select aria-label="Default select example">
+                  <Form.Label>Cantidad</Form.Label>
+                  <option value="">Menu</option>
+                  <option value="Sandwich">Sandwich</option>
+                  <option value="Plato">Al plato</option>
+                  <option value="Pures">Pures</option>
+                  <option value="Agregados">Agregados</option>
+                  <option value="Bebida sin alcohol">Bebidas sin alcohol</option>
+                  <option value="Bebidas con alcohol">Bebidas con alcohol</option>
+                </Form.Select>
+                <Form.Text className="text-muted">
+                  We'll never share your email with anyone else.
+                </Form.Text>
+              </Form.Group>
+  
+              <Button variant="danger" type="submit">
+                editar
+              </Button>
+            </Form>
+          </div>
+        </div>
+      </Container>
+
+
+      
     );
 };
 
-export default Login;
+export default EditarProducto;
