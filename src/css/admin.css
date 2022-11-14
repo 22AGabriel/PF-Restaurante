@@ -21,22 +21,18 @@
     border: solid #c96752;
 }
 
-.form-select{
-    background-color: black;
+.w-select.form-select{
+    background-color: #292929;
     border: solid 1px white;
     color: white;
 }
-
-.form-select-disabled{
-    background-color: #db8d7b;
-} 
 
 .form-select:focus{
     border: #c96752;
     box-shadow: 0 0 0 2px #db8d7b;
 }
 
-.form-select:disabled{
+.w-select.form-select:disabled{
     color: black;
     background-color: rgb(163, 163, 163);
 }
