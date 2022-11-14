@@ -26,7 +26,7 @@ const Inicio = () => {
                 <p>
                   Llamanos a nuestros telefonos fijos y registramos tu pedido
                 </p>
-                <a href="#whats" className="btn bg-rojo1 text-light btnLink">Nuestros telefono</a>
+                <a href="#whats" className="btn bg-rojo3 text-light btnLink">Nuestros telefono</a>
               </div>
             </Col>
             <Col md={4}>
@@ -40,7 +40,7 @@ const Inicio = () => {
                 <p>
                   sumanos a tus contactos y te asesoramos sobre los costos de envio
                 </p>
-                <a href="#whats" className="btn bg-rojo1 text-light btnLink">Nuestros telefono</a>
+                <a href="#whats" className="btn bg-rojo3 text-light btnLink">Nuestros telefono</a>
               </div>
             </Col>
             <Col md={4}>
@@ -54,7 +54,7 @@ const Inicio = () => {
                 <p>
                  Visitanos en nuestro local y conocenos te estamos esperando
                 </p>
-                <a href="#ubicacion" className="btn bg-rojo1 text-light btnLink">Ver ubucacion</a>
+                <a href="#ubicacion" className="btn bg-rojo3 text-light btnLink">Ver ubucacion</a>
               </div>
             </Col>
           </Row>
@@ -101,7 +101,7 @@ const Inicio = () => {
           <h2 className="tituloCel display-3">Haz tu pedido</h2>
         </div>
       </div>
-      <div className="bg-rojo1">
+      <div className="bg-rojo2">
       <Contacto></Contacto>
       </div>
       <Ubicacion></Ubicacion>

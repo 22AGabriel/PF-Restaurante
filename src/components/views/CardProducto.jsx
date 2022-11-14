@@ -14,7 +14,7 @@ const CardProducto = () => {
             <Card.Title>Card Title</Card.Title>
             <Card.Text>Precio: $500</Card.Text>
             <Card.Text>Categoria: Categoria</Card.Text>
-            <Button className="btn bg-rojo1 text-light buttonCard" as={Link} to="/detalle">Ver mas</Button>
+            <Button className="btn bg-rojo3 text-light buttonCard" as={Link} to="/detalle">Ver mas</Button>
           </Card.Body>
         </Card>
     </Col>

@@ -4,7 +4,7 @@ import { Row, Col } from "react-bootstrap";
 const Contacto = () => {
   return (
     <>
-    <div className="container bg-rojo1" id="whats">
+    <div className="container" id="whats">
       <Row className="container ">
         <Col md={6}>
            <div className="mt-5">
@@ -23,7 +23,7 @@ const Contacto = () => {
       </Row>
     </div>
     <div className="bg-black py-4"></div>
-    <div className="container bg-rojo1">
+    <div className="container">
       <Row className="container">
         <Col md={6}>
            <div className="mt-5">
