@@ -10,8 +10,8 @@ const  NavBar = () => {
   return (
     <>
     {[false].map((expand) => (
-      <Navbar key={expand}  expand={expand} className="mb-3 bg-rojo2">
-        <Container fluid>
+      <Navbar key={expand}  expand={expand} className="mb-3 bg-rojo3">
+        <Container>
           <Navbar.Brand as={Link} to='/'>
             <img src="https://trello.com/1/cards/636987e596b2de018dfa4d9c/attachments/636bbf6a4fc778028d53781f/previews/636bbf6a4fc778028d537889/download/Logo_Sham.png" alt="sham logo" width="60" height='40' className='d-inline-block align-center' />
           </Navbar.Brand>
