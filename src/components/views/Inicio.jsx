@@ -16,15 +16,15 @@ const Inicio = () => {
         </div>
       </div>
       <div className="container py-5 divPedidos">
-        <div className="w-75 mx-auto my-5">
+        <div className="w-100 mx-auto my-5">
           <Row>
             <Col md={4}>
-              <div className="divCirculo ms-4">
+              <div className="divCirculo ">
                 <a href="#whats">
                   <i class="bi bi-telephone display-3"></i>
                 </a>
               </div>
-              <div className="d-flex flex-column text-center mx-auto  mt-3">
+              <div className="d-flex flex-column text-center   mt-3">
                 <h4 className="text-center">Realiza tu pedido</h4>
                 <p>
                   Llamanos a nuestros telefonos fijos y registramos tu pedido
@@ -33,7 +33,7 @@ const Inicio = () => {
               </div>
             </Col>
             <Col md={4}>
-              <div className="divCirculo  ms-4">
+              <div className="divCirculo">
                  <a href="#whats">
                   <i class="bi bi-whatsapp display-3"></i>
                 </a>
@@ -47,7 +47,7 @@ const Inicio = () => {
               </div>
             </Col>
             <Col md={4}>
-              <div className="divCirculo  ms-4">
+              <div className="divCirculo">
               <a href="#ubicacion">
                   <i class="bi bi-geo-alt display-3"></i>
               </a>
@@ -104,7 +104,9 @@ const Inicio = () => {
           <h2 className="tituloCel display-3">Haz tu pedido</h2>
         </div>
       </div>
+      <div className="bg-rojo1">
       <Contacto></Contacto>
+      </div>
       <Ubicacion></Ubicacion>
     </div>
   );
