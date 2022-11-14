@@ -36,6 +36,13 @@ const Registro = () => {
                 placeholder="Ingrese una contraseña"
               />
             </Form.Group>
+            <Form.Group className="mb-3" controlId="formPassword">
+              <Form.Label>Confirmar contraseña</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Ingrese una contraseña"
+              />
+            </Form.Group>
             <div className="d-flex justify-content-end">
               {" "}
               <Button className="bg-rojo2 " type="submit">
