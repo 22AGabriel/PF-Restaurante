@@ -1,7 +1,7 @@
 import React from "react";
 import "../../css/Inicio.css";
 import { Row, Col } from "react-bootstrap";
-import CardInicio from "./CardInicio";
+import CardProducto from "./CardProducto";
 import Contacto from "./Contacto";
 import Ubicacion from "./Ubicacion";
 
@@ -81,15 +81,15 @@ const Inicio = () => {
         <h1 className="text-center text-light display-3 my-5">Productos</h1>
         <div>
           <Row>
-            <CardInicio></CardInicio>
-            <CardInicio></CardInicio>
-            <CardInicio></CardInicio>
-            <CardInicio></CardInicio>
-            <CardInicio></CardInicio>
-            <CardInicio></CardInicio>
-            <CardInicio></CardInicio>
-            <CardInicio></CardInicio>
-            <CardInicio></CardInicio>
+            <CardProducto></CardProducto>
+            <CardProducto></CardProducto>
+            <CardProducto></CardProducto>
+            <CardProducto></CardProducto>
+            <CardProducto></CardProducto>
+            <CardProducto></CardProducto>
+            <CardProducto></CardProducto>
+            <CardProducto></CardProducto>
+            <CardProducto></CardProducto>
           </Row>
         </div>
       </div>

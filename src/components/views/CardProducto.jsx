@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const CardInicio = () => {
+const CardProducto = () => {
   return (
     <Col md={4}>
       <Card className="mb-3 CardPP">
@@ -21,4 +21,4 @@ const CardInicio = () => {
   );
 };
 
-export default CardInicio;
+export default CardProducto;
