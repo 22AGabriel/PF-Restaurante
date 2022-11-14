@@ -10,7 +10,7 @@ const AgregarProducto = () => {
           <Form className="w-75 mx-auto">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Nombre Producto</Form.Label>
-              <Form.Control type="text" placeholder="Producto" className="bg-black text-light"/>
+              <Form.Control type="text" placeholder="Producto"/>
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
@@ -18,7 +18,7 @@ const AgregarProducto = () => {
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Precio</Form.Label>
-              <Form.Control type="text" placeholder="00,00" className="bg-black text-light"/>
+              <Form.Control type="text" placeholder="00,00"/>
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
@@ -26,7 +26,7 @@ const AgregarProducto = () => {
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>imagen</Form.Label>
-              <Form.Control type="text" placeholder="URL" className="bg-black text-light"/>
+              <Form.Control type="text" placeholder="URL"/>
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
@@ -34,7 +34,7 @@ const AgregarProducto = () => {
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Cantidad</Form.Label>
-              <Form.Control as="textarea" placeholder="" className="bg-black text-light"/>
+              <Form.Control as="textarea" placeholder=""/>
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
@@ -42,7 +42,7 @@ const AgregarProducto = () => {
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Categoria</Form.Label>
-              <Form.Select aria-label="Default select example" className=" bg-black text-light">
+              <Form.Select aria-label="Default select example">
                 <Form.Label>Cantidad</Form.Label>
                 <option value="">Menu</option>
                 <option value="Sandwich">Sandwich</option>
