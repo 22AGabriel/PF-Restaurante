@@ -35,7 +35,7 @@ const Contacto = () => {
         </Col>
         <Col md={6}>
            <div className="mt-5 ms-4 celContacto">
-            <p>Llama a nuestros telefonos figos y te asesoramos sobre nuestros costos</p>
+            <p>Llama a nuestros telefonos fijos y te asesoramos sobre nuestros costos</p>
             <h4>3814272345</h4>
            </div>
         </Col>

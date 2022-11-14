@@ -10,8 +10,6 @@
 
 }
 
-
-
 .divPortada3{
     height: 100%;
     width: 100%;
@@ -22,22 +20,15 @@
     
 }
 
-
-
 .divPortada3 .tituloCel{
     display: none;
 }
-
-
-
-
 
 .CardPP{
     background-color: black;
     color: white;
     text-decoration: none;
 }
-
 
 .CardPP:hover{
    position: relative;
@@ -50,29 +41,23 @@
     border:white;
 }
 
-
 .CardPP:hover .buttonCard{
     background-color: red;
 }
-
 
 .divSearch{
     height: 40px;
     width: 500px;
 }
 
-
 .divSearch button{
     height: 40px;
     width: 100%;
 }
 
-
 .divSearch button .iconSearch{
     height: 10px;
 }
-
-
 
 .divCirculo{
     height: 200px;
@@ -102,7 +87,6 @@
     align-items: center;
 }
 
-
 .btnLink{
     background-color:#9d0105;
 }
@@ -111,28 +95,24 @@
     background-color:#9d0105;
 }
 
-
 .divWhatsApp{
     background-color:black;
     height: 100px;
     width: 100%;
    
-   }
+}
 
-   .ulUbicacion{
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-right:15px;
-   }
+.ulUbicacion{
+ list-style: none;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ margin-right:15px;
+}
 
 @media all and (max-width:540px){
     
-  
-    
-
    .divSearch{
     width: 100%;
    }
@@ -146,18 +126,13 @@
     color: white;
    }
 
-
    .divSearch{
     width: 300px;
    }
 
-
-   
-
    .whatsapp p{
     display: none;
    }
-
 
    .visitanos{
     display: none;
@@ -166,10 +141,15 @@
    .celContacto{
     text-align: center;
    }
+
+    .portada3{
+        height: 300px;
+    }
+   .divPortada3{
+    height: 300px;
+   }
    
 }
-
-
 
 
 @media all and (max-width:991px){
@@ -180,32 +160,29 @@
         background-size: cover; 
     }
 
-
-
-    
     .divPortada3{
         background-color: rgba(0, 0, 0, 0.514);
     }
     
-
-
     .divPortada3 h1{
         display: none;
     }
     
-
     .divPortada3 .tituloCel{
         display: block;
         color: white;
     }
 
-
     .divPedidos{
         display: none;
     }
 
-
-
+    .portada3{
+        height: 300px;
+    }
+   .divPortada3{
+    height: 300px;
+   }
     
 }
 
