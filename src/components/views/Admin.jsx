@@ -7,7 +7,7 @@ import "../../css/admin.css"
 
 const Admin = () => {
   return (
-    <Container className="my-5">
+    <Container className="my-5 bajarFooter">
       <div className="d-flex justify-content-center mb-4">
         <h1 className="display-4">Administrar</h1>
       </div>
