@@ -1,0 +1,44 @@
+{
+  "productos": [
+    {
+      "nombreProducto": "falafel",
+      "precio": "500",
+      "detalle": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, officia qui. Provident quod in non? Mollitia quisquam in magni reiciendis! Ex, incidunt deleniti. Vero, obcaecati!",
+      "categoria": "Al plato",
+      "imagen": "https://images.hola.com/imagenes/cocina/recetas/20200327164281/falafel-tradicional/0-804-456/falafel-tradicional-m.jpg",
+      "cantidad": 1,
+      "id": 1
+    },
+    {
+      "nombreProducto": "kipe",
+      "precio": "500",
+      "detalle": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, officia qui. Provident quod in non? Mollitia quisquam in magni reiciendis! Ex, incidunt deleniti. Vero, obcaecati!",
+      "categoria": "Al plato",
+      "imagen": "https://cocinacriolla.com.ar/wp-content/uploads/2021/06/el-leon-arabe-kipe-bola.jpg",
+      "cantidad": 1,
+      "id": 2
+    }
+  ],
+  "usuarios": [
+    {
+      "nombreUsuario": "Juan",
+      "email": "juanperez@gmail.com",
+      "password": "JuanPe22*",
+      "perfil": "Administrador",
+      "carrito": [],
+      "pedidos": [],
+      "estado": "Activo",
+      "id": 1
+    },
+    {
+      "nombreUsuario": "Javier",
+      "email": "javierUncos@gmail.com",
+      "password": "Javier666*",
+      "perfil": "usuario",
+      "carrito": [],
+      "pedidos": [],
+      "estado": "Activo",
+      "id": 2
+    }
+  ]
+}
