@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {Modal, Button, Form} from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -9,15 +9,17 @@ const Login = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true); 
-    const {
+   const {
         register,
         handleSubmit,
         formState: { errors },
       } = useForm();
-      
+    const onSubmit = (data) =>{
+        Login(data);
+    }
       return (
         <>
-          <NavLink className={"nav-item nav-link"} variant='dark' onClick={handleShow}>
+          <NavLink Name={"nav-item nav-link"} variant='dark' onClick={handleShow}>
           <i className="bi bi-box-arrow-in-right fs-4"></i>
           </NavLink>
           <Modal show={show} onHide={handleClose}>
@@ -25,7 +27,7 @@ const Login = () => {
               <Modal.Title className='text-black1'>Login</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <Form onSubmit={handleSubmit}>
+              <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group className="mb-3" controlId="formEmail">
                   <Form.Label>Email</Form.Label>
                   <Form.Control
@@ -35,11 +37,11 @@ const Login = () => {
                       required: "El email es obligatorio",
                       minLength: {
                         value: 8,
-                        message: "La cantidad minima debe ser 8",
+                        message: "La cantidad minima debe ser 8"
                       },
                       maxLength: {
                         value: 30,
-                        message: "La cantidad maxima debe ser de 30",
+                        message: "La cantidad maxima debe ser de 30"
                       },
                     })}
                     autoFocus
@@ -57,17 +59,17 @@ const Login = () => {
                       required: "El contraseña es obligatorio",
                       minLength: {
                         value: 8,
-                        message: "La cantidad minima debe ser 8",
+                        message: "La cantidad minima debe ser 8"
                       },
                       maxLength: {
                         value: 15,
-                        message: "La cantidad maxima debe ser de 15",
+                        message: "La cantidad maxima debe ser de 15"
                       },
                     })}
                   />
                 </Form.Group>
                 <Form.Text className="text-danger">
-                  {errors.contrasenia?.message}
+                  {errors.password?.message}
                 </Form.Text>
                 <hr></hr>
                 <div className="text-center">
@@ -81,6 +83,7 @@ const Login = () => {
               Cerrar
             </Button>
           </Modal>
+    
         </>
     );
 };

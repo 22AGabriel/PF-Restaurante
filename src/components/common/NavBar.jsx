@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Login from '../views/Login'
-import { Link } from 'react-router-dom';
+import { Link, NavLink} from 'react-router-dom';
 const  NavBar = () => {
   return (
     <>
@@ -34,16 +34,19 @@ const  NavBar = () => {
                   type="search"
                   placeholder="Buscar"
                   className="me-2"
-                  aria-label="Buscar"
+                  aria-label="search"
                 />
-                <Button variant="outline-success">Buscar</Button>
+                <Button variant="outline-dark">Buscar</Button>
+                {/* <div class='searsh'>
+                    <input type="text" placeholder='Buscar...' required/>
+                </div> */}
               </Form>
-              <Nav.Link to="/registrar" className={'nav-item nav-link align-self-center'}>Registrar</Nav.Link>
-              <Nav.Link className='align-self-center'>
+              <NavLink to="/registrar" className={'nav-item nav-link align-self-center'}>Registrar</NavLink>
+              <NavLink className={'nav-item nav-link align-self-center'}>
                 <Login></Login>
-              </Nav.Link>
-              <Nav.Link to="/admin" className={'nav-item nav-link d-flex align-self-center'}>Administrador</Nav.Link>
-              <Nav.Link to="/pedidos" className={'nav-item nav-link align-self-center'}><i class="bi bi-cart-plus-fill fs-4"></i></Nav.Link>
+              </NavLink>
+              <NavLink to="/administrar" className={'nav-item nav-link d-flex align-self-center'}>Administrador</NavLink>
+              <NavLink to="/usuario/pedidos" className={'nav-item nav-link align-self-center'}><i class="bi bi-cart-plus-fill fs-4"></i></NavLink>
               <Button variant={'danger'} className='d-flex align-items-center justify-content-center'>Cerrar Sesión <i class="bi bi-toggle2-on fs-3 ms-2"></i></Button>
               </Nav>
             </Offcanvas.Body>
