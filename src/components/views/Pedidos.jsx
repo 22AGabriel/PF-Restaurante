@@ -2,28 +2,10 @@ import React from "react";
 import { Container, Card, Row, Col, Button } from "react-bootstrap";
 import '../../css/app.css';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Popover from 'react-bootstrap/Popover';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 const Pedidos = () => {
-  const popover = (
-    <Popover id="popover-basic" className="text-dark">
-      <Popover.Header as="h3">Agregar al carrito</Popover.Header>
-      <Popover.Body>
-        Poder agregar al carrito haciendo click <strong>aquí</strong>.
-      </Popover.Body>
-    </Popover>
-  );
-
-  const popover2 = (
-    <Popover id="popover-basic" className="text-dark">
-      <Popover.Header as="h3">Volver a pedir</Popover.Header>
-      <Popover.Body>
-        Si te gustó podes volver a pedir haciendo click <strong>aquí</strong>.
-      </Popover.Body>
-    </Popover>
-  );
-
-  return (
+    return (
     <div class='bajarFooter'>
       <h1 className="display-4 text-center">El Sham</h1>
       <hr />
@@ -44,12 +26,33 @@ const Pedidos = () => {
                 <Card.Text className='mt-4'>
                   Pure de garbanzos realizados con garbanzos frescos, ajo, limon, sal, pimienta y pimentón rojo. Vienen acompañados con 3 pancitos arabes para disfrutar!
                   <article className="d-flex justify-content-end mt-4">
-                  <OverlayTrigger trigger="click" placement="top" overlay={popover}>
-    <Button className='text-rojo1 btn-light' size="sm"><i class="bi bi-bag-plus fs-2"></i></Button>
-  </OverlayTrigger>
-  <OverlayTrigger trigger="click" placement="top" overlay={popover2}>
-    <Button className='text-rojo1 btn-light ms-2' size="sm"> <i class="bi bi-arrow-repeat fs-2"></i></Button>
-  </OverlayTrigger>
+
+                  {['top'].map((placement) => (
+        <OverlayTrigger
+          key={placement}
+          placement={placement}
+          overlay={
+            <Tooltip id={`tooltip`}>
+              <p>Agregar al carrito</p>
+            </Tooltip>
+          }
+        >
+          <Button className='text-rojo1 btn-light' size="sm"><i class="bi bi-bag-plus fs-2"></i></Button>
+        </OverlayTrigger>
+ ))}
+    {['top'].map((placement) => (
+        <OverlayTrigger
+          key={placement}
+          placement={placement}
+          overlay={
+            <Tooltip id={`tooltip`}>
+              <p>Volver a pedir</p>
+            </Tooltip>
+          }
+        >
+          <Button className='text-rojo1 btn-light' size="sm"><i class="bi bi-arrow-repeat fs-2"></i></Button>
+        </OverlayTrigger>
+ ))}
                   </article>
                   <i class="bi bi-basket2-fill fs-5"> Cantidad: 1</i> 
                 </Card.Text>
