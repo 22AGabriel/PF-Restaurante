@@ -18,7 +18,7 @@ const Inicio = () => {
         <div className="w-100 mx-auto my-5">
           <Row>
             <Col md={4}>
-              <div className="divCirculo ">
+              <div className="divCirculo mx-auto">
               <a href="#whats"><i className="bi bi-telephone display-3"> </i></a>
               </div>
               <div className="d-flex flex-column text-center   mt-3">
@@ -30,7 +30,7 @@ const Inicio = () => {
               </div>
             </Col>
             <Col md={4}>
-              <div className="divCirculo">
+              <div className="divCirculo mx-auto">
                  <a href="#whats">
                   <i className="bi bi-whatsapp display-3"></i>
                 </a>
@@ -44,7 +44,7 @@ const Inicio = () => {
               </div>
             </Col>
             <Col md={4}>
-              <div className="divCirculo">
+              <div className="divCirculo mx-auto">
               <a href="#ubicacion">
                   <i className="bi bi-geo-alt display-3"></i>
               </a>
