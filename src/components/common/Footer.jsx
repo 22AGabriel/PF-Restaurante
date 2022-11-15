@@ -20,9 +20,9 @@ const Footer = () => {
                     <Col md={4} className='d-flex flex-column align-items-center'>
                     <p>Seguinos en nuestras redes</p>
                     <div>
-                    <i class="bi bi-facebook fs-4 me-2"></i>
-                    <i class="bi bi-whatsapp fs-4 me-2"></i>
-                    <i class="bi bi-instagram fs-4"></i>
+                    <i className="bi bi-facebook fs-4 me-2"></i>
+                    <i className="bi bi-whatsapp fs-4 me-2"></i>
+                    <i className="bi bi-instagram fs-4"></i>
                     </div>
                     </Col>
                 </Row>

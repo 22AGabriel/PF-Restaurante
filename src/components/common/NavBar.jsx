@@ -38,7 +38,7 @@ const  NavBar = () => {
                 />
                 <Button variant="outline-dark">Buscar</Button>
               </Form>
-              <NavLink to="/registrar" className={'nav-item nav-link align-self-center'}>Registrar</NavLink>
+              <NavLink to="/registro" className={'nav-item nav-link align-self-center'}>Registrar</NavLink>
               <NavLink className={'nav-item nav-link align-self-center'}>
                 <Login></Login>
               </NavLink>
