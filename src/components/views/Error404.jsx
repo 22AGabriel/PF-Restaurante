@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 const Error404 = () => {
     return (
         <Container>
-      <nav aria-label="breadcrumb">
+      <nav aria-label="breadcrumb" className='mt-5'>
         <ol class="breadcrumb">
           <li class="breadcrumb-item text-light">
             <a href="/" className="text-light">Inicio</a>
