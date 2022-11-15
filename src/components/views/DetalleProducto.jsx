@@ -25,11 +25,9 @@ const DetalleProducto = () => {
                 <Card.Text className="fs-5 text-dark">
                   Detalle:
                   <br></br>
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Dolor dolore sequi incidunt aliquam sed quam porro ipsam
-                    dolorum voluptate dolores?
-                  </p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Dolor dolore sequi incidunt aliquam sed quam porro ipsam
+                  dolorum voluptate dolores?
                 </Card.Text>
                 <Card.Text className="fs-5 text-dark">Precio: $</Card.Text>
                 <Card className="shadow bg-rojo4 text-dark p-2 rounded">
