@@ -3,7 +3,7 @@ import {Modal, Button, Form} from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState } from 'react';
-
+import '../../css/login.css';
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -15,8 +15,8 @@ const Login = () => {
         formState: { errors },
       } = useForm();
       
-    const onSubmit = (data) =>{
-        Login(data);
+    const onSubmit = () =>{
+        Login();
     }
       return (
         <>
@@ -24,10 +24,10 @@ const Login = () => {
           <i className="bi bi-box-arrow-in-right fs-4 text-white"></i>
           </NavLink>
           <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title className='text-black1'>Login</Modal.Title>
+            <Modal.Header closeButton className='bg-rojo2'>
+              <Modal.Title>Login</Modal.Title>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body className='bg-rojo2'>
               <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group className="mb-3" controlId="formEmail">
                   <Form.Label>Email</Form.Label>
@@ -44,7 +44,7 @@ const Login = () => {
                         value: 30,
                         message: "La cantidad maxima debe ser de 30"
                       },
-                    })}
+                    })} className='bg-rojo2 bg-login'
                     autoFocus
                   />
                   <Form.Text className="text-danger">
@@ -67,6 +67,7 @@ const Login = () => {
                         message: "La cantidad maxima debe ser de 15"
                       },
                     })}
+                    className='bg-rojo2 bg-login'
                   />
                 </Form.Group>
                 <Form.Text className="text-danger">
