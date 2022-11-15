@@ -2,19 +2,20 @@ import React from "react";
 import { Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const CardProducto = () => {
+const CardProducto = ({producto}) => {
   return (
     <Col md={4}>
       <Card className="mb-3 CardPP">
           <Card.Img
             variant="top"
-            src="https://www.serargentino.com/public/images/2020/02/comida-arabe-773x458.jpeg"
+            src={producto.imagen}
+            alt={producto.nombreProducto}
           />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>Precio: $500</Card.Text>
-            <Card.Text>Categoria: Categoria</Card.Text>
-            <Button className="btn bg-rojo3 text-light buttonCard" as={Link} to="/detalle/:id">Ver mas</Button>
+            <Card.Title>{producto.nombreProducto}</Card.Title>
+            <Card.Text>Precio: ${producto.precio}</Card.Text>
+            <Card.Text>Categoria: {producto.categoria}</Card.Text>
+            <Button className="btn bg-rojo3 text-light buttonCard" as={Link} to={`/detalle/${producto.id}`}>Ver mas</Button>
           </Card.Body>
         </Card>
     </Col>

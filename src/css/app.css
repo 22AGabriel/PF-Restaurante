@@ -26,6 +26,11 @@ body{
     color: #c96752;
 }
 
+.borde-rojo2{
+    border: #c96752;
+    border-radius: 40%;
+}
+
 .bg-rojo2{
     background-color: #c96752;
 }
@@ -60,4 +65,9 @@ body{
     background-color: white;
     color: black;
     border: 1px solid white;
+}
+
+.bajarDetalle{
+    display: flex;
+    align-content: flex-end;
 }
