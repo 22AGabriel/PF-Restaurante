@@ -2,6 +2,16 @@ import React from "react";
 import { Container, Form, Button } from "react-bootstrap";
 
 const AgregarProducto = () => {
+
+  const {register, handleSubmit, formState:{errors}, reset} = useForm();
+
+  
+   
+
+
+
+
+
   return (
     <Container>
       <div className=" my-5">
