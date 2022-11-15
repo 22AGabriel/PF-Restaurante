@@ -35,6 +35,42 @@
       "categoria": "Sandwich",
       "cantidad": 1,
       "id": 4
+    },
+    {
+      "nombreProducto": "Arroz Persa",
+      "precio": "200",
+      "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+      "imagen": "https://th.bing.com/th/id/OIP.AR86W2bf5HNk6mAQ5D5pagHaLH?pid=ImgDet&rs=1",
+      "categoria": "Al plato",
+      "cantidad": 1,
+      "id": 5
+    },
+    {
+      "nombreProducto": "Sfijas",
+      "precio": "400",
+      "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+      "imagen": "https://th.bing.com/th/id/OIP.AR86W2bf5HNk6mAQ5D5pagHaLH?pid=ImgDet&rs=1",
+      "categoria": "Al plato",
+      "cantidad": 1,
+      "id": 6
+    },
+    {
+      "nombreProducto": "Shawarma",
+      "precio": "400",
+      "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+      "imagen": "https://th.bing.com/th/id/OIP.AR86W2bf5HNk6mAQ5D5pagHaLH?pid=ImgDet&rs=1",
+      "categoria": "Al plato",
+      "cantidad": 1,
+      "id": 7
+    },
+    {
+      "nombreProducto": "Niños envueltos",
+      "precio": "400",
+      "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+      "imagen": "https://th.bing.com/th/id/OIP.AR86W2bf5HNk6mAQ5D5pagHaLH?pid=ImgDet&rs=1",
+      "categoria": "Al plato",
+      "cantidad": 1,
+      "id":8
     }
   ],
   "usuarios": [
