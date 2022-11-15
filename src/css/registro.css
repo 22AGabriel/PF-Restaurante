@@ -7,3 +7,7 @@
 .bg-rojo4 {
   background-color: #f6d8d1;
 }
+
+.bajarFooter {
+  flex-grow: 1;
+}
