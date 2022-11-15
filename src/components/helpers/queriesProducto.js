@@ -16,6 +16,30 @@ export const crearProducto = async(producto)=>{
     }
 }
 
+export const consultarProducto = async()=>{
+    try{
+        const nuevoProducto = await fetch(URL)
+        const listaProductos = await nuevoProducto.json()
+        console.log(listaProductos)
+        return listaProductos;
+    }catch(error){
+        console.log(error)
+        return false;
+    }
+}
+
+export const borrarProducto = async(id)=>{
+    try{
+        const nuevoProducto = await fetch(URL+'/'+id,{
+            method: 'DELETE',
+        });
+        return nuevoProducto;
+    }catch(error){
+        console.log(error)
+        return false;
+    }
+}
+
 export const obtenerProducto = async(id)=> {
     try{
         const respuesta = await fetch(URL+'/'+id);
@@ -42,3 +66,4 @@ export const editarProducto = async (id, producto) =>{
         return false;
     }
 }
+

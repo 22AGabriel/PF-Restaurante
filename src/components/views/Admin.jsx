@@ -4,8 +4,19 @@ import ItemUsuario from "./usuario/ItemUsuario";
 import ItemPedido from "./producto/ItemPedido";
 import { Link } from "react-router-dom";
 import "../../css/admin.css"
+import { useEffect, useState } from "react";
+import { consultarProducto } from "../helpers/queriesProducto";
 
 const Admin = () => {
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    consultarProducto().then((respuesta)=>{
+      setProductos(respuesta)
+    })
+  }, [])
+  
+
   return (
     <Container className="my-5 bajarFooter">
       <div className="d-flex justify-content-center mb-4">
@@ -31,8 +42,9 @@ const Admin = () => {
               </tr>
             </thead>
             <tbody>
-              <ItemProducto></ItemProducto>
-              <ItemProducto></ItemProducto>
+              {
+                productos.map((producto)=><ItemProducto key={producto.id} producto={producto} setProductos={setProductos}></ItemProducto> )
+              }
             </tbody>
           </Table>
         </Tab>
