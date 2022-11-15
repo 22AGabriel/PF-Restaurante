@@ -24,14 +24,14 @@ function App() {
      <NavBar></NavBar>
      <Routes>
       <Route exact path="/" element={<Inicio/>}/>
-      <Route exact path="/detalle" element={<DetalleProducto/>}/>
+      <Route exact path="/detalle/:id" element={<DetalleProducto/>}/>
       <Route exact path="/administrar" element={<Admin/>}/>
       <Route exact path="/login" element={<Login/>}/>
       <Route exact path="/registro" element={<Registro/>}/>
       <Route exact path="/nosotros" element={<Nosotros/>}/>
       <Route exact path="/usuario/pedidos" element={<Pedidos/>}/>
       <Route exact path="/administrar/agregar" element={<AgregarProducto/>}/>
-      <Route exact path="/administrar/editar" element={<EditarProducto/>}/>
+      <Route exact path="/administrar/editar/:id" element={<EditarProducto/>}/>
       <Route exact path="*" element={<Error404/>}/>
      </Routes>
      <Footer></Footer>

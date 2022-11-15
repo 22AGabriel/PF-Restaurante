@@ -1,8 +1,20 @@
 import { Card, Container, Col, Row, Button, Form } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { obtenerProducto } from "../helpers/queriesProducto";
+import { useParams } from "react-router-dom";
 
 const DetalleProducto = () => {
   let [numeritos, setNumeritos] = useState(1);
+  const [producto, setProducto] = useState("")
+  const {id} = useParams();
+
+  useEffect(() => {
+    obtenerProducto(id).then((respuesta) => {
+      if(respuesta.status === 200){
+        setProducto(respuesta.dato)
+      }
+    })
+  }, [])
 
   return (
     <>
@@ -11,7 +23,7 @@ const DetalleProducto = () => {
           <Row>
             <Col md={4} className="bg-rojo3">
               <Card.Img
-                src="https://images.pexels.com/photos/6252729/pexels-photo-6252729.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src={producto.imagen}
                 className="w-100 mt-5 m-2"
                 alt="salsa arabe"
               ></Card.Img>
@@ -19,17 +31,15 @@ const DetalleProducto = () => {
             <Col md={8} className="bg-rojo3">
               <Card.Body>
                 <Card.Title className="fs-2 w-bold mt-3 d-flex justify-content-center text-dark">
-                  Nombre
+                  {producto.nombreProducto}
                 </Card.Title>
                 <hr />
                 <Card.Text className="fs-5 text-dark">
                   Detalle:
                   <br></br>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Dolor dolore sequi incidunt aliquam sed quam porro ipsam
-                  dolorum voluptate dolores?
+                  {producto.detalle}
                 </Card.Text>
-                <Card.Text className="fs-5 text-dark">Precio: $</Card.Text>
+                <Card.Text className="fs-5 text-dark">Precio: ${producto.precio}</Card.Text>
                 <Card className="shadow bg-rojo4 text-dark p-2 rounded">
                   <Form>
                     <Form.Group>
