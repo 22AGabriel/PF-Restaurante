@@ -1,0 +1,17 @@
+.bg-login {
+  border-color: white;
+  border-width: 2px;
+  color: white;
+}
+
+.bg-login::placeholder {
+  color: white;
+}
+
+.bg-login:focus {
+  background-color: #db8d7b;
+  box-shadow: 0 0 0 2px #db8d7b;
+  border: #c96752;
+}
+
+
