@@ -3,51 +3,41 @@ import { Form, Button, Container, Card, Row } from "react-bootstrap";
 
 const Registro = () => {
   return (
-    <Container className="bg-rojo4 p-3 bajarFooter">
-      <div className="d-flex justify-content-center">
- 
-        <h1 className="text-rojo3">Registrarse</h1>
+    <Container className="bajarFooter">
+      <div className="text-center my-5">
+        <h1 className="display-4">Registrarse</h1>
       </div>
-      <Card className="py-3 bg-rojo4 shadow">
+      <Card className="p-3 bg-rojo3">
         <Row>
-          <Form className="px-4 text-dark">
+          <Form>
             <Form.Group className="mb-3" controlId="formNombre">
               <Form.Label>Nombre</Form.Label>
               <Form.Control type="text" placeholder="Ej: Juan Martin" />
               <Form.Text className="text-muted">Error</Form.Text>
             </Form.Group>
-
             <Form.Group className="mb-3" controlId="formApellido">
               <Form.Label>Apellido</Form.Label>
               <Form.Control type="text" placeholder="Ej: Lopez" />
-              <Form.Text className="text-muted">Error</Form.Text>
+              <Form.Text>Error</Form.Text>
             </Form.Group>
-
             <Form.Group className="mb-3" controlId="formEmail">
-              <Form.Label>E-mail</Form.Label>
+              <Form.Label>Email</Form.Label>
               <Form.Control type="email" placeholder="Ej: comida@gmail.com" />
-              <Form.Text className="text-muted">Error</Form.Text>
+              <Form.Text>Error</Form.Text>
             </Form.Group>
-
             <Form.Group className="mb-3" controlId="formPassword">
               <Form.Label>Contraseña</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Ingrese una contraseña"
-              />
+              <Form.Control type="password" placeholder="Ingrese una contraseña"/>
+              <Form.Text>Error</Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formPassword">
               <Form.Label>Confirmar contraseña</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Ingrese nuevamente la contraseña"
-              />
+              <Form.Control type="password" placeholder="Ingrese nuevamente la contraseña"/>
+              <Form.Text>Error</Form.Text>
             </Form.Group>
-            <div className="d-flex justify-content-end">
-              <Button className="bg-rojo2 " type="submit">
-                Enviar
+              <Button className="bg-rojo2 border-dark w-100" type="submit">
+                Registrar
               </Button>
-            </div>
           </Form>
         </Row>
       </Card>
