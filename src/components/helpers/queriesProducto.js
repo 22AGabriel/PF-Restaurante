@@ -29,3 +29,17 @@ export const obtenerProducto = async(id)=> {
         return false;
     }
 }
+export const editarProducto = async (id, producto) =>{
+    try {
+        const respuesta = await fetch (URL+ '/' + id,{
+            method: "PUT",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(producto)
+        });
+        return respuesta
+    } catch (error) {
+        return false;
+    }
+}
