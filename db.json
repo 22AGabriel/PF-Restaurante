@@ -48,6 +48,16 @@
       "pedidos": [],
       "estado": "Activo",
       "id": 2
+    },
+    {
+      "nombreUsuario": "Jose",
+      "email": "jose@gmail.com",
+      "password": "Jose123456*",
+      "perfil": "Administrador",
+      "carrito": [],
+      "pedidos": [],
+      "estado": "Activo",
+      "id": 3
     }
   ]
 }
