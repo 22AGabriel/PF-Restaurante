@@ -1,8 +1,5 @@
 const URL = process.env.REACT_APP_API_PRODUCTOS;
 
-
-
-
 export const crearProducto = async(producto)=>{
     try {
         const nuevoProducto = await fetch(URL,{
@@ -16,5 +13,19 @@ export const crearProducto = async(producto)=>{
     } catch (error) {
         console.log(error)
         return false
+    }
+}
+
+export const obtenerProducto = async(id)=> {
+    try{
+        const respuesta = await fetch(URL+`/${id}`);
+        const producto = {
+            dato: await respuesta.json(),
+            status: respuesta.status
+        }
+        return producto;
+    } catch(error){
+        console.log(error);
+        return false;
     }
 }
