@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { crearProducto } from "../../helpers/queriesProducto";
 import {useForm} from "react-hook-form"
+import Swal from "sweetalert2";
 
 const AgregarProducto = () => {
   const {register, handleSubmit, formState:{errors}, reset} = useForm();
@@ -9,9 +10,9 @@ const AgregarProducto = () => {
     producto.cantidad = 1
     crearProducto(producto).then((respuesta)=>{
       if(respuesta.status === 201){
-        console.log("todo bien")
+       Swal.fire("Producto creado","el producto se creo correctamente","success")
       }else{
-        console.log("todo mal")
+        Swal.fire("error","el producto no pudo ser creado","error")
       }
     })
   }
