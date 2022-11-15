@@ -7,24 +7,6 @@
       "categoria": "Al plato",
       "imagen": "https://images.hola.com/imagenes/cocina/recetas/20200327164281/falafel-tradicional/0-804-456/falafel-tradicional-m.jpg",
       "cantidad": 1,
-      "id": 1
-    },
-    {
-      "nombreProducto": "kipe",
-      "precio": "500",
-      "detalle": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, officia qui. Provident quod in non? Mollitia quisquam in magni reiciendis! Ex, incidunt deleniti. Vero, obcaecati!",
-      "categoria": "Al plato",
-      "imagen": "https://cocinacriolla.com.ar/wp-content/uploads/2021/06/el-leon-arabe-kipe-bola.jpg",
-      "cantidad": 1,
-      "id": 2
-    },
-    {
-      "nombreProducto": "falafel",
-      "precio": "500",
-      "detalle": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, officia qui. Provident quod in non? Mollitia quisquam in magni reiciendis! Ex, incidunt deleniti. Vero, obcaecati!",
-      "categoria": "Al plato",
-      "imagen": "https://images.hola.com/imagenes/cocina/recetas/20200327164281/falafel-tradicional/0-804-456/falafel-tradicional-m.jpg",
-      "cantidad": 1,
       "id": 3
     },
     {
@@ -62,15 +44,6 @@
       "categoria": "Al plato",
       "cantidad": 1,
       "id": 7
-    },
-    {
-      "nombreProducto": "Niños envueltos",
-      "precio": "400",
-      "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
-      "imagen": "https://th.bing.com/th/id/OIP.AR86W2bf5HNk6mAQ5D5pagHaLH?pid=ImgDet&rs=1",
-      "categoria": "Al plato",
-      "cantidad": 1,
-      "id":8
     }
   ],
   "usuarios": [

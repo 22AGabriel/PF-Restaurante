@@ -20,7 +20,7 @@ const Login = () => {
     }
       return (
         <>
-          <NavLink Name={"nav-item nav-link"} variant='dark' onClick={handleShow}>
+          <NavLink className={"nav-item nav-link"} variant='dark' onClick={handleShow}>
           <i className="bi bi-box-arrow-in-right fs-4 text-white"></i>
           </NavLink>
           <Modal show={show} onHide={handleClose}>
