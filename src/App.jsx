@@ -24,7 +24,7 @@ function App() {
      <NavBar></NavBar>
      <Routes>
       <Route exact path="/" element={<Inicio/>}/>
-      <Route exact path="/detalle" element={<DetalleProducto/>}/>
+      <Route exact path="/detalle/:id" element={<DetalleProducto/>}/>
       <Route exact path="/administrar" element={<Admin/>}/>
       <Route exact path="/login" element={<Login/>}/>
       <Route exact path="/registro" element={<Registro/>}/>
