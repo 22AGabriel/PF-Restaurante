@@ -19,6 +19,18 @@ export const crearProducto = async(producto)=>{
     }
 }
 
+export const consultarProducto = async()=>{
+    try{
+        const nuevoProducto = await fetch(URL)
+        const listaProductos = await nuevoProducto.json()
+        console.log(listaProductos)
+        return listaProductos;
+    }catch(error){
+        console.log(error)
+        return false;
+    }
+}
+
 export const borrarProducto = async(id)=>{
     try{
         const nuevoProducto = await fetch(URL+'/'+id,{
@@ -30,3 +42,4 @@ export const borrarProducto = async(id)=>{
         return false;
     }
 }
+
