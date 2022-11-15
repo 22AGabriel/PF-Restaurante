@@ -52,7 +52,7 @@ const DetalleProducto = () => {
                           size="sm"
                           onClick={() => setContador(contador + 1)}
                         >
-                          +
+                         +
                         </Button>
                         <Button
                           type="submit"
