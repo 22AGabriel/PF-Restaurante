@@ -18,14 +18,13 @@ export const crearProducto = async(producto)=>{
 
 export const obtenerProducto = async(id)=> {
     try{
-        const respuesta = await fetch(URL+`/${id}`);
+        const respuesta = await fetch(URL+'/'+id);
         const producto = {
             dato: await respuesta.json(),
             status: respuesta.status
         }
         return producto;
     } catch(error){
-        console.log(error);
         return false;
     }
 }
