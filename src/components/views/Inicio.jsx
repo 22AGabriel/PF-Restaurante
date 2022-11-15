@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../css/Inicio.css";
 import { Row, Col } from "react-bootstrap";
 import CardProducto from "./CardProducto";
 import Contacto from "./Contacto";
 import Ubicacion from "./Ubicacion";
+import { consultarProducto } from "../helpers/queriesProducto";
 
 const Inicio = () => {
+  const [mostrarProducto, setMostrarProducto] = useState([])
+
+  useEffect(() => {
+    consultarProducto().then((respuesta)=>{
+      setMostrarProducto(respuesta)
+    })
+  }, [])
+  
+
   return (
     <div className="mainSection">
       <div className=" text-light portada3 ">
@@ -81,15 +91,15 @@ const Inicio = () => {
         <h1 className="text-center text-light display-3 my-5">Productos</h1>
         <div>
           <Row>
-            <CardProducto></CardProducto>
-            <CardProducto></CardProducto>
-            <CardProducto></CardProducto>
-            <CardProducto></CardProducto>
-            <CardProducto></CardProducto>
-            <CardProducto></CardProducto>
-            <CardProducto></CardProducto>
-            <CardProducto></CardProducto>
-            <CardProducto></CardProducto>
+            {
+              mostrarProducto.map((producto)=>(
+                <CardProducto
+                key={producto.id}
+                producto={producto}
+                mostrarProducto={mostrarProducto}
+                ></CardProducto>
+              ))
+            }
           </Row>
         </div>
       </div>
