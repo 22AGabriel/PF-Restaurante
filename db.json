@@ -1,15 +1,6 @@
 {
   "productos": [
     {
-      "nombreProducto": "kipe",
-      "precio": "500",
-      "detalle": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, officia qui. Provident quod in non? Mollitia quisquam in magni reiciendis! Ex, incidunt deleniti. Vero, obcaecati!",
-      "categoria": "Al plato",
-      "imagen": "https://cocinacriolla.com.ar/wp-content/uploads/2021/06/el-leon-arabe-kipe-bola.jpg",
-      "cantidad": 1,
-      "id": 2
-    },
-    {
       "nombreProducto": "falafel",
       "precio": "500",
       "detalle": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, officia qui. Provident quod in non? Mollitia quisquam in magni reiciendis! Ex, incidunt deleniti. Vero, obcaecati!",

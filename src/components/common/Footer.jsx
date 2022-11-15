@@ -5,7 +5,7 @@ import '../../css/app.css';
 
 const Footer = () => {
     return (
-        <section class='py-5 bg-footer text-light'>
+        <section className='py-5 bg-footer text-light'>
             <Container>
                 <Row className='d-flex'>
                     <Col md={4} className='d-flex flex-column align-items-center'>
