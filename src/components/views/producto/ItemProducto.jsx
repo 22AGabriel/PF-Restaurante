@@ -44,22 +44,22 @@ const ItemProducto = ({producto, setProductos}) => {
               swalWithBootstrapButtons.fire(
                 "Cancelado",
                 "Los cambios no fueron realizados",
-                "error"
+                "info"
               );
             }
           });
       };
     return (
         <tr>
-            <td>1</td>
-            <td>Falafel</td>
-            <td>$500</td>
-            <td>Garbanzo, verdura en hoja y condimento especial</td>
-            <td>Al plato</td>
-            <td className="text-truncate w-url">https://images.pexels.com/photos/6275187/pexels-photo-6275187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1</td>
+            <td>{producto.id}</td>
+            <td>{producto.nombreProducto}</td>
+            <td>{producto.precio}</td>
+            <td>{producto.detalle}</td>
+            <td>{producto.categoria}</td>
+            <td className="text-truncate w-url">{producto.imagen}</td>
             <td>
                 <div className="d-flex">
-                    <Link to={"/administrar/editar/:id"} className="me-1 btn border">
+                    <Link to={`/administrar/editar/${producto.id}`} className="me-1 btn border">
                         <i className="bi bi-pencil-square text-rojo4"></i>
                     </Link>
                     <Button className="bg-transparent border" onClick={borrarUnProducto}>

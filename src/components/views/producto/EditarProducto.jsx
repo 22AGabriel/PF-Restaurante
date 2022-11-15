@@ -1,16 +1,19 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Button, Form, Container } from "react-bootstrap";
-import { useParams } from "react-router-dom";
-import { obtenerProducto } from "../../helpers/queriesProducto";
+import { useParams, useNavigate } from "react-router-dom";
+import { editarProducto, obtenerProducto } from "../../helpers/queriesProducto";
+import Swal from "sweetalert2";
 
 const EditarProducto = () => {
-  const {register, handleSubmit, formState: { errors }, setValue} = useForm();
   const { id } = useParams();
-
+  
+  const navegacion = useNavigate();
+  
   useEffect(() => {
     obtenerProducto(id).then((respuesta) => {
       if(respuesta.status === 200){
+        console.log(respuesta)
         setValue('nombreProducto', respuesta.dato.nombreProducto)
         setValue('precio', respuesta.dato.precio)
         setValue('detalle', respuesta.dato.detalle)
@@ -18,14 +21,26 @@ const EditarProducto = () => {
         setValue('categoria', respuesta.dato.categoria)
       }
     })
-  }, [])
+  }, []);
+  const {register, handleSubmit, formState: { errors }, setValue} = useForm();
+  
+  const onSubmit = (datos) =>{
+    editarProducto(id, datos).then((respuesta)=>{
+      if(respuesta.status === 200){
+        Swal.fire('Producto Modificado', 'El producto fue modificado correctamente','success');
+        navegacion('/administrar')
+      }else{
+        Swal.fire('Ocurrion un error', 'El producto no pudo ser modificado','error')
+      }
+    });
+  }
 
   return (
     <Container>
       <div className=" my-5">
         <h1 className="text-center my-5">Editar Producto</h1>
         <div className="shadow py-5 w-100 mx-auto">
-          <Form className="w-75 mx-auto" onSubmit={handleSubmit()}>
+          <Form className="w-75 mx-auto" onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Nombre Producto</Form.Label>
               <Form.Control 
@@ -127,9 +142,8 @@ const EditarProducto = () => {
               {errors.categoria?.message}
               </Form.Text>
             </Form.Group>
-
             <Button variant="danger" type="submit">
-              crear
+              Guardar
             </Button>
           </Form>
         </div>
