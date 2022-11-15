@@ -14,7 +14,7 @@ const Admin = () => {
       <Tabs defaultActiveKey="productos" id="fill-tab" className="mt-5" fill>
         <Tab eventKey="productos" title="Productos">
           <div className="d-flex justify-content-end">
-            <Link to={"/administrar/agregar"} className="my-4 btn text-white bg-rojo2">
+            <Link to={"/administrar/agregar"} className="my-4 btn bg-rojo2">
                 Agregar
             </Link>
           </div>
