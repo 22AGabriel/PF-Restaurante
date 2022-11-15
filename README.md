@@ -21,3 +21,8 @@ Proyecto grupal N° 3 de RollingCode School
 - Uncos Javier
 - Lopez Nazarena
 - Azubel Cristian Gabriel
+
+
+- ## Comandos para ejecutar JSON-Server
+
+`json-server --watch db.json --port 4010`

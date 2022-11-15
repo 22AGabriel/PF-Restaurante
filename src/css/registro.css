@@ -1,0 +1,13 @@
+.bg-rojo2 {
+  background-color: #c96752;
+}
+.text-rojo3 {
+  color: #db8d7b;
+}
+.bg-rojo4 {
+  background-color: #f6d8d1;
+}
+
+.bajarFooter {
+  flex-grow: 1;
+}
