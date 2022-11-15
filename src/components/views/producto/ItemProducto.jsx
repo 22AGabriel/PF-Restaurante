@@ -1,7 +1,56 @@
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+// import { borrarProducto } from "../../helpers/queriesProducto";
+// import Swal from "sweetalert2";
 
 const ItemProducto = () => {
+    // const borrarUnProducto = () => {
+    //     const swalWithBootstrapButtons = Swal.mixin({
+    //       customClass: {
+    //         confirmButton: "btn btn-success",
+    //         cancelButton: "btn btn-danger",
+    //       },
+    //       buttonsStyling: false,
+    //     });
+    
+    //     swalWithBootstrapButtons
+    //       .fire({
+    //         title: "Estas Seguro?",
+    //         text: "Los cambios seran irreversibles!",
+    //         icon: "warning",
+    //         showCancelButton: true,
+    //         confirmButtonText: "Borrar!",
+    //         cancelButtonText: "Cancelar!",
+    //         reverseButtons: true,
+    //       })
+    //       .then((result) => {
+    //         if (result.isConfirmed) {
+    //           borrarProducto(producto.id).then((respuesta) => {
+    //             if (respuesta.status === 200) {
+    //               //cuando haya eliminado, busco todos los productos existentes en ese instante de tiempo
+    //               consultarApi().then((respuesta) => {
+    //                 //actualizamos el state de prod de administrador con los datos que hay en la API
+    //                 setProductos(respuesta);
+    //                 swalWithBootstrapButtons.fire(
+    //                   "Borrado!",
+    //                   "Ha sido borrado con exito",
+    //                   "success"
+    //                 )
+    //               });
+    //             } 
+    //           });
+    //         }
+    //         else if (
+    //           result.dismiss === Swal.DismissReason.cancel
+    //         ) {
+    //           swalWithBootstrapButtons.fire(
+    //             "Cancelado",
+    //             "Los cambios no fueron realizados",
+    //             "error"
+    //           );
+    //         }
+    //       });
+    //   };
     return (
         <tr>
             <td>1</td>
