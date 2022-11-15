@@ -31,7 +31,7 @@ function App() {
       <Route exact path="/nosotros" element={<Nosotros/>}/>
       <Route exact path="/usuario/pedidos" element={<Pedidos/>}/>
       <Route exact path="/administrar/agregar" element={<AgregarProducto/>}/>
-      <Route exact path="/administrar/editar" element={<EditarProducto/>}/>
+      <Route exact path="/administrar/editar/:id" element={<EditarProducto/>}/>
       <Route exact path="*" element={<Error404/>}/>
      </Routes>
      <Footer></Footer>
