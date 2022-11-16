@@ -4,13 +4,11 @@ import { useEffect } from "react";
 import {obtenerUsuario} from "../../helpers/queriesUsuario";
 
 const ItemUsuario = ({setUsuarios, usuario}) => {
-
-  const {register, handleSubmit, formState: { errors }, setValue} = useForm();
+  const {register, handleSubmit, setValue} = useForm();
   
   useEffect(() => {
     obtenerUsuario(usuario.id).then((respuesta)=>{
       if(respuesta.status ===200){
-        console.log(respuesta)
         setValue('estado', respuesta.dato.estado)
       }
     })
@@ -18,6 +16,11 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
 
   const onSubmit = (datos)=>{
     console.log(datos)
+  }
+
+  const editarEstado = () => {
+    let estado = document.getElementById(`${usuario.id}`)
+    estado.disabled = false
   }
 
   return (
@@ -29,21 +32,18 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
       <td>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Group>
-            <Form.Select className="w-select" disabled {...register("estado",{
-                require:"El campo de la categoria es obligatorio",
+            <Form.Select id={usuario.id} className="w-select" disabled {...register("estado",{
+                require: true
                })}>
                 <option value="Activo">Activo</option>
                 <option value="Suspendido">Suspendido</option>
             </Form.Select>
-            <Form.Text className="text-danger">
-                {errors.categoria?.message}
-              </Form.Text>
           </Form.Group>
         </Form>
       </td>
       <td>
       <div className="d-flex">
-        <Button className="bg-transparent me-1 border">
+        <Button className="bg-transparent me-1 border" onClick={editarEstado}>
           <i className="bi bi-pencil-square text-rojo4"></i>
         </Button>
         <Button className="bg-transparent border">
