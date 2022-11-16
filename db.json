@@ -58,48 +58,8 @@
       "perfil": "Administrador",
       "carrito": [],
       "pedidos": [],
-      "estado": "Activo",
+      "estado": "Suspendido",
       "id": 3
-    },
-    {
-      "nombreUsuario": "javier",
-      "apellidoUsuario": "uncos",
-      "email": "javier@gmail.com",
-      "password": "Res12345678#",
-      "carrito": [],
-      "pedidos": [],
-      "estado": "Activo",
-      "id": 4
-    },
-    {
-      "nombreUsuario": "javier",
-      "apellidoUsuario": "uncos",
-      "email": "javier@gmail.com",
-      "password": "Res12345678",
-      "carrito": [],
-      "pedidos": [],
-      "estado": "Activo",
-      "id": 5
-    },
-    {
-      "nombreUsuario": "javier",
-      "apellidoUsuario": "uncos",
-      "email": "javier@gmail.com",
-      "password": "Res12345678",
-      "carrito": [],
-      "pedidos": [],
-      "estado": "Activo",
-      "id": 6
-    },
-    {
-      "nombreUsuario": "hernan",
-      "apellidoUsuario": "uncos",
-      "email": "hernan@gmail.com",
-      "password": "12345678Res",
-      "carrito": [],
-      "pedidos": [],
-      "estado": "Activo",
-      "id": 7
     }
   ]
 }
