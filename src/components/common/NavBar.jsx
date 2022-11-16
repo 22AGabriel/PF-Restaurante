@@ -5,8 +5,18 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Login from '../views/Login'
-import { Link, NavLink} from 'react-router-dom';
-const  NavBar = () => {
+import { Link, NavLink, useNavigate} from 'react-router-dom';
+
+
+const  NavBar = ({usuarioLogueado, setUsuarioLogueado}) => {
+  const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.removeItem("usuarioIniciado");
+    setUsuarioLogueado({});
+    navigate("/")
+  }
+
   return (
     <>
     {[false].map((expand) => (
@@ -44,7 +54,7 @@ const  NavBar = () => {
               </div>
               <NavLink to="/administrar" className={'nav-item nav-link d-flex align-self-center'}>Administrador</NavLink>
               <NavLink to="/usuario/pedidos" className={'nav-item nav-link align-self-center'}><i className="bi bi-cart-plus-fill fs-4"></i></NavLink>
-              <Button variant={'danger'} className='d-flex align-items-center justify-content-center'>Cerrar Sesión <i className="bi bi-toggle2-on fs-3 ms-2"></i></Button>
+              <Button variant={'danger'} className='d-flex align-items-center justify-content-center' onClick={logout}>Cerrar Sesión <i className="bi bi-toggle2-on fs-3 ms-2"></i></Button>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

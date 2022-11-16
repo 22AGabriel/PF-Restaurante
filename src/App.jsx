@@ -14,14 +14,15 @@ import AgregarProducto from './components/views/producto/AgregarProducto';
 import EditarProducto from './components/views/producto/EditarProducto';
 import Error404 from './components/views/Error404';
 import "./css/app.css"
-
-
+import { useState } from "react";
 
 function App() {
+  const usuario = JSON.parse(localStorage.getItem("usuarioIniciado")) || {};
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario)
+
   return (
-  
     <BrowserRouter>
-     <NavBar></NavBar>
+     <NavBar usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></NavBar>
      <Routes>
       <Route exact path="/" element={<Inicio/>}/>
       <Route exact path="/detalle/:id" element={<DetalleProducto/>}/>
@@ -36,8 +37,6 @@ function App() {
      </Routes>
      <Footer></Footer>
     </BrowserRouter>
-
-
   );
 }
 
