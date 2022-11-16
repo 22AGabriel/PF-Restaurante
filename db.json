@@ -47,7 +47,7 @@
       "perfil": "Usuario",
       "carrito": [],
       "pedidos": [],
-      "estado": "Suspendido",
+      "estado": "Activo",
       "id": 2
     },
     {
@@ -55,7 +55,7 @@
       "apellidoUsuario": "Juan",
       "email": "jose@gmail.com",
       "password": "Jose123456*",
-      "perfil": "Administrador",
+      "perfil": "Usuario",
       "carrito": [],
       "pedidos": [],
       "estado": "Suspendido",

@@ -9,21 +9,26 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
   
   useEffect(() => {
     obtenerUsuario(usuario.id).then((respuesta)=>{
-      if(respuesta.status ===200){
+      if(respuesta.status === 200){
         setValue('estado', respuesta.dato.estado)
+        setValue('perfil', respuesta.dato.perfil)
       }
     })
   }, [])
   
-  const editarEstado = () => {
-    let estado = document.getElementById(`${usuario.id}`)
+  const updateUser = () => {
+    let estado = document.getElementById(`${usuario.id}estado`)
+    let perfil = document.getElementById(`${usuario.id}perfil`)
     if(editar === "disabled"){
       estado.disabled = false
+      perfil.disabled = false
       setEditar("noDisabled")
     } else {
       estado.disabled = true
+      perfil.disabled = true
       setEditar("disabled")
       usuario.estado = estado.value
+      usuario.perfil = perfil.value
       editarUsuario(usuario.id, usuario)
     }
   }
@@ -33,12 +38,23 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
       <td>{usuario.id}</td>
       <td>{usuario.nombreUsuario}</td>
       <td>{usuario.email}</td>
-      <td>{usuario.perfil}</td>
       <td>
-        <Form >
+        <Form>
           <Form.Group>
-            <Form.Select id={usuario.id} className="w-select" disabled {...register("estado",{
-                require: true
+            <Form.Select id={`${usuario.id}perfil`} className="w-select" disabled {...register("perfil",{
+                required: true
+               })}>
+                <option value="Administrador">Administrador</option>
+                <option value="Usuario">Usuario</option>
+            </Form.Select>
+          </Form.Group>
+        </Form>
+      </td>
+      <td>
+        <Form>
+          <Form.Group>
+            <Form.Select id={`${usuario.id}estado`} className="w-select" disabled {...register("estado",{
+                required: true
                })}>
                 <option value="Activo">Activo</option>
                 <option value="Suspendido">Suspendido</option>
@@ -50,12 +66,12 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
       <div className="d-flex">
         {editar === "disabled"? (
             <>
-        <Button className="bg-transparent me-1 border" onClick={editarEstado}>
+        <Button className="bg-transparent me-1 border" onClick={updateUser}>
           <i className="bi bi-pencil-square text-rojo4"></i>
         </Button>
             </>
           ) : (
-        <Button className="bg-transparent me-1 border" onClick={editarEstado}>
+        <Button className="bg-transparent me-1 border" onClick={updateUser}>
         <i className="bi bi-check-square text-rojo4"></i>
         </Button>
           )
