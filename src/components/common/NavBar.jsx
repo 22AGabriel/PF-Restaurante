@@ -39,9 +39,9 @@ const  NavBar = () => {
                 <Button variant="outline-dark">Buscar</Button>
               </Form>
               <NavLink to="/registro" className={'nav-item nav-link align-self-center'}>Registrar</NavLink>
-              <NavLink className={'nav-item nav-link align-self-center'}>
+              <div className={'nav-item nav-link align-self-center'}>
                 <Login></Login>
-              </NavLink>
+              </div>
               <NavLink to="/administrar" className={'nav-item nav-link d-flex align-self-center'}>Administrador</NavLink>
               <NavLink to="/usuario/pedidos" className={'nav-item nav-link align-self-center'}><i className="bi bi-cart-plus-fill fs-4"></i></NavLink>
               <Button variant={'danger'} className='d-flex align-items-center justify-content-center'>Cerrar Sesión <i className="bi bi-toggle2-on fs-3 ms-2"></i></Button>
