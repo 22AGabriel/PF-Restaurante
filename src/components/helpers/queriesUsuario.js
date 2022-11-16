@@ -54,3 +54,15 @@ export const editarUsuario = async(id, usuario) => {
       return false;
   }
 }
+
+export const borrarUsuario = async(id)=>{
+  try{
+    const respuesta = await fetch(URL+'/'+id,{
+      method: 'DELETE',
+    });
+    return respuesta;
+  }catch(error){
+    console.log(error)
+    return false;
+  }
+}
