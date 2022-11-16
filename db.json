@@ -29,17 +29,6 @@
   ],
   "usuarios": [
     {
-      "nombreUsuario": "Juan",
-      "apellidoUsuario": "Juan",
-      "email": "juanperez@gmail.com",
-      "password": "JuanPe22*",
-      "perfil": "Administrador",
-      "carrito": [],
-      "pedidos": [],
-      "estado": "Activo",
-      "id": 1
-    },
-    {
       "nombreUsuario": "Javier",
       "apellidoUsuario": "Juan",
       "email": "javierUncos@gmail.com",
