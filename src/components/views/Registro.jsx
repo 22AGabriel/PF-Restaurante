@@ -21,6 +21,7 @@ const Registro = () => {
     delete data.confirmPassword;
     data.carrito = [];
     data.pedidos = [];
+    data.perfil = "Usuario";
     data.estado = "Activo";
     crearUsuario(data).then((respuesta) => {
       if (respuesta.status === 201) {

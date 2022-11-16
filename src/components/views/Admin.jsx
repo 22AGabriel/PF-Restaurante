@@ -6,16 +6,22 @@ import { Link } from "react-router-dom";
 import "../../css/admin.css"
 import { useEffect, useState } from "react";
 import { consultarProducto } from "../helpers/queriesProducto";
+import { consultarUsuario } from "../helpers/queriesUsuario";
 
 const Admin = () => {
   const [productos, setProductos] = useState([]);
+  const [usuarios, setUsuarios] = useState([]);
 
   useEffect(() => {
     consultarProducto().then((respuesta)=>{
       setProductos(respuesta)
     })
+    consultarUsuario().then((respuesta)=>{
+      setUsuarios(respuesta)
+    })
   }, [])
   
+
 
   return (
     <Container className="my-5 bajarFooter">
@@ -61,8 +67,7 @@ const Admin = () => {
               </tr>
             </thead>
             <tbody>
-              <ItemUsuario></ItemUsuario>
-              <ItemUsuario></ItemUsuario>
+              {usuarios.map((usuario)=><ItemUsuario key={usuario.id} usuario={usuario} setUsuarios={setUsuarios}></ItemUsuario>)}
             </tbody>
           </Table>
         </Tab>

@@ -1,19 +1,43 @@
 import { Button, Form, } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import { useEffect } from "react";
+import {obtenerUsuario} from "../../helpers/queriesUsuario";
 
-const ItemUsuario = () => {
+const ItemUsuario = ({setUsuarios, usuario}) => {
+
+  const {register, handleSubmit, formState: { errors }, setValue} = useForm();
+  
+  useEffect(() => {
+    obtenerUsuario(usuario.id).then((respuesta)=>{
+      if(respuesta.status ===200){
+        console.log(respuesta)
+        setValue('estado', respuesta.dato.estado)
+      }
+    })
+  }, [])
+
+  const onSubmit = (datos)=>{
+    console.log(datos)
+  }
+
   return (
     <tr>
-      <td>1</td>
-      <td>JuanPe5</td>
-      <td>juanperez1997@gmail.com</td>
-      <td>Administrador</td>
+      <td>{usuario.id}</td>
+      <td>{usuario.nombreUsuario}</td>
+      <td>{usuario.email}</td>
+      <td>{usuario.perfil}</td>
       <td>
-        <Form>
+        <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Group>
-            <Form.Select className="w-select" disabled>
+            <Form.Select className="w-select" disabled {...register("estado",{
+                require:"El campo de la categoria es obligatorio",
+               })}>
                 <option value="Activo">Activo</option>
                 <option value="Suspendido">Suspendido</option>
             </Form.Select>
+            <Form.Text className="text-danger">
+                {errors.categoria?.message}
+              </Form.Text>
           </Form.Group>
         </Form>
       </td>
