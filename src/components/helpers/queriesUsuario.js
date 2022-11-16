@@ -66,3 +66,23 @@ export const borrarUsuario = async(id)=>{
     return false;
   }
 }
+
+export const login = async (usuario) => {
+  try {
+    const respuesta = await fetch(URL);
+    const listaUsuarios = await respuesta.json();
+    const usuarioBuscado = listaUsuarios.find((itemUsuario) => itemUsuario.email === usuario.email);
+    if(usuarioBuscado){
+      if(usuarioBuscado.password === usuario.password){
+        return usuarioBuscado
+      } else {
+        return false
+      }
+    } else {
+      return false 
+    }
+  } catch (error) {
+    console.log(error) 
+    return false
+  }
+}
