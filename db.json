@@ -30,6 +30,7 @@
   "usuarios": [
     {
       "nombreUsuario": "Juan",
+      "apellidoUsuario": "Juan",
       "email": "juanperez@gmail.com",
       "password": "JuanPe22*",
       "perfil": "Administrador",
@@ -40,6 +41,7 @@
     },
     {
       "nombreUsuario": "Javier",
+      "apellidoUsuario": "Juan",
       "email": "javierUncos@gmail.com",
       "password": "Javier666*",
       "perfil": "usuario",
@@ -47,6 +49,57 @@
       "pedidos": [],
       "estado": "Activo",
       "id": 2
+    },
+    {
+      "nombreUsuario": "Jose",
+      "apellidoUsuario": "Juan",
+      "email": "jose@gmail.com",
+      "password": "Jose123456*",
+      "perfil": "Administrador",
+      "carrito": [],
+      "pedidos": [],
+      "estado": "Activo",
+      "id": 3
+    },
+    {
+      "nombreUsuario": "javier",
+      "apellidoUsuario": "uncos",
+      "email": "javier@gmail.com",
+      "password": "Res12345678#",
+      "carrito": [],
+      "pedidos": [],
+      "estado": "Activo",
+      "id": 4
+    },
+    {
+      "nombreUsuario": "javier",
+      "apellidoUsuario": "uncos",
+      "email": "javier@gmail.com",
+      "password": "Res12345678",
+      "carrito": [],
+      "pedidos": [],
+      "estado": "Activo",
+      "id": 5
+    },
+    {
+      "nombreUsuario": "javier",
+      "apellidoUsuario": "uncos",
+      "email": "javier@gmail.com",
+      "password": "Res12345678",
+      "carrito": [],
+      "pedidos": [],
+      "estado": "Activo",
+      "id": 6
+    },
+    {
+      "nombreUsuario": "hernan",
+      "apellidoUsuario": "uncos",
+      "email": "hernan@gmail.com",
+      "password": "12345678Res",
+      "carrito": [],
+      "pedidos": [],
+      "estado": "Activo",
+      "id": 7
     }
   ]
 }
