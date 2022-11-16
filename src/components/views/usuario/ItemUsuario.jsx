@@ -1,10 +1,11 @@
 import { Button, Form, } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {obtenerUsuario} from "../../helpers/queriesUsuario";
 
 const ItemUsuario = ({setUsuarios, usuario}) => {
   const {register, handleSubmit, setValue} = useForm();
+  const [editar, setEditar] = useState("disabled")
   
   useEffect(() => {
     obtenerUsuario(usuario.id).then((respuesta)=>{
@@ -13,14 +14,20 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
       }
     })
   }, [])
-
+  
   const onSubmit = (datos)=>{
     console.log(datos)
   }
-
+  
   const editarEstado = () => {
     let estado = document.getElementById(`${usuario.id}`)
-    estado.disabled = false
+    if(editar === "disabled"){
+      estado.disabled = false
+      setEditar("noDisabled")
+    } else {
+      estado.disabled = true
+      setEditar("disabled")
+    }
   }
 
   return (
@@ -43,9 +50,18 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
       </td>
       <td>
       <div className="d-flex">
+        {editar === "disabled"? (
+            <>
         <Button className="bg-transparent me-1 border" onClick={editarEstado}>
           <i className="bi bi-pencil-square text-rojo4"></i>
         </Button>
+            </>
+          ) : (
+        <Button className="bg-transparent me-1 border" onClick={editarEstado}>
+        <i className="bi bi-check-square text-rojo4"></i>
+        </Button>
+          )
+        }
         <Button className="bg-transparent border">
           <i className="bi bi-trash text-rojo2"></i>
         </Button>
