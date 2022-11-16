@@ -1,10 +1,10 @@
 import { Button, Form, } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
-import {obtenerUsuario} from "../../helpers/queriesUsuario";
+import {editarUsuario, obtenerUsuario} from "../../helpers/queriesUsuario";
 
 const ItemUsuario = ({setUsuarios, usuario}) => {
-  const {register, handleSubmit, setValue} = useForm();
+  const {register, setValue} = useForm();
   const [editar, setEditar] = useState("disabled")
   
   useEffect(() => {
@@ -15,10 +15,6 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
     })
   }, [])
   
-  const onSubmit = (datos)=>{
-    console.log(datos)
-  }
-  
   const editarEstado = () => {
     let estado = document.getElementById(`${usuario.id}`)
     if(editar === "disabled"){
@@ -27,6 +23,8 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
     } else {
       estado.disabled = true
       setEditar("disabled")
+      usuario.estado = estado.value
+      editarUsuario(usuario.id, usuario)
     }
   }
 
@@ -37,7 +35,7 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
       <td>{usuario.email}</td>
       <td>{usuario.perfil}</td>
       <td>
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form >
           <Form.Group>
             <Form.Select id={usuario.id} className="w-select" disabled {...register("estado",{
                 require: true
