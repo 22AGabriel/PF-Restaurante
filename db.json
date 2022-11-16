@@ -60,6 +60,17 @@
       "pedidos": [],
       "estado": "Suspendido",
       "id": 3
+    },
+    {
+      "nombreUsuario": "Gabriel",
+      "apellidoUsuario": "Azubel",
+      "email": "gabriel@gmail.com",
+      "password": "Gabriel22",
+      "carrito": [],
+      "pedidos": [],
+      "perfil": "Usuario",
+      "estado": "Activo",
+      "id": 4
     }
   ]
 }
