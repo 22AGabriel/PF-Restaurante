@@ -1,23 +1,36 @@
 import { Button, Form, } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useEffect } from "react";
-import {obtenerUsuario} from "../../helpers/queriesUsuario";
+import { useEffect, useState } from "react";
+import {editarUsuario, obtenerUsuario} from "../../helpers/queriesUsuario";
 
 const ItemUsuario = ({setUsuarios, usuario}) => {
-
-  const {register, handleSubmit, formState: { errors }, setValue} = useForm();
+  const {register, setValue} = useForm();
+  const [editar, setEditar] = useState("disabled")
   
   useEffect(() => {
     obtenerUsuario(usuario.id).then((respuesta)=>{
-      if(respuesta.status ===200){
-        console.log(respuesta)
+      if(respuesta.status === 200){
         setValue('estado', respuesta.dato.estado)
+        setValue('perfil', respuesta.dato.perfil)
       }
     })
   }, [])
-
-  const onSubmit = (datos)=>{
-    console.log(datos)
+  
+  const updateUser = () => {
+    let estado = document.getElementById(`${usuario.id}estado`)
+    let perfil = document.getElementById(`${usuario.id}perfil`)
+    if(editar === "disabled"){
+      estado.disabled = false
+      perfil.disabled = false
+      setEditar("noDisabled")
+    } else {
+      estado.disabled = true
+      perfil.disabled = true
+      setEditar("disabled")
+      usuario.estado = estado.value
+      usuario.perfil = perfil.value
+      editarUsuario(usuario.id, usuario)
+    }
   }
 
   return (
@@ -25,27 +38,44 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
       <td>{usuario.id}</td>
       <td>{usuario.nombreUsuario}</td>
       <td>{usuario.email}</td>
-      <td>{usuario.perfil}</td>
       <td>
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form>
           <Form.Group>
-            <Form.Select className="w-select" disabled {...register("estado",{
-                require:"El campo de la categoria es obligatorio",
+            <Form.Select id={`${usuario.id}perfil`} className="w-select" disabled {...register("perfil",{
+                required: true
+               })}>
+                <option value="Administrador">Administrador</option>
+                <option value="Usuario">Usuario</option>
+            </Form.Select>
+          </Form.Group>
+        </Form>
+      </td>
+      <td>
+        <Form>
+          <Form.Group>
+            <Form.Select id={`${usuario.id}estado`} className="w-select" disabled {...register("estado",{
+                required: true
                })}>
                 <option value="Activo">Activo</option>
                 <option value="Suspendido">Suspendido</option>
             </Form.Select>
-            <Form.Text className="text-danger">
-                {errors.categoria?.message}
-              </Form.Text>
           </Form.Group>
         </Form>
       </td>
       <td>
       <div className="d-flex">
-        <Button className="bg-transparent me-1 border">
+        {editar === "disabled"? (
+            <>
+        <Button className="bg-transparent me-1 border" onClick={updateUser}>
           <i className="bi bi-pencil-square text-rojo4"></i>
         </Button>
+            </>
+          ) : (
+        <Button className="bg-transparent me-1 border" onClick={updateUser}>
+        <i className="bi bi-check-square text-rojo4"></i>
+        </Button>
+          )
+        }
         <Button className="bg-transparent border">
           <i className="bi bi-trash text-rojo2"></i>
         </Button>

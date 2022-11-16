@@ -38,3 +38,19 @@ export const obtenerUsuario = async (id) => {
     return false;
   }
 };
+
+export const editarUsuario = async(id, usuario) => {
+  try{
+      const respuesta = await fetch(URL+`/${id}`, {
+          method: "PUT",
+          headers:{
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(usuario)
+      });
+      return respuesta;
+  }catch(error){
+      console.log(error);
+      return false;
+  }
+}
