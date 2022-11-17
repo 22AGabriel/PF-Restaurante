@@ -31,7 +31,7 @@ const Registro = ({setUsuarioLogueado}) => {
           "success"
         );
         localStorage.setItem('usuarioIniciado', JSON.stringify(respuesta))
-        setUsuarioLogueado(respuesta)
+        setUsuarioLogueado(respuesta);
         reset();
         navigate("/");
       } else {

@@ -10,7 +10,6 @@ export const crearUsuario = async (usuario) => {
       body: JSON.stringify(usuario),
     });
     return nuevoUsuario;
-    console.log("creado ");
   } catch (error) {
     console.log(error);
     return false;

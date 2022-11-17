@@ -68,7 +68,7 @@
       "password": "Victoria123",
       "carrito": [],
       "pedidos": [],
-      "perfil": "Usuario",
+      "perfil": "Administrador",
       "estado": "Activo",
       "id": 5
     },
@@ -82,6 +82,138 @@
       "perfil": "Usuario",
       "estado": "Activo",
       "id": 6
+    },
+    {
+      "nombreUsuario": "Victoria",
+      "apellidoUsuario": "Perez",
+      "email": "victoria@gmail.com",
+      "password": "Victoria222",
+      "carrito": [],
+      "pedidos": [],
+      "perfil": "Administrador",
+      "estado": "Activo",
+      "id": 7
+    },
+    {
+      "nombreUsuario": "Cielo",
+      "apellidoUsuario": "Palacio",
+      "email": "cielopp5@gmail.com",
+      "password": "Cielo123",
+      "carrito": [],
+      "pedidos": [],
+      "perfil": "Usuario",
+      "estado": "Activo",
+      "id": 8
+    },
+    {
+      "nombreUsuario": "Cielo",
+      "apellidoUsuario": "Palacio",
+      "email": "cielopp5@gmail.com",
+      "password": "Cielo123",
+      "carrito": [],
+      "pedidos": [],
+      "perfil": "Usuario",
+      "estado": "Activo",
+      "id": 9
+    },
+    {
+      "nombreUsuario": "Cielo",
+      "apellidoUsuario": "Palacio",
+      "email": "cielopp5@gmail.com",
+      "password": "Cielo123",
+      "carrito": [],
+      "pedidos": [],
+      "perfil": "Usuario",
+      "estado": "Activo",
+      "id": 10
+    },
+    {
+      "nombreUsuario": "Cielo",
+      "apellidoUsuario": "Palacio",
+      "email": "cielopp5@gmail.com",
+      "password": "Cielo123",
+      "carrito": [],
+      "pedidos": [],
+      "perfil": "Usuario",
+      "estado": "Activo",
+      "id": 11
+    },
+    {
+      "nombreUsuario": "Agustin",
+      "apellidoUsuario": "Palacio",
+      "email": "agustin@gmail.com",
+      "password": "Agustin123",
+      "carrito": [],
+      "pedidos": [],
+      "perfil": "Usuario",
+      "estado": "Activo",
+      "id": 12
+    },
+    {
+      "nombreUsuario": "Nahir",
+      "apellidoUsuario": "Mustafa",
+      "email": "nahir@gmail.com",
+      "password": "Nahir123",
+      "carrito": [],
+      "pedidos": [],
+      "perfil": "Usuario",
+      "estado": "Activo",
+      "id": 13
+    },
+    {
+      "nombreUsuario": "Nahir",
+      "apellidoUsuario": "Mustafa",
+      "email": "nahir@gmail.com",
+      "password": "Nahir123",
+      "carrito": [],
+      "pedidos": [],
+      "perfil": "Usuario",
+      "estado": "Activo",
+      "id": 14
+    },
+    {
+      "nombreUsuario": "Nahir",
+      "apellidoUsuario": "Mustafa",
+      "email": "nahir@gmail.com",
+      "password": "Nahir123",
+      "carrito": [],
+      "pedidos": [],
+      "perfil": "Usuario",
+      "estado": "Activo",
+      "id": 15
+    },
+    {
+      "nombreUsuario": "Nahir",
+      "apellidoUsuario": "Mustafa",
+      "email": "nahir@gmail.com",
+      "password": "Nahir123",
+      "carrito": [],
+      "pedidos": [],
+      "perfil": "Usuario",
+      "estado": "Activo",
+      "id": 16
+    },
+    {
+      "nombreUsuario": "Maria",
+      "apellidoUsuario": "Perez",
+      "email": "maria@gmail.com",
+      "password": "Maria123",
+      "carrito": [],
+      "pedidos": [],
+      "perfil": "Usuario",
+      "estado": "Activo",
+      "id": 17
+    },
+    {
+      "nombreUsuario": "Juan",
+      "apellidoUsuario": "Marin",
+      "email": "martin@gmail.com",
+      "password": "Martin123",
+      "carrito": [],
+      "pedidos": [],
+      "perfil": "Usuario",
+      "estado": "Activo",
+      "id": 18
     }
   ]
 }

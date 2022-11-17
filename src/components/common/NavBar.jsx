@@ -61,20 +61,28 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado }) => {
                   </Form>
                   {usuarioLogueado.nombreUsuario ? (
                     <>
-                    {usuarioLogueado.estado === "Administrador" ?(
+                    {usuarioLogueado.perfil === "Administrador" ?(
                       <>
                       <NavLink
                         to="/administrar"
-                        className={"nav-item nav-link d-flex align-self-center"}
+                        className={"nav-item nav-link d-flex align-self-center my-2"}
                       >
                         Administrador
                       </NavLink>
+                      <Button
+                        variant={"danger"}
+                        className="d-flex align-items-center justify-content-center my-2"
+                        onClick={logout}
+                      >
+                        Cerrar Sesión{" "}
+                        <i className="bi bi-toggle2-on fs-3 ms-2"></i>
+                      </Button>
                       </>
                     ):(
                       <>
                       <NavLink
                         to="/usuario/pedidos"
-                        className={"nav-item nav-link align-self-center"}
+                        className={"nav-item nav-link align-self-center my-2"}
                       >
                         <i className="bi bi-cart-plus-fill fs-4"></i>
                       </NavLink>
@@ -92,9 +100,9 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado }) => {
                   ) : (
                     <>
                       <NavLink
+                      setUsuarioLogueado={setUsuarioLogueado}
                         to="/registro"
-                        className={"nav-item nav-link align-self-center"}
-                        setUsuarioLogueado={setUsuarioLogueado}
+                        className={"nav-item nav-link align-self-center mt-2"}
                       >
                         Registrar
                       </NavLink>
