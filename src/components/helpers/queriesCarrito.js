@@ -8,7 +8,3 @@ export const editarCarrito = (producto)=>{
     editarUsuario(usuario.id,usuario)
     localStorage.setItem('usuarioIniciado', JSON.stringify(usuario))
 }
-
-
-
-
