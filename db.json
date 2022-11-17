@@ -71,6 +71,17 @@
       "perfil": "Usuario",
       "estado": "Activo",
       "id": 5
+    },
+    {
+      "nombreUsuario": "Lucinda",
+      "apellidoUsuario": "Palacio",
+      "email": "lupf@gmail.com",
+      "password": "Lucinda55",
+      "carrito": [],
+      "pedidos": [],
+      "perfil": "Usuario",
+      "estado": "Activo",
+      "id": 6
     }
   ]
 }

@@ -61,12 +61,17 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado }) => {
                   </Form>
                   {usuarioLogueado.nombreUsuario ? (
                     <>
+                    {usuarioLogueado.estado === "Administrador" ?(
+                      <>
                       <NavLink
                         to="/administrar"
                         className={"nav-item nav-link d-flex align-self-center"}
                       >
                         Administrador
                       </NavLink>
+                      </>
+                    ):(
+                      <>
                       <NavLink
                         to="/usuario/pedidos"
                         className={"nav-item nav-link align-self-center"}
@@ -81,6 +86,8 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado }) => {
                         Cerrar Sesión{" "}
                         <i className="bi bi-toggle2-on fs-3 ms-2"></i>
                       </Button>
+                      </>
+                    )}
                     </>
                   ) : (
                     <>
