@@ -60,6 +60,17 @@
       "perfil": "Usuario",
       "estado": "Activo",
       "id": 4
+    },
+    {
+      "nombreUsuario": "Victoria",
+      "apellidoUsuario": "Palacio Fernández",
+      "email": "victoriapalaciof@gmail.com",
+      "password": "Victoria123",
+      "carrito": [],
+      "pedidos": [],
+      "perfil": "Usuario",
+      "estado": "Activo",
+      "id": 5
     }
   ]
 }

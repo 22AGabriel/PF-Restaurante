@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import { crearUsuario } from "../helpers/queriesUsuario";
 
 
-const Registro = () => {
+const Registro = ({setUsuarioLogueado}) => {
   const {
     register,
     handleSubmit,
@@ -26,10 +26,12 @@ const Registro = () => {
     crearUsuario(data).then((respuesta) => {
       if (respuesta.status === 201) {
         Swal.fire(
-          "registro exitoso",
+          `Bienvenido ${data.nombreUsuario}`,
           "¡ya puedes comprar libremente en nuestra pagina!",
           "success"
         );
+        localStorage.setItem('usuarioIniciado', JSON.stringify(respuesta))
+        setUsuarioLogueado(respuesta)
         reset();
         navigate("/");
       } else {

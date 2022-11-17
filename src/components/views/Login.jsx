@@ -5,7 +5,7 @@ import { useState } from "react";
 import { login } from "../helpers/queriesUsuario"
 import "../../css/login.css";
 
-const Login = () => {
+const Login = ({setUsuarioLogueado}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -21,6 +21,7 @@ const Login = () => {
         navegate("/")
         setShow(false)
         localStorage.setItem('usuarioIniciado', JSON.stringify(respuesta))
+        setUsuarioLogueado(respuesta);
       }
     })
   };
