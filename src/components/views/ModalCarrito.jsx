@@ -2,8 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Modal, Button,Table} from "react-bootstrap";
+import ItemModal from "./producto/ItemModal";
 
-const ModalCarrito = () => {
+const ModalCarrito = ({usuario}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -32,12 +33,10 @@ const ModalCarrito = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
+                {
+                    usuario.carrito.map((item)=>  <ItemModal producto={item} key={item.id}></ItemModal>)
+                }
+             
             </tbody>
           </Table>
 

@@ -54,7 +54,7 @@ const  NavBar = ({usuarioLogueado, setUsuarioLogueado}) => {
                 <Login></Login>
               </div>
               <NavLink to="/administrar" className={'nav-item nav-link d-flex align-self-center'}>Administrador</NavLink>
-              <NavLink className={'nav-item nav-link align-self-center'}><ModalCarrito></ModalCarrito></NavLink>
+              <div className={'nav-item nav-link align-self-center'}><ModalCarrito usuario={usuarioLogueado}></ModalCarrito></div>
               <Button variant={'danger'} className='d-flex align-items-center justify-content-center' onClick={logout}>Cerrar Sesión <i className="bi bi-toggle2-on fs-3 ms-2"></i></Button>
               </Nav>
             </Offcanvas.Body>
