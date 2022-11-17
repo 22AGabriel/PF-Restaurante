@@ -34,9 +34,9 @@ const ModalCarrito = ({ usuario }) => {
               </tr>
             </thead>
             <tbody>
-              {/* {usuario.carrito.map((item) => (
+              {usuario.carrito.map((item) => (
                 <ItemModal producto={item} key={item.id}></ItemModal>
-              ))} */}
+              ))}
             </tbody>
           </Table>
           <p>Total del pedido:</p>
