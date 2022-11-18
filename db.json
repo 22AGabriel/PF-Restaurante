@@ -214,6 +214,17 @@
       "perfil": "Usuario",
       "estado": "Activo",
       "id": 18
+    },
+    {
+      "nombreUsuario": "Julio",
+      "apellidoUsuario": "Palacio",
+      "email": "juliopalacio@gmail.com",
+      "password": "Julio123",
+      "carrito": [],
+      "pedidos": [],
+      "perfil": "Usuario",
+      "estado": "Activo",
+      "id": 19
     }
   ]
 }

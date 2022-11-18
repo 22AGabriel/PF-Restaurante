@@ -100,7 +100,6 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado }) => {
                   ) : (
                     <>
                       <NavLink
-                      setUsuarioLogueado={setUsuarioLogueado}
                         to="/registro"
                         className={"nav-item nav-link align-self-center mt-2"}
                       >
