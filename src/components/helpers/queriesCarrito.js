@@ -11,7 +11,14 @@ export const editarCarrito = (producto) => {
     }
    
     editarUsuario(usuario.id,usuario)
-    localStorage.setItem("usuarioIniciado", JSON.stringify(usuario));
+    localStorage.setItem('usuarioIniciado', JSON.stringify(usuario))
+}
 
-};
-
+export const borrarProductosCarrito = (producto)=>{
+    let usuario = JSON.parse(localStorage.getItem("usuarioIniciado"))
+    let carrito = usuario.carrito;
+    let carritoNuevo = carrito.filter((item)=>item.id !== producto.id);
+    usuario.carrito = carritoNuevo
+    editarUsuario(usuario.id,usuario)
+    localStorage.setItem('usuarioIniciado', JSON.stringify(usuario));
+}

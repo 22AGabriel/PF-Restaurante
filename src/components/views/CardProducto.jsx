@@ -16,7 +16,7 @@ const CardProducto = ({producto}) => {
             <Card.Title>{producto.nombreProducto}</Card.Title>
             <Card.Text>Precio: ${producto.precio}</Card.Text>
             <Card.Text>Categoria: {producto.categoria}</Card.Text>
-            <div className="d-flex justify-content-around">
+            <div className="d-flex justify-content-between">
             <Button className=" bg-rojo3 text-light buttonCard" as={Link} to={`/detalle/${producto.id}`}>Ver mas</Button>
             <Button className="bg-rojo3 text-light buttonCard borde-rojo3" onClick={()=>{editarCarrito(producto)}}>Agregar<i className="bi bi-cart-plus-fill"></i></Button>
             </div>
