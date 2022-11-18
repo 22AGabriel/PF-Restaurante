@@ -85,9 +85,15 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado }) => {
                       <>
                       <NavLink
                         to="/usuario/pedidos"
-                        className={"nav-item nav-link align-self-center my-2"}
+                        className={"nav-item nav-link align-self-center mt-1"}
                       >
                         <i className="bi bi-cart-plus-fill fs-4"></i>
+                      </NavLink>
+                      <NavLink
+                        to="/usuario/pedidos"
+                        className={"nav-item nav-link d-flex align-self-center mb-2"}
+                      >
+                        Mis pedidos
                       </NavLink>
                       <Button
                         variant={"danger"}
