@@ -87,6 +87,12 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado }) => {
                       >
                         <ModalCarrito usuario={usuarioLogueado}></ModalCarrito>
                       </div>
+                      <NavLink
+                        to="/usuario/pedidos"
+                        className={"nav-item nav-link d-flex align-self-center mb-2"}
+                      >
+                        Mis pedidos
+                      </NavLink>
                       <Button
                         variant={"danger"}
                         className="d-flex align-items-center justify-content-center"
