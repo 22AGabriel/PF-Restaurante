@@ -1,11 +1,14 @@
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Offcanvas from "react-bootstrap/Offcanvas";
-import Login from "../views/Login";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import Login from '../views/Login'
+import { Link, NavLink, useNavigate} from 'react-router-dom';
+import ModalCarrito from '../views/ModalCarrito';
+
 
 const NavBar = ({ usuarioLogueado, setUsuarioLogueado }) => {
   const navigate = useNavigate();
@@ -125,5 +128,6 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado }) => {
     </>
   );
 };
+
 
 export default NavBar;
