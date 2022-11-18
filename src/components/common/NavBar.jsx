@@ -85,7 +85,7 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado }) => {
                       <>
                       <div   className={"nav-item nav-link align-self-center mt-2"}
                       >
-                        <ModalCarrito></ModalCarrito>
+                        <ModalCarrito usuario={usuarioLogueado}></ModalCarrito>
                       </div>
                       <Button
                         variant={"danger"}
