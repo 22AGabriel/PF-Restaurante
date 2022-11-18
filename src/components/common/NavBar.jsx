@@ -83,12 +83,10 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado }) => {
                       </>
                     ):(
                       <>
-                      <NavLink
-                        to="/usuario/pedidos"
-                        className={"nav-item nav-link align-self-center mt-1"}
+                      <div   className={"nav-item nav-link align-self-center mt-2"}
                       >
-                        <i className="bi bi-cart-plus-fill fs-4"></i>
-                      </NavLink>
+                        <ModalCarrito usuario={usuarioLogueado}></ModalCarrito>
+                      </div>
                       <NavLink
                         to="/usuario/pedidos"
                         className={"nav-item nav-link d-flex align-self-center mb-2"}

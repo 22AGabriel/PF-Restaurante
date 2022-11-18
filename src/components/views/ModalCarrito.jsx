@@ -8,7 +8,7 @@ const ModalCarrito = ({ usuario }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const { carrito } = { ...usuario };
+ 
 
   return (
     <div>
@@ -24,7 +24,7 @@ const ModalCarrito = ({ usuario }) => {
           <Modal.Title>Carrito de Compra</Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-rojo2">
-          <Table striped bordered hover>
+          <Table striped bordered hover responsive>
             <thead>
               <tr>
                 <th>Producto</th>
@@ -34,9 +34,20 @@ const ModalCarrito = ({ usuario }) => {
               </tr>
             </thead>
             <tbody>
-              {usuario.carrito.map((item) => (
-                <ItemModal producto={item} key={item.id}></ItemModal>
-              ))}
+              {usuario?(
+                <>
+                {usuario.carrito.lenght !== 0?(
+                  <>
+                  {usuario.carrito.map((item) => (
+                    <ItemModal producto={item} key={item.id}></ItemModal>
+                  ))}
+                    </>
+                  
+                  ):(<><p>No hay productos cargados en el carrito aun</p></>)}
+                  </>
+                ):(<><div></div></>)}
+
+
             </tbody>
           </Table>
           <p>Total del pedido:</p>
