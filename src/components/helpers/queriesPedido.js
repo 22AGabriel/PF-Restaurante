@@ -1,3 +1,4 @@
+import { editarUsuario } from "./queriesUsuario";
 const URL = process.env.REACT_APP_API_PEDIDOS;
 const fecha = new Date();
 
@@ -20,6 +21,10 @@ export const crearPedido = async() => {
             },
             body:JSON.stringify(pedido)
         })
+        usuario.pedidos.push(pedido)
+        usuario.carrito = []
+        editarUsuario(usuario.id,usuario)
+        localStorage.setItem('usuarioIniciado', JSON.stringify(usuario));
         return nuevoPedido
     } catch (error) {
         console.log(error)
