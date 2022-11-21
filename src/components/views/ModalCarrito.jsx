@@ -3,31 +3,17 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Modal, Button, Table } from "react-bootstrap";
 import ItemModal from "./producto/ItemModal";
+import { Suma } from "../helpers/queriesCarrito";
 
-const ModalCarrito = ({ usuario }) => {
+const ModalCarrito = ({ usuario,carrito,setCarrito,resultado,setResultado }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [carrito, setCarrito] = useState(usuario.carrito);
-  const [resultado, setResultado] = useState(0);
 
-  useEffect(() => {
-    let suma = 0;
-    const Suma = () => {
-      carrito.forEach((item) => {
-        suma += item.precio;
-      });
-      setResultado(suma);
-    };
-    Suma();
-  }, [carrito]);
-
-  useEffect(() => {
-    carrito.map((item) => {
-      setCarrito(...[carrito, item]);
-    });
-  }, [carrito]);
-
+  useEffect(()=>{
+    setResultado(Suma(carrito))
+  },[carrito])
+ 
   return (
     <div>
       <NavLink
@@ -52,11 +38,11 @@ const ModalCarrito = ({ usuario }) => {
               </tr>
             </thead>
             <tbody>
-              {usuario ? (
+              {carrito ? (
                 <>
-                  {usuario.carrito.lenght !== 0 ? (
+                  {carrito.lenght !== 0 ? (
                     <>
-                      {usuario.carrito.map((item) => (
+                      {carrito.map((item) => (
                         <ItemModal producto={item} key={item.id}></ItemModal>
                       ))}
                     </>
@@ -73,7 +59,7 @@ const ModalCarrito = ({ usuario }) => {
               )}
             </tbody>
           </Table>
-          <p>Total del pedido:{resultado}</p>
+          <p>Total del pedido: {resultado}</p>
           <Button className="w-100 mt-2" variant="dark" onClick={handleClose}>
             Cerrar
           </Button>

@@ -6,7 +6,7 @@ import Contacto from "./Contacto";
 import Ubicacion from "./Ubicacion";
 import { consultarProducto } from "../helpers/queriesProducto";
 
-const Inicio = () => {
+const Inicio = ({carrito,setCarrito}) => {
   const [mostrarProducto, setMostrarProducto] = useState([])
 
   useEffect(() => {
@@ -97,6 +97,7 @@ const Inicio = () => {
                 key={producto.id}
                 producto={producto}
                 mostrarProducto={mostrarProducto}
+                carrito={carrito} setCarrito={setCarrito}
                 ></CardProducto>
               ))
             }
