@@ -12,6 +12,7 @@ const ModalCarrito = ({ usuario,carrito,setCarrito,resultado,setResultado }) => 
 
   useEffect(()=>{
     setResultado(Suma(carrito))
+    setCarrito(carrito)
   },[carrito])
  
   return (

@@ -42,8 +42,14 @@
 }
 
 .CardPP:hover .buttonCard{
-    background-color: #c96752;
+    background-color: #111010;
 }
+
+.buttonCard:hover{
+background-color: rgb(35, 43, 43);
+}
+
+
 
 .divSearch{
     height: 40px;
