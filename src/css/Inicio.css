@@ -124,15 +124,12 @@ background-color: rgb(35, 43, 43);
 .imgCardProducto{
     height: 350px;
     width: 100%;
-    background-color: red;
-   
 }
 
 .imgCardProducto .imgDiv{
     height: 350px;
     width: 100%;
     object-fit: cover;
-  
 }
 
 

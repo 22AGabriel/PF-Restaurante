@@ -1,8 +1,6 @@
 import React from "react";
 import { Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
-import { editarCarrito } from "../helpers/queriesCarrito";
 import { editarUsuario } from "../helpers/queriesUsuario";
 
 const CardProducto = ({
@@ -10,7 +8,6 @@ const CardProducto = ({
   carrito,
   setCarrito,
   usuarioLogueado,
-  setUsuarioLogueado,
 }) => {
   const editarCarrito = (producto) => {
     const existeProducto = usuarioLogueado.carrito.find(
