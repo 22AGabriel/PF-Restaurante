@@ -7,11 +7,14 @@ const CardProducto = ({producto}) => {
   return (
     <Col md={4}>
       <Card className="mb-3 CardPP">
+          <div className="imgCardProducto">
           <Card.Img
             variant="top"
             src={producto.imagen}
             alt={producto.nombreProducto}
+             className="imgDiv"
           />
+          </div>
           <Card.Body>
             <Card.Title>{producto.nombreProducto}</Card.Title>
             <Card.Text>Precio: ${producto.precio}</Card.Text>
