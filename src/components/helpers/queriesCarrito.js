@@ -5,7 +5,7 @@ export const editarCarrito = (producto) => {
     const existeProducto = usuario.carrito.find((item)=>item.id === producto.id)
     if(existeProducto){
         existeProducto.cantidad += 1
-        existeProducto.precio = existeProducto.cantidad * producto.precio
+        existeProducto.precio =   producto.precio * existeProducto.cantidad
     }else{
         usuario.carrito.push(producto)
     }
@@ -22,3 +22,11 @@ export const borrarProductosCarrito = (producto)=>{
     editarUsuario(usuario.id,usuario)
     localStorage.setItem('usuarioIniciado', JSON.stringify(usuario));
 }
+
+export const Suma = (carrito) => {
+    let suma = 0;
+    carrito.forEach((item) => {
+      suma += item.precio;
+    });
+    return suma
+};

@@ -116,6 +116,22 @@
     background-attachment: fixed;
 }
 
+
+.imgCardProducto{
+    height: 350px;
+    width: 100%;
+    background-color: red;
+   
+}
+
+.imgCardProducto .imgDiv{
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+  
+}
+
+
 @media all and (max-width:540px){
     
    .divSearch{

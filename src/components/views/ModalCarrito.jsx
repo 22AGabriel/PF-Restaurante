@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Modal, Button, Table } from "react-bootstrap";
 import ItemModal from "./producto/ItemModal";
+import { Suma } from "../helpers/queriesCarrito";
 
-const ModalCarrito = ({ usuario }) => {
+const ModalCarrito = ({ usuario,carrito,setCarrito,resultado,setResultado }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
- 
 
+  useEffect(()=>{
+    setResultado(Suma(carrito))
+  },[carrito])
+ 
   return (
     <div>
       <NavLink
@@ -34,23 +38,28 @@ const ModalCarrito = ({ usuario }) => {
               </tr>
             </thead>
             <tbody>
-              {usuario?(
+              {carrito ? (
                 <>
-                {usuario.carrito.lenght !== 0?(
-                  <>
-                  {usuario.carrito.map((item) => (
-                    <ItemModal producto={item} key={item.id}></ItemModal>
-                  ))}
+                  {carrito.lenght !== 0 ? (
+                    <>
+                      {carrito.map((item) => (
+                        <ItemModal producto={item} key={item.id}></ItemModal>
+                      ))}
                     </>
-                  
-                  ):(<><p>No hay productos cargados en el carrito aun</p></>)}
-                  </>
-                ):(<><div></div></>)}
-
-
+                  ) : (
+                    <>
+                      <p>No hay productos cargados en el carrito aun</p>
+                    </>
+                  )}
+                </>
+              ) : (
+                <>
+                  <div></div>
+                </>
+              )}
             </tbody>
           </Table>
-          <p>Total del pedido:</p>
+          <p>Total del pedido: {resultado}</p>
           <Button className="w-100 mt-2" variant="dark" onClick={handleClose}>
             Cerrar
           </Button>
