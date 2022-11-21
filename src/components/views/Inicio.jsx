@@ -6,7 +6,7 @@ import Contacto from "./Contacto";
 import Ubicacion from "./Ubicacion";
 import { consultarProducto } from "../helpers/queriesProducto";
 
-const Inicio = ({carrito,setCarrito}) => {
+const Inicio = ({carrito,setCarrito,usuarioLogueado,setUsuarioLogueado}) => {
   const [mostrarProducto, setMostrarProducto] = useState([])
 
   useEffect(() => {
@@ -98,6 +98,8 @@ const Inicio = ({carrito,setCarrito}) => {
                 producto={producto}
                 mostrarProducto={mostrarProducto}
                 carrito={carrito} setCarrito={setCarrito}
+                usuarioLogueado={usuarioLogueado}
+                setUsuarioLogueado={setUsuarioLogueado}
                 ></CardProducto>
               ))
             }

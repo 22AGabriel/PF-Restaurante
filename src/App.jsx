@@ -26,7 +26,7 @@ function App() {
     <BrowserRouter>
      <NavBar usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} carrito={carrito} setCarrito={setCarrito} resultado={resultado} setResultado={setResultado}></NavBar>
      <Routes>
-      <Route exact path="/" element={<Inicio  carrito={carrito} setCarrito={setCarrito}/>}/>
+      <Route exact path="/" element={<Inicio  carrito={carrito} setCarrito={setCarrito} usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Inicio>}/>
       <Route exact path="/detalle/:id" element={<DetalleProducto/>}/>
       <Route exact path="/administrar" element={<Admin/>}/>
       <Route exact path="/login" element={<Login/>}/>
