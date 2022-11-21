@@ -41,9 +41,7 @@
     border:white;
 }
 
-.CardPP:hover .buttonCard{
-    background-color: #111010;
-}
+
 
 .buttonCard:hover{
 background-color: rgb(35, 43, 43);

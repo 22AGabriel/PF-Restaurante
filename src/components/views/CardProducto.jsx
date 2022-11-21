@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import { editarCarrito } from "../helpers/queriesCarrito";
 import { editarUsuario } from "../helpers/queriesUsuario";
 
@@ -12,7 +13,6 @@ const CardProducto = ({
   setUsuarioLogueado,
 }) => {
   const editarCarrito = (producto) => {
-    // let usuario = JSON.parse(localStorage.getItem("usuarioIniciado"));
     const existeProducto = usuarioLogueado.carrito.find(
       (item) => item.id === producto.id
     );
@@ -28,7 +28,6 @@ const CardProducto = ({
     localStorage.setItem("usuarioIniciado", JSON.stringify(usuarioLogueado));
   };
 
-  
   return (
     <Col md={6} lg={4}>
       <Card className="mb-3 CardPP">
@@ -58,7 +57,9 @@ const CardProducto = ({
                 editarCarrito(producto);
               }}
             >
-              Agregar<i className="bi bi-cart-plus-fill"></i>
+              Agregar
+              <i className="bi bi-cart-plus-fill">
+              </i>
             </Button>
           </div>
         </Card.Body>
