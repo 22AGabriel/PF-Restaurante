@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Modal, Button, Table } from "react-bootstrap";
 import ItemModal from "./producto/ItemModal";
 import { Suma } from "../helpers/queriesCarrito";
+import { crearPedido } from "../helpers/queriesPedido";
 
 const ModalCarrito = ({carrito,setCarrito,resultado,setResultado }) => {
   const [show, setShow] = useState(false);
@@ -61,6 +62,9 @@ const ModalCarrito = ({carrito,setCarrito,resultado,setResultado }) => {
             </tbody>
           </Table>
           <p>Total del pedido: {resultado}</p>
+          <Button className="w-100 my-2" variant="danger" onClick={crearPedido}>
+            Enviar pedido
+          </Button>
           <Button className="w-100 mt-2" variant="dark" onClick={handleClose}>
             Cerrar
           </Button>

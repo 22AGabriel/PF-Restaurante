@@ -5,7 +5,7 @@ import {useForm} from "react-hook-form"
 import Swal from "sweetalert2";
 
 const AgregarProducto = () => {
-  const {register, handleSubmit, formState:{errors}, reset} = useForm();
+  const {register, handleSubmit, formState:{errors}} = useForm();
   const onSubmit =(producto)=>{
     producto.cantidad = 1
     crearProducto(producto).then((respuesta)=>{
