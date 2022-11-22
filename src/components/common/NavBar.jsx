@@ -22,7 +22,7 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,result
   return (
     <>
       {[false].map((expand) => (
-        <Navbar key={expand} expand={expand} className="bg-rojo3">
+        <Navbar key={expand} expand={expand} className="bg-rojo3 fixed-top">
           <Container>
             <Navbar.Brand as={Link} to="/">
               <img
@@ -30,8 +30,7 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,result
                 alt="sham logo"
                 width="60"
                 height="40"
-                className="d-inline-block align-center"
-              />
+                className="d-inline-block align-center"/>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
@@ -52,14 +51,13 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,result
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                <Nav className="flex-grow-1 pe-3">
+                <Nav className="flex-grow-2 pe-3">
                   <Form className="d-flex">
                     <Form.Control
                       type="search"
-                      placeholder="Buscar"
+                      placeholder="Producto o categoría"
                       className="me-2"
-                      aria-label="search"
-                    />
+                      aria-label="search"/>
                     <Button variant="outline-dark">Buscar</Button>
                   </Form>
                   {usuarioLogueado.nombreUsuario ? (
@@ -68,37 +66,32 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,result
                       <>
                       <NavLink
                         to="/administrar"
-                        className={"nav-item nav-link d-flex align-self-center my-2"}
-                      >
+                        className={"nav-item nav-link d-flex align-self-center my-2"}>
                         Administrador
                       </NavLink>
                       <Button
                         variant={"danger"}
                         className="d-flex align-items-center justify-content-center my-2"
-                        onClick={logout}
-                      >
-                        Cerrar Sesión{" "}
+                        onClick={logout}>
+                        Cerrar Sesión
                         <i className="bi bi-toggle2-on fs-3 ms-2"></i>
                       </Button>
                       </>
                     ):(
                       <>
-                      <div   className={"nav-item nav-link align-self-center mt-2"}
-                      >
+                      <div className={"nav-item nav-link align-self-center mt-2"}>
                         <ModalCarrito usuario={usuarioLogueado} carrito={carrito} setCarrito={setCarrito} resultado={resultado} setResultado={setResultado}></ModalCarrito>
                       </div>
                       <NavLink
                         to="/usuario/pedidos"
-                        className={"nav-item nav-link d-flex align-self-center mb-2"}
-                      >
+                        className={"nav-item nav-link d-flex align-self-center mb-2"}>
                         Mis pedidos
                       </NavLink>
                       <Button
                         variant={"danger"}
                         className="d-flex align-items-center justify-content-center"
-                        onClick={logout}
-                      >
-                        Cerrar Sesión{" "}
+                        onClick={logout}>
+                        Cerrar Sesión
                         <i className="bi bi-toggle2-on fs-3 ms-2"></i>
                       </Button>
                       </>
@@ -108,8 +101,7 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,result
                     <>
                       <NavLink
                         to="/registro"
-                        className={"nav-item nav-link align-self-center mt-2"}
-                      >
+                        className={"nav-item nav-link align-self-center mt-2"}>
                         Registrar
                       </NavLink>
                       <div className={"nav-item nav-link align-self-center"}>

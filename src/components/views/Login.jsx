@@ -30,10 +30,8 @@ const Login = ({setUsuarioLogueado}) => {
     <>
       <NavLink
         className={"nav-item nav-link"}
-        variant="dark"
-        onClick={handleShow}
-      >
-        <i className="bi bi-box-arrow-in-right fs-4 text-white"></i>
+        onClick={handleShow}>
+        Iniciar sesión
       </NavLink>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton className="bg-rojo2">
@@ -50,8 +48,7 @@ const Login = ({setUsuarioLogueado}) => {
                 autoFocus
                 {...register("email", {
                   required: "Email o contraseña incorrecta, intenta nuevamente",
-                })}
-              />
+                })}/>
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Contraseña</Form.Label>
@@ -61,8 +58,7 @@ const Login = ({setUsuarioLogueado}) => {
                 className="bg-rojo2 bg-login"
                 {...register("password", {
                   required: "Email o contraseña incorrecta, intenta nuevamente",
-                })}
-              />
+                })}/>
               <Form.Text className="text-black">
                 {errors.password?.message}
               </Form.Text>
