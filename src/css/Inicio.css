@@ -206,7 +206,7 @@ background-color: rgb(35, 43, 43);
     margin-bottom: 10px;
     width: 100%;
     display: flex;
-    justify-content: space-between; 
+    justify-content: end; 
     height: 200%;
 }
    
