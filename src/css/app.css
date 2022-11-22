@@ -2,6 +2,7 @@ body{
     background-color:  #292929;
     color: white;
     font-family: 'Roboto Mono', monospace;
+    margin-top: 65px;
 }
 
 #root{
