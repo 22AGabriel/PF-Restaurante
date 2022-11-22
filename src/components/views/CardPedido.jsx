@@ -16,9 +16,9 @@ const CardPedido = ({ pedido }) => {
           <hr className="text-dark" />
           <div className="col-12 col-md-6">
             <ul>
-              {pedido.productos.map((item) => (
-                <li>
-                  {item.nombreProducto} / cantidad: {item.cantidad}{" "}
+              {pedido.productos.map((item,indice) => (
+                <li item={item} key={indice}>
+                  {item.nombreProducto} / cantidad: {item.cantidad}
                 </li>
               ))}
             </ul>
