@@ -1,17 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Card, Row, Col, Button } from "react-bootstrap";
-import '../../css/app.css';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
+import "../../css/app.css";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+import { crearPedido } from "../helpers/queriesPedido";
+import CardPedido from "./CardPedido";
 
-const Pedidos = () => {
-    return (
-    <div class='bajarFooter'>
+const Pedidos = ({ usuarioLogueado }) => {
+  // const [arregloPedido, setarregloPedido] = useState(usuarioLogueado.pedidos);
+
+  useEffect(() => {
+    // setarregloPedido(usuarioLogueado.pedidos)
+   console.log(usuarioLogueado.pedidos)
+  
+  }, []);
+
+  return (
+    <div className="bajarFooter">
       <h1 className="display-4 text-center">El Sham</h1>
       <hr />
       <h3 className="display-6 text-center">Tus pedidos</h3>
       <Container>
-        <Card className='my-5'>
+        {usuarioLogueado.pedidos.map((item, indice) => (
+          <CardPedido pedido={item} key={indice}></CardPedido>
+        ))}
+        {/* <Card className='my-5'>
           <Row>
             <Col md={4}>
               <Card.Img
@@ -37,7 +50,7 @@ const Pedidos = () => {
             </Tooltip>
           }
         >
-          <Button className='text-rojo1 btn-light' size="sm"><i class="bi bi-bag-plus fs-2"></i></Button>
+          <Button className='text-rojo1 btn-light' size="sm"><i className="bi bi-bag-plus fs-2"></i></Button>
         </OverlayTrigger>
  ))}
     {['top'].map((placement) => (
@@ -50,16 +63,16 @@ const Pedidos = () => {
             </Tooltip>
           }
         >
-          <Button className='text-rojo1 btn-light' size="sm"><i class="bi bi-arrow-repeat fs-2"></i></Button>
+          <Button className='text-rojo1 btn-light' size="sm"><i className="bi bi-arrow-repeat fs-2"></i></Button>
         </OverlayTrigger>
  ))}
                   </article>
-                  <i class="bi bi-basket2-fill fs-5"> Cantidad: 1</i> 
+                  <i className="bi bi-basket2-fill fs-5"> Cantidad: 1</i> 
                 </Card.Text>
               </Card.Body>
             </Col>
           </Row>
-        </Card>
+        </Card> */}
       </Container>
     </div>
   );

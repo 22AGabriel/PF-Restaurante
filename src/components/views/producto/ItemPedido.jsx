@@ -1,6 +1,12 @@
 import { Button, Form } from "react-bootstrap";
 
 const ItemPedido = () => {
+
+
+    
+
+
+
   return (
     <tr>
       <td>Pedido</td>
