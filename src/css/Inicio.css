@@ -70,7 +70,7 @@ background-color: rgb(35, 43, 43);
 }
 
 .divCirculo:hover a{
-    background-color: rgb(71, 71, 71);
+    background-color:  #db8d7b;
     color: rgb(17, 17, 17);
     transition: 1s ease;
     
@@ -152,7 +152,7 @@ background-color: rgb(35, 43, 43);
     margin-bottom: 10px;
     width: 50%;
     display: flex;
-    justify-content: space-around; 
+    justify-content:flex-end; 
     height: 200%;
 }
 
