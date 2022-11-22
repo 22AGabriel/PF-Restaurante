@@ -133,6 +133,30 @@ background-color: rgb(35, 43, 43);
 }
 
 
+.contenerdorPedidos{
+    border-radius: 10px;
+    width: 700px;
+    margin: 0 auto;
+}
+
+.cardPedidos div{
+    margin-top: 50px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardPedidos2{
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: space-around; 
+    height: 200%;
+}
+
+
 @media all and (max-width:540px){
     
    .divSearch{
@@ -170,6 +194,21 @@ background-color: rgb(35, 43, 43);
    .divPortada3{
     height: 300px;
    }
+
+   .contenerdorPedidos{
+    border-radius: 10px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.cardPedidos2{
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    height: 200%;
+}
    
 }
 
@@ -213,6 +252,11 @@ background-color: rgb(35, 43, 43);
     background-attachment: fixed;
 }
 
+.contenerdorPedidos{
+    border-radius: 10px;
+    width: 100%;
+    margin: 0 auto;
+}
     
 }
 
