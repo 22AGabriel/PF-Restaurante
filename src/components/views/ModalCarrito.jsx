@@ -6,20 +6,19 @@ import ItemModal from "./producto/ItemModal";
 import { Suma } from "../helpers/queriesCarrito";
 import { crearPedido } from "../helpers/queriesPedido";
 
-const ModalCarrito = ({carrito,setCarrito,resultado,setResultado }) => {
+const ModalCarrito = ({ carrito, setCarrito, resultado, setResultado }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  useEffect(()=>{
-    setResultado(Suma(carrito))
-    setCarrito(carrito)
-  },[carrito])
- 
+  useEffect(() => {
+    setResultado(Suma(carrito));
+    setCarrito(carrito);
+  }, [carrito]);
+
   return (
     <div>
       <NavLink
-        className={"nav-item nav-link"}
         variant="dark"
         onClick={handleShow}
       >
@@ -45,7 +44,12 @@ const ModalCarrito = ({carrito,setCarrito,resultado,setResultado }) => {
                   {carrito.lenght !== 0 ? (
                     <>
                       {carrito.map((item) => (
-                        <ItemModal producto={item} key={item.id}></ItemModal>
+                        <ItemModal
+                          producto={item}
+                          key={item.id}
+                          carrito={carrito}
+                          setCarrito={setCarrito}
+                        ></ItemModal>
                       ))}
                     </>
                   ) : (

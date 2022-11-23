@@ -59,11 +59,11 @@
       "carrito": [
         {
           "nombreProducto": "medialuna",
-          "precio": 400,
+          "precio": 200,
           "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
           "imagen": "https://images.pexels.com/photos/5779370/pexels-photo-5779370.jpeg?auto=compress&cs=tinysrgb&w=600",
           "categoria": "Sandwich",
-          "cantidad": 2,
+          "cantidad": 1,
           "id": 4
         },
         {
@@ -74,15 +74,6 @@
           "categoria": "Al plato",
           "cantidad": 1,
           "id": 6
-        },
-        {
-          "nombreProducto": "Shawarma",
-          "precio": 400,
-          "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
-          "imagen": "https://images.pexels.com/photos/5779773/pexels-photo-5779773.jpeg?auto=compress&cs=tinysrgb&w=600",
-          "categoria": "Al plato",
-          "cantidad": 1,
-          "id": 7
         }
       ],
       "pedidos": [],
