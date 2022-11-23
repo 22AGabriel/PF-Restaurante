@@ -13,8 +13,8 @@ import "./css/app.css";
 import { useState } from "react";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
-
-import Pedidos from "./components/views/Pedidos";
+import RutasUsuarios from "./components/routes/RutasUsuarios";
+import RutasProtegidasUsuario from "./components/routes/RutasProtegidasUsuario";
 function App() {
   const usuario = JSON.parse(localStorage.getItem("usuarioIniciado")) || {};
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
@@ -30,7 +30,11 @@ function App() {
       <Route exact path="/login" element={<Login/>}/>
       <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>}/>
       <Route exact path="/nosotros" element={<Nosotros/>}/>
-      <Route exact path="/usuario/pedidos" element={<Pedidos usuarioLogueado={usuarioLogueado}></Pedidos>}/>
+     <Route path="/usuario/*" element={
+      <RutasProtegidasUsuario>
+        <RutasUsuarios usuarioLogueado={usuarioLogueado}></RutasUsuarios>
+      </RutasProtegidasUsuario>
+     }></Route>
       <Route path="/administrar/*" element={
         <RutasProtegidas>
           <RutasAdmin></RutasAdmin>

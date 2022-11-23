@@ -26,11 +26,14 @@ const Registro = ({setUsuarioLogueado}) => {
     data.estado = "Activo";
     crearUsuario(data).then((respuesta) => {
       if (respuesta.status === 201) {
-        Swal.fire(
-          `Bienvenido ${data.nombreUsuario}`,
-          "¡ya puedes comprar libremente en nuestra pagina!",
-          "success"
-        );
+        Swal.fire({
+          color: "#fff",
+          background: "#292929", 
+          confirmButtonColor: "#c96752",
+          title: `Bienvenido ${data.nombreUsuario}`,
+          text: "¡ya puedes comprar libremente en nuestra pagina!",
+          icon: "success"
+      });
         localStorage.setItem('usuarioIniciado', JSON.stringify(respuesta))
         setUsuarioLogueado(respuesta);
         reset();
@@ -43,11 +46,13 @@ const Registro = ({setUsuarioLogueado}) => {
         );
       }
     });
-    console.log(data);
   };
 
   return (
     <Container className="bajarFooter">
+      <div className="text-center mt-3">
+          <p>Si ya estas registrado <Button className="bg-rojo3 borde-rojo3"><Login></Login></Button></p>
+          </div>
       <div className="text-center my-5">
         <h1 className="display-4">Registrarse</h1>
       </div>
@@ -153,9 +158,6 @@ const Registro = ({setUsuarioLogueado}) => {
               Registrar
             </Button>
           </Form>
-          <div className="text-center mt-4">
-          <h5>Si ya estas registrado <Button variant="success"><Login></Login></Button></h5>
-          </div>
         </Row>
       </Card>
     </Container>

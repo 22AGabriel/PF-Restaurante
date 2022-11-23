@@ -148,22 +148,6 @@
           ],
           "estado": "Pendiente",
           "fecha": "21/11/2022"
-        },
-        {
-          "usuario": "Josefina",
-          "productos": [
-            {
-              "nombreProducto": "medialuna",
-              "precio": 400,
-              "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
-              "imagen": "https://images.pexels.com/photos/5779370/pexels-photo-5779370.jpeg?auto=compress&cs=tinysrgb&w=600",
-              "categoria": "Sandwich",
-              "cantidad": 2,
-              "id": 4
-            }
-          ],
-          "estado": "Pendiente",
-          "fecha": "21/11/2022"
         }
       ],
       "perfil": "Administrador",
@@ -171,14 +155,14 @@
       "id": 3
     },
     {
-      "nombreUsuario": "Javier",
-      "apellidoUsuario": "Uncos",
-      "email": "javieruncos@gmail.com",
-      "password": "Javier12345",
+      "nombreUsuario": "Gabriel",
+      "apellidoUsuario": "Azubel",
+      "email": "gabriel@gmail.com",
+      "password": "Gabriel22",
       "carrito": [],
       "pedidos": [
         {
-          "usuario": "Javier",
+          "usuario": "Gabriel",
           "productos": [
             {
               "nombreProducto": "medialuna",
@@ -194,7 +178,75 @@
           "fecha": "21/11/2022"
         },
         {
-          "usuario": "Javier",
+          "usuario": "Gabriel",
+          "productos": [
+            {
+              "nombreProducto": "Sfijas ",
+              "precio": 450,
+              "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+              "imagen": "https://images.pexels.com/photos/5779413/pexels-photo-5779413.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "categoria": "Al plato",
+              "cantidad": 1,
+              "id": 6
+            },
+            {
+              "nombreProducto": "medialuna",
+              "precio": 200,
+              "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+              "imagen": "https://images.pexels.com/photos/5779370/pexels-photo-5779370.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "categoria": "Sandwich",
+              "cantidad": 1,
+              "id": 4
+            },
+            {
+              "nombreProducto": "Shawarma",
+              "precio": 400,
+              "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+              "imagen": "https://images.pexels.com/photos/5779773/pexels-photo-5779773.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "categoria": "Al plato",
+              "cantidad": 1,
+              "id": 7
+            }
+          ],
+          "estado": "Pendiente",
+          "fecha": "21/11/2022"
+        },
+        {
+          "usuario": "Gabriel",
+          "productos": [
+            {
+              "nombreProducto": "medialuna",
+              "precio": 200,
+              "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+              "imagen": "https://images.pexels.com/photos/5779370/pexels-photo-5779370.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "categoria": "Sandwich",
+              "cantidad": 1,
+              "id": 4
+            },
+            {
+              "nombreProducto": "Sfijas ",
+              "precio": 450,
+              "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+              "imagen": "https://images.pexels.com/photos/5779413/pexels-photo-5779413.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "categoria": "Al plato",
+              "cantidad": 1,
+              "id": 6
+            },
+            {
+              "nombreProducto": "Shawarma",
+              "precio": 400,
+              "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+              "imagen": "https://images.pexels.com/photos/5779773/pexels-photo-5779773.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "categoria": "Al plato",
+              "cantidad": 1,
+              "id": 7
+            }
+          ],
+          "estado": "Pendiente",
+          "fecha": "22/11/2022"
+        },
+        {
+          "usuario": "Gabriel",
           "productos": [
             {
               "nombreProducto": "medialuna",
@@ -204,20 +256,70 @@
               "categoria": "Sandwich",
               "cantidad": 2,
               "id": 4
+            },
+            {
+              "nombreProducto": "Sfijas ",
+              "precio": 900,
+              "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+              "imagen": "https://images.pexels.com/photos/5779413/pexels-photo-5779413.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "categoria": "Al plato",
+              "cantidad": 2,
+              "id": 6
+            },
+            {
+              "nombreProducto": "Shawarma",
+              "precio": 400,
+              "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+              "imagen": "https://images.pexels.com/photos/5779773/pexels-photo-5779773.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "categoria": "Al plato",
+              "cantidad": 1,
+              "id": 7
             }
           ],
           "estado": "Pendiente",
-          "fecha": "21/11/2022"
+          "fecha": "22/11/2022"
+        },
+        {
+          "usuario": "Gabriel",
+          "productos": [
+            {
+              "nombreProducto": "Shawarma",
+              "precio": 800,
+              "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+              "imagen": "https://images.pexels.com/photos/5779773/pexels-photo-5779773.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "categoria": "Plato",
+              "cantidad": 2,
+              "id": 7
+            }
+          ],
+          "estado": "Pendiente",
+          "fecha": "23/11/2022"
+        },
+        {
+          "usuario": "Gabriel",
+          "productos": [
+            {
+              "nombreProducto": "Shawarma",
+              "precio": 400,
+              "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+              "imagen": "https://images.pexels.com/photos/5779773/pexels-photo-5779773.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "categoria": "Plato",
+              "cantidad": 1,
+              "id": 7
+            }
+          ],
+          "estado": "Pendiente",
+          "fecha": "23/11/2022"
         }
       ],
-      "perfil": "Administrador",
+      "perfil": "Usuario",
       "estado": "Activo",
       "id": 4
     }
   ],
   "pedidos": [
     {
-      "usuario": "Victoria",
+      "usuario": "Gabriel",
       "productos": [
         {
           "nombreProducto": "medialuna",
@@ -234,6 +336,32 @@
       "id": 1
     },
     {
+      "usuario": "Gabriel",
+      "productos": [
+        {
+          "nombreProducto": "medialuna",
+          "precio": 200,
+          "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+          "imagen": "https://images.pexels.com/photos/5779370/pexels-photo-5779370.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "categoria": "Sandwich",
+          "cantidad": 1,
+          "id": 4
+        },
+        {
+          "nombreProducto": "Sfijas ",
+          "precio": 450,
+          "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+          "imagen": "https://images.pexels.com/photos/5779413/pexels-photo-5779413.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "categoria": "Al plato",
+          "cantidad": 1,
+          "id": 6
+        }
+      ],
+      "estado": "Pendiente",
+      "fecha": "22/11/2022",
+      "id": 2
+    },
+    {
       "usuario": "Victoria",
       "productos": [
         {
@@ -244,9 +372,17 @@
           "categoria": "Sandwich",
           "cantidad": 2,
           "id": 4
-        },
+        }
+      ],
+      "estado": "Pendiente",
+      "fecha": "21/11/2022",
+      "id": 3
+    },
+    {
+      "usuario": "Victoria",
+      "productos": [
         {
-          "nombreProducto": "Shawarma",
+          "nombreProducto": "medialuna",
           "precio": 400,
           "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
           "imagen": "https://images.pexels.com/photos/5779370/pexels-photo-5779370.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -255,9 +391,43 @@
           "id": 4
         }
       ],
-      "fecha": "15/11/2022",
       "estado": "Pendiente",
-      "id": 2
+      "fecha": "21/11/2022",
+      "id": 4
+    },
+    {
+      "usuario": "Josefina",
+      "productos": [
+        {
+          "nombreProducto": "medialuna",
+          "precio": 400,
+          "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+          "imagen": "https://images.pexels.com/photos/5779370/pexels-photo-5779370.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "categoria": "Sandwich",
+          "cantidad": 2,
+          "id": 4
+        }
+      ],
+      "estado": "Pendiente",
+      "fecha": "21/11/2022",
+      "id": 5
+    },
+    {
+      "usuario": "Javier",
+      "productos": [
+        {
+          "nombreProducto": "medialuna",
+          "precio": 400,
+          "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+          "imagen": "https://images.pexels.com/photos/5779370/pexels-photo-5779370.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "categoria": "Sandwich",
+          "cantidad": 2,
+          "id": 4
+        }
+      ],
+      "estado": "Pendiente",
+      "fecha": "21/11/2022",
+      "id": 6
     }
   ]
 }

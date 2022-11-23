@@ -1,21 +1,28 @@
 import { Button, Form } from "react-bootstrap";
 
-const ItemPedido = () => {
 
-
-    
-
-
+const ItemPedido = ({ pedido, setPedidos }) => {
 
   return (
     <tr>
-      <td>Pedido</td>
-      <td>JuanPe5</td>
-      <td>dd/mm/aaa</td>
+      <td>
+        <ul>
+          {pedido.productos.map((item,indice) => (
+            <li item={item} key={indice}>
+              {item.nombreProducto} / cantidad: {item.cantidad}
+            </li>))}
+        </ul>
+      </td>
+      <td>{pedido.usuario}</td>
+      <td>{pedido.fecha}</td>
       <td>
         <Form>
           <Form.Group>
-            <Form.Select className="w-select" disabled>
+            <Form.Select
+              id={`${pedido.id}estado`}
+              className="w-select"
+              disabled
+            >
               <option value="Pendiente">Pendiente</option>
               <option value="Realizado">Realizado</option>
             </Form.Select>
