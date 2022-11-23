@@ -33,8 +33,8 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
       editarUsuario(usuario.id, usuario)
     }
   }
-
-  const borrarUnUsuario = () => {
+  
+    const borrarUnUsuario = () => {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: "btn btn-success",
@@ -79,6 +79,7 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
         }
       });
 }
+
   return (
     <tr>
       <td>{usuario.id}</td>

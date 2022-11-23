@@ -31,3 +31,15 @@ export const crearPedido = async() => {
         return false
     }
 }
+
+export const listarPedidos = async()=>{
+    try{
+        const respuesta = await fetch(URL)
+        const listarPedidos = await respuesta.json();
+        console.log(listarPedidos)
+        return listarPedidos;
+    }catch(error){
+        console.log(error)
+        return false;
+    }
+}
