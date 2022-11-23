@@ -13,7 +13,6 @@ const RutasAdmin = () => {
         <Route exact path="/administrar/agregar" element={<AgregarProducto/>}/>
         <Route exact path="/administrar/editar/:id" element={<EditarProducto/>}/>
         </Routes>
-        <Route exact path="/usuario/pedidos" element={<Pedidos/>}/>
         </>
     );
 };

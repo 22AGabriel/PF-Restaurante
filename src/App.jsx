@@ -26,44 +26,18 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar
-        usuarioLogueado={usuarioLogueado}
-        setUsuarioLogueado={setUsuarioLogueado}
-        carrito={carrito}
-        setCarrito={setCarrito}
-        resultado={resultado}
-        setResultado={setResultado}
-      ></NavBar>
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <Inicio
-              carrito={carrito}
-              setCarrito={setCarrito}
-              usuarioLogueado={usuarioLogueado}
-              setUsuarioLogueado={setUsuarioLogueado}
-            ></Inicio>
-          }
-        />
-        <Route exact path="/detalle/:id" element={<DetalleProducto />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route
-          exact
-          path="/registro"
-          element={<Registro setUsuarioLogueado={setUsuarioLogueado} />}
-        />
-        <Route exact path="/nosotros" element={<Nosotros />} />
-        <Route path="/administrar/*" element={
-          <RutasProtegidas>
-            <RutasAdmin></RutasAdmin>
-          </RutasProtegidas>
-        }>
-        </Route>
-        <Route exact path="*" element={<Error404 />} />
-      </Routes>
-      <Footer></Footer>
+     <NavBar usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} carrito={carrito} setCarrito={setCarrito} resultado={resultado} setResultado={setResultado}></NavBar>
+     <Routes>
+      <Route exact path="/" element={<Inicio  carrito={carrito} setCarrito={setCarrito} usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Inicio>}/>
+      <Route exact path="/detalle/:id" element={<DetalleProducto/>}/>
+      <Route exact path="/login" element={<Login/>}/>
+      <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>}/>
+      <Route exact path="/nosotros" element={<Nosotros/>}/>
+      <Route exact path="/usuario/pedidos" element={<Pedidos usuarioLogueado={usuarioLogueado}/>}/>
+  
+      <Route exact path="*" element={<Error404/>}/>
+     </Routes>
+     <Footer></Footer>
     </BrowserRouter>
   );
 }
