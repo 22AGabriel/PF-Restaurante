@@ -42,3 +42,19 @@ export const listarPedidos = async()=>{
         return false;
     }
 }
+
+export const editarPedido = async (id, producto) =>{
+    try{
+        const respuesta = await fetch(URL+'/'+ id,{
+            method:"PUT",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(producto) 
+        });
+    
+    return respuesta;
+    }catch(error){
+        return false;
+    }
+}
