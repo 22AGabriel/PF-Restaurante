@@ -5,13 +5,10 @@ import NavBar from "./components/common/NavBar";
 import Footer from "./components/common/Footer";
 import Inicio from "./components/views/Inicio";
 import DetalleProducto from "./components/views/DetalleProducto";
-import Admin from "./components/views/Admin";
 import Login from "./components/views/Login";
 import Nosotros from "./components/views/Nosotros";
 import Pedidos from "./components/views/Pedidos";
 import Registro from "./components/views/Registro";
-import AgregarProducto from "./components/views/producto/AgregarProducto";
-import EditarProducto from "./components/views/producto/EditarProducto";
 import Error404 from "./components/views/Error404";
 import "./css/app.css";
 import { useState } from "react";
@@ -34,7 +31,12 @@ function App() {
       <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>}/>
       <Route exact path="/nosotros" element={<Nosotros/>}/>
       <Route exact path="/usuario/pedidos" element={<Pedidos usuarioLogueado={usuarioLogueado}/>}/>
-  
+      <Route path="/administrar/*" element={
+        <RutasProtegidas>
+          <RutasAdmin></RutasAdmin>
+        </RutasProtegidas>
+      }>
+      </Route>
       <Route exact path="*" element={<Error404/>}/>
      </Routes>
      <Footer></Footer>
