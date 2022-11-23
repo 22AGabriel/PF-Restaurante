@@ -123,7 +123,7 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
         </Button>
           )
         }
-        <Button className="bg-transparent border">
+        <Button className="bg-transparent border" onClick={borrarUnUsuario}>
           <i className="bi bi-trash text-rojo2"></i>
         </Button>
       </div>
