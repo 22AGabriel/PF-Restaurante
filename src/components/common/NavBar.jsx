@@ -64,7 +64,7 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,result
                     <>
                     {usuarioLogueado.perfil === "Administrador" ?(
                       <>
-                      <NavLink
+                      <NavLink end
                         to="/administrar"
                         className={"nav-item nav-link d-flex align-self-center my-2"}>
                         Administrador
@@ -82,7 +82,7 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,result
                       <div className={"nav-item nav-link align-self-center mt-2"}>
                         <ModalCarrito usuario={usuarioLogueado} carrito={carrito} setCarrito={setCarrito} resultado={resultado} setResultado={setResultado}></ModalCarrito>
                       </div>
-                      <NavLink
+                      <NavLink end
                         to="/usuario/pedidos"
                         className={"nav-item nav-link d-flex align-self-center mb-2"}>
                         Mis pedidos
@@ -99,7 +99,7 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,result
                     </>
                   ) : (
                     <>
-                      <NavLink
+                      <NavLink end
                         to="/registro"
                         className={"nav-item nav-link align-self-center mt-2"}>
                         Registrar
