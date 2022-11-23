@@ -37,7 +37,7 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
     const borrarUnUsuario = () => {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
-        confirmButton: "btn btn-success",
+        confirmButton: "btn bg-rojo2 mx-2",
         cancelButton: "btn btn-danger",
       },
       buttonsStyling: false,
@@ -50,6 +50,8 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
         icon: "warning",
         showCancelButton: true,
         confirmButtonText: "Borrar!",
+        color: "#fff",
+        background: "#292929",
         cancelButtonText: "Cancelar!",
         reverseButtons: true,
       })
@@ -59,11 +61,14 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
             if (respuesta.status === 200) {
               consultarUsuario().then((respuesta) => {
                 setUsuarios(respuesta);
-                swalWithBootstrapButtons.fire(
-                  "Borrado!",
-                  "El usuario ha sido borrado con exito",
-                  "success"
-                )
+                swalWithBootstrapButtons.fire({
+                  color: "#fff",
+                  background: "#292929", 
+                  confirmButtonColor: "#c96752",
+                  title: "Borrado!",
+                  text: "El usuario ha sido borrado con exito",
+                  icon: "success"
+              })
               });
             } 
           });
@@ -71,11 +76,14 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
         else if (
           result.dismiss === Swal.DismissReason.cancel
         ) {
-          swalWithBootstrapButtons.fire(
-            "Cancelado",
-            "Los cambios no fueron realizados",
-            "info"
-          );
+          swalWithBootstrapButtons.fire({
+            color: "#fff",
+            background: "#292929", 
+            confirmButtonColor: "#c96752",
+            title: "Cancelado",
+            text: "Los cambios no fueron realizados",
+            icon: "info"
+        });
         }
       });
 }

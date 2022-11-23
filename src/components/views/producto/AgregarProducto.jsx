@@ -3,16 +3,35 @@ import { Container, Form, Button } from "react-bootstrap";
 import { crearProducto } from "../../helpers/queriesProducto";
 import {useForm} from "react-hook-form"
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const AgregarProducto = () => {
-  const {register, handleSubmit, formState:{errors}} = useForm();
+  const {register, handleSubmit, formState:{errors}, reset} = useForm();
+  const navigate = useNavigate();
+
   const onSubmit =(producto)=>{
     producto.cantidad = 1
     crearProducto(producto).then((respuesta)=>{
       if(respuesta.status === 201){
-       Swal.fire("Producto creado","el producto se creo correctamente","success")
+        Swal.fire({
+          color: "#fff",
+          background: "#292929", 
+          confirmButtonColor: "#c96752",
+          title:"Producto creado",
+          text: "el producto se creo correctamente",
+          icon: "success"
+        })
+        reset()
+        navigate("/administrar")
       }else{
-        Swal.fire("error","el producto no pudo ser creado","error")
+        Swal.fire({
+          color: "#fff",
+          background: "#292929", 
+          confirmButtonColor: "#c96752",
+          title:"Error",
+          text: "El producto no pudo ser creado",
+          icon: "error"
+        })
       }
     })
   }
