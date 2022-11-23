@@ -1,9 +1,10 @@
 import React from "react";
 import { Form, Button, Container, Card, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { crearUsuario } from "../helpers/queriesUsuario";
+import Login from "../views/Login";
 
 
 const Registro = ({setUsuarioLogueado}) => {
@@ -49,6 +50,9 @@ const Registro = ({setUsuarioLogueado}) => {
 
   return (
     <Container className="bajarFooter">
+      <div className="text-center mt-3">
+          <p>Si ya estas registrado <Button className="bg-rojo3 borde-rojo3"><Login></Login></Button></p>
+          </div>
       <div className="text-center my-5">
         <h1 className="display-4">Registrarse</h1>
       </div>
