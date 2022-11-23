@@ -44,6 +44,7 @@ const ModalCarrito = ({usuario, carrito,setCarrito,resultado,setResultado }) => 
         })
       } else {
         crearPedido()
+        setCarrito([])
         Toast.fire({
           icon: 'success',
           title: '¡Tu pedido fue enviado con éxito!'
@@ -66,7 +67,7 @@ const ModalCarrito = ({usuario, carrito,setCarrito,resultado,setResultado }) => 
           <Modal.Title>Carrito de Compra</Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-rojo2">
-          <Table striped bordered hover responsive>
+          <Table className="text-center" striped bordered hover responsive>
             <thead>
               <tr>
                 <th>Producto</th>
@@ -81,7 +82,12 @@ const ModalCarrito = ({usuario, carrito,setCarrito,resultado,setResultado }) => 
                   {carrito.lenght !== 0 ? (
                     <>
                       {carrito.map((item) => (
-                        <ItemModal producto={item} key={item.id}></ItemModal>
+                        <ItemModal
+                          producto={item}
+                          key={item.id}
+                          carrito={carrito}
+                          setCarrito={setCarrito}
+                        ></ItemModal>
                       ))}
                     </>
                   ) : (

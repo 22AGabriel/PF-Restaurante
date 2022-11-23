@@ -129,12 +129,10 @@ const AgregarProducto = () => {
               <Form.Select aria-label="Default select example"
                {...register("categoria",{
                 require:"el campo de la categoria es obligatorio",
-               })}
-              >
-                <Form.Label>Cantidad</Form.Label>
+               })}>
                 <option value="">Menu</option>
                 <option value="Sandwich">Sandwich</option>
-                <option value="Plato">Al plato</option>
+                <option value="Al plato">Al plato</option>
                 <option value="Pures">Pures</option>
                 <option value="Agregados">Agregados</option>
                 <option value="Bebida sin alcohol">Bebidas sin alcohol</option>
