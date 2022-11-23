@@ -1,16 +1,18 @@
 import { Container, Tab, Table, Tabs } from "react-bootstrap";
 import ItemProducto from "./producto/ItemProducto";
 import ItemUsuario from "./usuario/ItemUsuario";
-import ItemPedido from "./producto/ItemPedido";
+import ItemPedido from './producto/ItemPedido';
 import { Link } from "react-router-dom";
 import "../../css/admin.css"
 import { useEffect, useState } from "react";
 import { consultarProducto } from "../helpers/queriesProducto";
 import { consultarUsuario } from "../helpers/queriesUsuario";
+import { listarPedidos } from "../helpers/queriesPedido";
 
 const Admin = () => {
   const [productos, setProductos] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
+  const [pedidos, setPedidos] = useState([]);
 
   useEffect(() => {
     consultarProducto().then((respuesta)=>{
@@ -19,9 +21,10 @@ const Admin = () => {
     consultarUsuario().then((respuesta)=>{
       setUsuarios(respuesta)
     })
-  }, [])
-  
-
+    listarPedidos().then((respuesta)=>{
+      setPedidos(respuesta)
+     })
+  }, []);
 
   return (
     <Container className="my-5 bajarFooter">
@@ -83,7 +86,11 @@ const Admin = () => {
               </tr>
             </thead>
             <tbody>
-              <ItemPedido></ItemPedido>
+              {
+                pedidos.map((pedido)=>
+                <ItemPedido key={pedido.id} pedido={pedido} setPedidos={setPedidos}></ItemPedido>
+                )
+              }
             </tbody>
           </Table>
         </Tab>

@@ -22,7 +22,7 @@ const ModalCarrito = ({ carrito, setCarrito, resultado, setResultado }) => {
         variant="dark"
         onClick={handleShow}
       >
-        <i className="bi bi-cart-plus-fill fs-4 text-light"></i>
+        Carrito <i className="bi bi-cart-plus-fill fs-4 text-light"></i>
       </NavLink>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton className="bg-rojo2">

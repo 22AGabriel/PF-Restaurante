@@ -74,6 +74,15 @@
           "categoria": "Al plato",
           "cantidad": 1,
           "id": 6
+        },
+        {
+          "nombreProducto": "Shawarma",
+          "precio": 400,
+          "detalle": "asdasdasdasnasfafdfdfadfadfadfadfdadfadfadfadfad",
+          "imagen": "https://images.pexels.com/photos/5779773/pexels-photo-5779773.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "categoria": "Al plato",
+          "cantidad": 1,
+          "id": 7
         }
       ],
       "pedidos": [],
