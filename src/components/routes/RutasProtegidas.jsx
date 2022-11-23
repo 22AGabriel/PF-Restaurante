@@ -7,7 +7,7 @@ const RutasProtegidas = ({children}) => {
         return children;
     }else{
         return <Navigate to={'/registro'}></Navigate>
-    } 
+    }
 };
 
 export default RutasProtegidas;
