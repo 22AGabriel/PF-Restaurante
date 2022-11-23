@@ -59,4 +59,4 @@ const CardPedido = ({ pedido }) => {
   );
 };
 
-export default CardPedido;
+export default CardPedido;
