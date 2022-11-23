@@ -1,7 +1,20 @@
 import { Button, Form } from "react-bootstrap";
-
+import { useState } from "react";
 
 const ItemPedido = ({ pedido, setPedidos }) => {
+
+  const [editarPedido, setEditarPedido] = useState('disabled');
+
+  const actualizarPedido = ()=> {
+    let estadoPedido = document.getElementById(`${pedido.id}`);
+    if(editarPedido === 'disabled'){
+      estadoPedido.disabled = false;
+      setEditarPedido('noDisabled');
+    }else{
+      estadoPedido.disabled = true;
+      setEditarPedido('disabled');
+    }
+  }
 
   return (
     <tr>
@@ -19,9 +32,9 @@ const ItemPedido = ({ pedido, setPedidos }) => {
         <Form>
           <Form.Group>
             <Form.Select
-              id={`${pedido.id}estado`}
+              id={`${pedido.id}`}
               className="w-select"
-              disabled
+              disabled 
             >
               <option value="Pendiente">Pendiente</option>
               <option value="Realizado">Realizado</option>
@@ -30,9 +43,24 @@ const ItemPedido = ({ pedido, setPedidos }) => {
         </Form>
       </td>
       <td>
-        <Button className="bg-transparent border">
+        <div className="d-flex">
+          {editarPedido === 'disabled'? (
+            <>
+        <Button className="bg-transparent me-1 border" onClick={actualizarPedido}>
           <i className="bi bi-pencil-square text-rojo4"></i>
         </Button>
+            </>
+          ):(
+            <>
+        <Button className="bg-transparent me-1 border" onClick={actualizarPedido}>
+        <i className="bi bi-check-square text-rojo4"></i>
+        </Button>
+            </>
+          )}
+        <Button className="bg-transparent border">
+          <i className="bi bi-trash text-rojo2"></i>
+        </Button>
+        </div>
       </td>
     </tr>
   );
