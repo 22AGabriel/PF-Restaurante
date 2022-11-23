@@ -1,7 +1,8 @@
 import { Button, Form, } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
-import {editarUsuario, obtenerUsuario} from "../../helpers/queriesUsuario";
+import {borrarUsuario, consultarUsuario, editarUsuario, obtenerUsuario} from "../../helpers/queriesUsuario";
+import Swal from "sweetalert2";
 
 const ItemUsuario = ({setUsuarios, usuario}) => {
   const {register, setValue} = useForm();
@@ -32,6 +33,52 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
       editarUsuario(usuario.id, usuario)
     }
   }
+  
+    const borrarUnUsuario = () => {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger",
+      },
+      buttonsStyling: false,
+    });
+
+    swalWithBootstrapButtons
+      .fire({
+        title: "Estas Seguro?",
+        text: "Los cambios seran irreversibles!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Borrar!",
+        cancelButtonText: "Cancelar!",
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          borrarUsuario(usuario.id).then((respuesta) => {
+            if (respuesta.status === 200) {
+              consultarUsuario().then((respuesta) => {
+                setUsuarios(respuesta);
+                swalWithBootstrapButtons.fire(
+                  "Borrado!",
+                  "El usuario ha sido borrado con exito",
+                  "success"
+                )
+              });
+            } 
+          });
+        }
+        else if (
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            "Cancelado",
+            "Los cambios no fueron realizados",
+            "info"
+          );
+        }
+      });
+}
 
   return (
     <tr>
@@ -76,7 +123,7 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
         </Button>
           )
         }
-        <Button className="bg-transparent border">
+        <Button className="bg-transparent border" onClick={borrarUnUsuario}>
           <i className="bi bi-trash text-rojo2"></i>
         </Button>
       </div>
