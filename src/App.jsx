@@ -32,7 +32,7 @@ function App() {
       <Route exact path="/login" element={<Login/>}/>
       <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>}/>
       <Route exact path="/nosotros" element={<Nosotros/>}/>
-      <Route exact path="/usuario/pedidos" element={<Pedidos usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} />}/>
+      <Route exact path="/usuario/pedidos" element={<Pedidos usuarioLogueado={usuarioLogueado}/>}/>
       <Route exact path="/administrar/agregar" element={<AgregarProducto/>}/>
       <Route exact path="/administrar/editar/:id" element={<EditarProducto/>}/>
       <Route exact path="*" element={<Error404/>}/>
