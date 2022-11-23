@@ -1,7 +1,8 @@
 import { Button, Form } from "react-bootstrap";
 
+
 const ItemPedido = ({ pedido, setPedidos }) => {
- 
+
   return (
     <tr>
       <td>{pedido.productos}</td>
