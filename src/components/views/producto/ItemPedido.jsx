@@ -5,7 +5,14 @@ const ItemPedido = ({ pedido, setPedidos }) => {
 
   return (
     <tr>
-      <td>{pedido.productos}</td>
+      <td>
+        <ul>
+          {pedido.productos.map((item,indice) => (
+            <li item={item} key={indice}>
+              {item.nombreProducto} / cantidad: {item.cantidad}
+            </li>))}
+        </ul>
+      </td>
       <td>{pedido.usuario}</td>
       <td>{pedido.fecha}</td>
       <td>

@@ -3,12 +3,7 @@ import { Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { editarUsuario } from "../helpers/queriesUsuario";
 
-const CardProducto = ({
-  producto,
-  carrito,
-  setCarrito,
-  usuarioLogueado,
-}) => {
+const CardProducto = ({ producto, carrito, setCarrito, usuarioLogueado }) => {
   const editarCarrito = (producto) => {
     const existeProducto = usuarioLogueado.carrito.find(
       (item) => item.id === producto.id
@@ -49,14 +44,17 @@ const CardProducto = ({
               Ver mas
             </Button>
             <Button
-              className="bg-rojo3 text-light buttonCard borde-rojo3"
+              className="bg-rojo3 text-light buttonCard borde-rojo3 position-relative"
               onClick={() => {
                 editarCarrito(producto);
               }}
             >
-              Agregar
               <i className="bi bi-cart-plus-fill">
               </i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+               {carrito.length}
+                <span class="visually-hidden">unread messages</span>
+              </span>
             </Button>
           </div>
         </Card.Body>
