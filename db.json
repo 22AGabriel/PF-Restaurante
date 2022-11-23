@@ -158,4 +158,33 @@
       "perfil": "Usuario",
       "estado": "Activo",
       "id": 4
+    },
+    {
+      "nombreUsuario": "Cielo",
+      "apellidoUsuario": "Palacio",
+      "email": "cielopp5@gmail.com",
+      "password": "Cielo123",
+      "carrito": [],
+      "pedidos": [],
+      "perfil": "Usuario",
+      "estado": "Activo",
+      "id": 8
     }
+  ],
+  "pedidos": [
+    {
+      "usuario": "Cielo",
+      "productos": [],
+      "fecha": "21/11/2022",
+      "estado": "Pendiente",
+      "id": 1
+    },
+    {
+      "usuario": "Victoria",
+      "productos": [],
+      "fecha": "15/11/2022",
+      "estado": "Pendiente",
+      "id": 2
+    }
+  ]
+}
