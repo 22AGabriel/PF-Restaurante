@@ -25,11 +25,14 @@ const Registro = ({setUsuarioLogueado}) => {
     data.estado = "Activo";
     crearUsuario(data).then((respuesta) => {
       if (respuesta.status === 201) {
-        Swal.fire(
-          `Bienvenido ${data.nombreUsuario}`,
-          "¡ya puedes comprar libremente en nuestra pagina!",
-          "success"
-        );
+        Swal.fire({
+          color: "#fff",
+          background: "#292929", 
+          confirmButtonColor: "#c96752",
+          title: `Bienvenido ${data.nombreUsuario}`,
+          text: "¡ya puedes comprar libremente en nuestra pagina!",
+          icon: "success"
+      });
         localStorage.setItem('usuarioIniciado', JSON.stringify(respuesta))
         setUsuarioLogueado(respuesta);
         reset();
@@ -42,7 +45,6 @@ const Registro = ({setUsuarioLogueado}) => {
         );
       }
     });
-    console.log(data);
   };
 
   return (

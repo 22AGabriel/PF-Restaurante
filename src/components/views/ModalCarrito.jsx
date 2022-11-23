@@ -5,24 +5,60 @@ import { Modal, Button, Table } from "react-bootstrap";
 import ItemModal from "./producto/ItemModal";
 import { Suma } from "../helpers/queriesCarrito";
 import { crearPedido } from "../helpers/queriesPedido";
+import Swal from "sweetalert2";
 
-const ModalCarrito = ({ carrito, setCarrito, resultado, setResultado }) => {
+const ModalCarrito = ({usuario, carrito,setCarrito,resultado,setResultado }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  useEffect(() => {
-    setResultado(Suma(carrito));
-    setCarrito(carrito);
-  }, [carrito]);
+  useEffect(()=>{
+    setResultado(Suma(carrito))
+    setCarrito(carrito)
+  },[carrito])
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    color: "#fff",
+    background: "#292929",
+    timer: 5000,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+
+  const verificarUsuario = () => {
+    if(usuario.estado === "Suspendido"){
+      Toast.fire({
+        icon: 'error',
+        title: 'Usuario suspendido, no puedes realizar esta acción'
+      })
+    } else {
+      if(carrito.length < 1){
+        Toast.fire({
+          icon: 'error',
+          title: 'Primero debes agregar productos al carrito'
+        })
+      } else {
+        crearPedido()
+        Toast.fire({
+          icon: 'success',
+          title: '¡Tu pedido fue enviado con éxito!'
+        })
+      }
+    }
+  }
+ 
   return (
     <div>
       <NavLink
         variant="dark"
         onClick={handleShow}
       >
-        Carrito <i className="bi bi-cart-plus-fill fs-4 text-light"></i>
+         <i className="bi bi-cart-plus-fill fs-4 text-light"></i>
       </NavLink>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton className="bg-rojo2">
@@ -66,7 +102,7 @@ const ModalCarrito = ({ carrito, setCarrito, resultado, setResultado }) => {
             </tbody>
           </Table>
           <p>Total del pedido: {resultado}</p>
-          <Button className="w-100 my-2" variant="danger" onClick={crearPedido}>
+          <Button className="w-100 my-2" variant="danger" onClick={verificarUsuario}>
             Enviar pedido
           </Button>
           <Button className="w-100 mt-2" variant="dark" onClick={handleClose}>
