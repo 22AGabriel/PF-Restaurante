@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { editarUsuario } from "../helpers/queriesUsuario";
 
 const CardProducto = ({ producto, carrito, setCarrito, usuarioLogueado }) => {
+  
   const editarCarrito = (producto) => {
     const existeProducto = usuarioLogueado.carrito.find(
       (item) => item.id === producto.id
@@ -15,7 +16,6 @@ const CardProducto = ({ producto, carrito, setCarrito, usuarioLogueado }) => {
       setCarrito([...carrito, producto]);
       usuarioLogueado.carrito.push(producto);
     }
-
     editarUsuario(usuarioLogueado.id, usuarioLogueado);
     localStorage.setItem("usuarioIniciado", JSON.stringify(usuarioLogueado));
   };
@@ -37,24 +37,19 @@ const CardProducto = ({ producto, carrito, setCarrito, usuarioLogueado }) => {
           <Card.Text>Categoria: {producto.categoria}</Card.Text>
           <div className="d-flex justify-content-between">
             <Button
-              className=" bg-rojo3 text-light buttonCard"
+              className=" bg-rojo2 text-light buttonCard"
               as={Link}
               to={`/detalle/${producto.id}`}
             >
               Ver mas
             </Button>
             <Button
-              className="bg-rojo3 text-light buttonCard borde-rojo3 position-relative"
+              className="bg-rojo2 text-light buttonCard"
               onClick={() => {
                 editarCarrito(producto);
               }}
             >
-              <i className="bi bi-cart-plus-fill">
-              </i>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-               {carrito.length}
-                <span class="visually-hidden">unread messages</span>
-              </span>
+              <i className="bi bi-cart-plus-fill"></i>
             </Button>
           </div>
         </Card.Body>
