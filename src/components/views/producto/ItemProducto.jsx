@@ -7,7 +7,7 @@ const ItemProducto = ({producto, setProductos}) => {
     const borrarUnProducto = () => {
         const swalWithBootstrapButtons = Swal.mixin({
           customClass: {
-            confirmButton: "btn btn-success",
+            confirmButton: "btn bg-rojo2 mx-2",
             cancelButton: "btn btn-danger",
           },
           buttonsStyling: false,
@@ -18,6 +18,8 @@ const ItemProducto = ({producto, setProductos}) => {
             title: "Estas Seguro?",
             text: "Los cambios seran irreversibles!",
             icon: "warning",
+            color: "#fff",
+            background: "#292929",
             showCancelButton: true,
             confirmButtonText: "Borrar!",
             cancelButtonText: "Cancelar!",
@@ -29,10 +31,14 @@ const ItemProducto = ({producto, setProductos}) => {
                 if (respuesta.status === 200) {
                   consultarProducto().then((respuesta) => {
                     setProductos(respuesta);
-                    swalWithBootstrapButtons.fire(
-                      "Borrado!",
-                      "Ha sido borrado con exito",
-                      "success"
+                    swalWithBootstrapButtons.fire({
+                      color: "#fff",
+                      background: "#292929", 
+                      confirmButtonColor: "#c96752",
+                      title:"Borrado!",
+                      text: "El producto fue borrado con exito",
+                      icon: "success"
+                    }
                     )
                   });
                 } 
@@ -41,10 +47,14 @@ const ItemProducto = ({producto, setProductos}) => {
             else if (
               result.dismiss === Swal.DismissReason.cancel
             ) {
-              swalWithBootstrapButtons.fire(
-                "Cancelado",
-                "Los cambios no fueron realizados",
-                "info"
+              swalWithBootstrapButtons.fire({
+                color: "#fff",
+                background: "#292929", 
+                confirmButtonColor: "#c96752",
+                title: "Cancelado",
+                text: "Los cambios no fueron realizados",
+                icon: "info"
+              }
               );
             }
           });
