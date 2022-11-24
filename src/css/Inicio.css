@@ -220,6 +220,14 @@
     .colContacto{
         border-right: 2px solid rgba(255, 253, 253, 0); 
     }
+    .cardPedidos2{
+        margin: 0 auto;
+        margin-bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: end; 
+        height: 200%;
+    }
 
 }
 
