@@ -66,7 +66,7 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
                   background: "#292929", 
                   confirmButtonColor: "#c96752",
                   title: "Borrado!",
-                  text: "El usuario ha sido borrado con exito",
+                  text: "El usuario ha sido borrado con éxito",
                   icon: "success"
               })
               });
