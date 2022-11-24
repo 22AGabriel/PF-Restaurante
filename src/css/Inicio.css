@@ -27,8 +27,9 @@
 .CardPP{
     background-color:  #292929;
     color: white;
-    text-decoration: none;
 }
+
+
 
 .CardPP:hover{
    position: relative;
@@ -133,6 +134,7 @@ background-color: rgb(35, 43, 43);
 }
 
 
+
 .contenerdorPedidos{
     border-radius: 10px;
     width: 700px;
@@ -155,6 +157,8 @@ background-color: rgb(35, 43, 43);
     justify-content:flex-end; 
     height: 200%;
 }
+
+
 
 
 @media all and (max-width:540px){
@@ -209,6 +213,8 @@ background-color: rgb(35, 43, 43);
     justify-content: end; 
     height: 200%;
 }
+
+
    
 }
 
