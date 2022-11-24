@@ -30,15 +30,17 @@
 .CardPP{
     background-color:  #292929;
     color: white;
+    border: transparent;
 }
 
 
 
 .CardPP:hover{
-   position: relative;
-   bottom: 7px;
    color:white;
-   background-color: rgba(92, 88, 88, 0.801);
+   border: 1px solid salmon;
+   scale: 1.02;
+    transition: 0.5s ease;
+
 }
 
 .CardPP .buttonCard{
@@ -48,17 +50,19 @@
 
 
 .buttonCard:hover{
-background-color: rgb(35, 43, 43);
+ background-color:salmon;
+ scale: 1.07;
+ transition: 0.5s ease;
 }
 
 
 .imgCardProducto{
-    height: 350px;
+    height: 200px;
     width: 100%;
 }
 
 .imgCardProducto .imgDiv{
-    height: 350px;
+    height: 200px;
     width: 100%;
     object-fit: cover;
 }
@@ -88,7 +92,8 @@ background-color: rgb(35, 43, 43);
 .divCirculo:hover a{
     background-color:  #db8d7b;
     color: rgb(17, 17, 17);
-    transition: 1s ease;
+    transition: 0.5s ease;
+    scale: 1.07;
     
 }
 
@@ -110,6 +115,8 @@ background-color: rgb(35, 43, 43);
 
 .btnLink:hover{
     background-color: #c96752;
+    scale: 1.04;
+    transition: 0.5s ease;
 }
 
 .divWhatsApp{
@@ -208,19 +215,12 @@ background-color: rgb(35, 43, 43);
     border-radius: 10px;
     width: 100%;
     margin: 0 auto;
-}
+    }
 
-.cardPedidos2{
-    margin: 0 auto;
-    margin-bottom: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: end; 
-    height: 200%;
-}
+    .colContacto{
+        border-right: 2px solid rgba(255, 253, 253, 0); 
+    }
 
-
-   
 }
 
 
@@ -271,6 +271,25 @@ background-color: rgb(35, 43, 43);
     
 }
 
+@media all and (max-width:360px){
 
+    .divSearch{
+        width: 100%;
+    }
+
+    .input{
+        height: 40px;
+        width: 100%;
+    }
+
+    .portada3{
+        height: 250px;
+    }
+
+    .divPortada3{
+        height: 250px;
+        margin-bottom: 100px;
+    }
+}
 
 

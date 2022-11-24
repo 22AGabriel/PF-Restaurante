@@ -46,8 +46,8 @@ const Inicio = ({
           <h2 className="tituloCel display-1">Sham</h2>
         </div>
       </div>
-      <div className="container py-5 divPedidos">
-        <div className="w-100 mx-auto my-5">
+      <div className="container py-3 divPedidos">
+        <div className="w-100 mx-auto mt-4">
           <Row>
             <Col md={4}>
               <div className="divCirculo mx-auto">
@@ -104,9 +104,11 @@ const Inicio = ({
           </Row>
         </div>
       </div>
-      <div className=" mb-5 container my-5">
-        <div className=" mx-auto my-5 d-flex  ">
-          <div className=" mx-auto divSearch">
+      <div className=" mb-5 container ">
+      </div>
+      <div className="container">
+        <h1 className="text-center text-light display-3 mb-5">Productos</h1>
+        <div className=" mx-auto divSearch mb-5">
             <div className="d-flex w-100 ">
             <input
                type="text" 
@@ -117,10 +119,6 @@ const Inicio = ({
                />
             </div>
           </div>
-        </div>
-      </div>
-      <div className="container">
-        <h1 className="text-center text-light display-3 my-5">Productos</h1>
         <div>
           <Row>
             {resultado.map((producto) => (
