@@ -2,6 +2,7 @@ import { Container } from "react-bootstrap";
 import "../../css/app.css";
 import CardPedido from "./CardPedido";
 
+
 const Pedidos = ({ usuarioLogueado }) => {
   return (
     <div className="bajarFooter mt-5">

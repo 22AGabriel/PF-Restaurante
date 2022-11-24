@@ -6,7 +6,7 @@ const Contacto = () => {
     <>
     <div className="container" id="whats">
       <Row className="container ">
-        <Col md={6}>
+        <Col md={6} className="colContacto">
            <div className="mt-5">
            <ul className="ulUbicacion text-center">
             <li className="display-6">Consultas</li>
@@ -25,7 +25,7 @@ const Contacto = () => {
     <div className="bg-black py-4 divisorContacto"></div>
     <div className="container">
       <Row className="container">
-        <Col md={6}>
+        <Col md={6} className="colContacto">
            <div className="mt-5">
            <ul className="ulUbicacion">
             <li className="display-6">Consultas</li>

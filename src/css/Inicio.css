@@ -24,11 +24,15 @@
     display: none;
 }
 
+
+
+
 .CardPP{
     background-color:  #292929;
     color: white;
-    text-decoration: none;
 }
+
+
 
 .CardPP:hover{
    position: relative;
@@ -48,7 +52,19 @@ background-color: rgb(35, 43, 43);
 }
 
 
+.imgCardProducto{
+    height: 350px;
+    width: 100%;
+}
 
+.imgCardProducto .imgDiv{
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* ***************************** */
 .divSearch{
     height: 40px;
     width: 500px;
@@ -120,18 +136,9 @@ background-color: rgb(35, 43, 43);
     background-attachment: fixed;
 }
 
-
-.imgCardProducto{
-    height: 350px;
-    width: 100%;
+.colContacto{
+    border-right: 2px solid rgba(255, 253, 253, 0.671); 
 }
-
-.imgCardProducto .imgDiv{
-    height: 350px;
-    width: 100%;
-    object-fit: cover;
-}
-
 
 .contenerdorPedidos{
     border-radius: 10px;
@@ -155,6 +162,8 @@ background-color: rgb(35, 43, 43);
     justify-content:flex-end; 
     height: 200%;
 }
+
+
 
 
 @media all and (max-width:540px){
@@ -209,6 +218,8 @@ background-color: rgb(35, 43, 43);
     justify-content: end; 
     height: 200%;
 }
+
+
    
 }
 
