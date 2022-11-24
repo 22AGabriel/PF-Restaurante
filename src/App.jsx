@@ -15,6 +15,7 @@ import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
 import RutasUsuarios from "./components/routes/RutasUsuarios";
 import RutasProtegidasUsuario from "./components/routes/RutasProtegidasUsuario";
+
 function App() {
   const usuario = JSON.parse(localStorage.getItem("usuarioIniciado")) || {};
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
