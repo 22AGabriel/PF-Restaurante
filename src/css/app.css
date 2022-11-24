@@ -72,3 +72,13 @@ body{
     background-color: white;
     color: black;
 }
+
+.w-error{
+    width: 40%;
+}
+
+@media all and (max-width:991px){
+    .w-error{
+        width: 100%;
+    }
+}
