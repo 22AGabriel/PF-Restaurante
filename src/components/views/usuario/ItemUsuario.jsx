@@ -126,9 +126,11 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
         </Button>
             </>
           ) : (
+            <>
         <Button className="bg-transparent me-1 border" onClick={updateUser}>
         <i className="bi bi-check-square text-rojo4"></i>
         </Button>
+            </>
           )
         }
         <Button className="bg-transparent border" onClick={borrarUnUsuario}>
