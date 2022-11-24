@@ -70,3 +70,13 @@ export const obtenerPedido = async (id) =>{
         return false;
     }
 }
+export const eliminarPedido = async (id)=>{
+    try {
+        const nuevoPedido = await fetch(URL +'/'+id,{
+            method: 'DELETE',
+        });
+        return nuevoPedido;
+    } catch (error) {
+        return false;
+    }
+}
