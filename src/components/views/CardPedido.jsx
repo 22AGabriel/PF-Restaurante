@@ -2,8 +2,12 @@ import React from "react";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { Button, Container } from "react-bootstrap";
+import { rehacerPedido } from "../helpers/queriesPedido";
 
 const CardPedido = ({ pedido }) => {
+   const reciclarPedido = ()=>{
+    rehacerPedido(pedido.productos)
+   }
   return (
     <>
       <Container className="bajarFooter">
@@ -28,26 +32,11 @@ const CardPedido = ({ pedido }) => {
                 placement={placement}
                 overlay={
                   <Tooltip id={`tooltip`}>
-                    <p>Agregar al carrito</p>
-                  </Tooltip>
-                }
-              >
-                <Button className="text-rojo1 btn-light mx-3" size="sm">
-                  <i className="bi bi-bag-plus fs-2"></i>
-                </Button>
-              </OverlayTrigger>
-            ))}
-            {["top"].map((placement) => (
-              <OverlayTrigger
-                key={placement}
-                placement={placement}
-                overlay={
-                  <Tooltip id={`tooltip`}>
                     <p>Volver a pedir</p>
                   </Tooltip>
                 }
               >
-                <Button className="text-rojo1 btn-light" size="sm">
+                <Button className="text-rojo1 btn-light" size="sm" onClick={reciclarPedido}>
                   <i className="bi bi-arrow-repeat fs-2"></i>
                 </Button>
               </OverlayTrigger>
