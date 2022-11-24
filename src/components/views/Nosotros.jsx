@@ -2,7 +2,6 @@ import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import "../../css/nosotros.css"
 import JavierUncos from "../../img/JavierUncos.jpg";
 import GabrielAzubel from "../../img/GabrielAzubel.jpg";
-import LopezNazarena from "../../img/LopezNazarena.jpg";
 import JosefinaDaoua from "../../img/JosefinaDaoua.jpg";
 import VictoriaPalacio from "../../img/VictoriaPalacio.jpg";
 
@@ -27,7 +26,7 @@ const Nosotros = () => {
         </Col>
       </Row>
       <Row className="my-5 d-flex justify-content-center">
-        <Col md={4} lg={2} className="mb-3">
+        <Col md={6} lg={3} className="mb-3">
           <Card className="Card border-0 bg-transparent">
             <Card.Img className="imgNosotros" src={JavierUncos} alt="Uncos Javier" />
             <Card.Body className="description text-center">
@@ -41,24 +40,7 @@ const Nosotros = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col md={4} lg={2} className="mb-3">
-          <Card className="Card border-0 bg-transparent">
-            <Card.Img className="imgNosotros" src={LopezNazarena} alt="Lopez Nazarena" />
-            <Card.Body className="description text-center">
-              <div className="text-white">
-                <Card.Title>Lopez Nazarena</Card.Title>
-                <Card.Text>Est. Programación FullStack</Card.Text>
-                <Card.Link className="text-rojo2" href="https://www.linkedin.com/in/nazarena-lopez-1087a921a/" target="_blank">
-                  <i className="bi bi-linkedin"></i>
-                </Card.Link>
-                <Card.Link className="text-rojo2" href="https://github.com/LopezNazarena" target="_blank">
-                  <i className="bi bi-github"></i>
-                </Card.Link>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={4} lg={2} className="mb-3">
+        <Col md={6} lg={3} className="mb-3">
           <Card className="Card border-0 bg-transparent">
             <Card.Img className="imgNosotros" src={VictoriaPalacio} alt="Palacio Fernandez Victoria" />
             <Card.Body className="description text-center">
@@ -75,7 +57,7 @@ const Nosotros = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col md={4} lg={2} className="mb-3">
+        <Col md={6} lg={3} className="mb-3">
           <Card className="Card border-0 bg-transparent">
             <Card.Img className="imgNosotros" src={JosefinaDaoua} alt="Daoua Josefina"/>
             <Card.Body className="description text-center">
@@ -92,7 +74,7 @@ const Nosotros = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col md={4} lg={2} className="mb-3">
+        <Col md={6} lg={3} className="mb-3">
           <Card className="Card border-0 bg-transparent">
             <Card.Img className="imgNosotros" src={GabrielAzubel} alt="Azubel Cristian Gabriel" />
             <Card.Body className="description text-center">

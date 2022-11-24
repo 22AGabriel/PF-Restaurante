@@ -19,9 +19,7 @@ Proyecto grupal N° 3 de RollingCode School
 - Palacio Fernandez Victoria
 - Daoua Josefina
 - Uncos Javier
-- Lopez Nazarena
 - Azubel Cristian Gabriel
-
 
 - ## Comandos para ejecutar JSON-Server
 
