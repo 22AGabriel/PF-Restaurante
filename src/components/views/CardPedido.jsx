@@ -4,9 +4,15 @@ import Tooltip from "react-bootstrap/Tooltip";
 import { Button, Container } from "react-bootstrap";
 import { rehacerPedido } from "../helpers/queriesPedido";
 
-const CardPedido = ({ pedido }) => {
+const CardPedido = ({ pedido,setArregloPedidos }) => {
    const reciclarPedido = ()=>{
-    rehacerPedido(pedido.productos)
+    rehacerPedido(pedido.productos).then((respuesta)=>{
+      console.log(respuesta)
+      if(respuesta.status === 201){
+        let usuario = JSON.parse(localStorage.getItem("usuarioIniciado"))
+        setArregloPedidos(usuario.pedidos)
+      }
+    })
    }
   return (
     <>
