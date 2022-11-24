@@ -1,12 +1,12 @@
 import { editarUsuario } from "./queriesUsuario";
 const URL = process.env.REACT_APP_API_PEDIDOS;
 const fecha = new Date();
+const dia = fecha.getDate()
+const mes = fecha.getMonth()
+const year = fecha.getFullYear()
+let usuario = JSON.parse(localStorage.getItem("usuarioIniciado"))
 
 export const crearPedido = async() => {
-    let usuario = JSON.parse(localStorage.getItem("usuarioIniciado"))
-    const dia = fecha.getDate()
-    const mes = fecha.getMonth()
-    const year = fecha.getFullYear()
     let pedido = {}
     pedido.usuario = usuario.nombreUsuario;
     pedido.productos = usuario.carrito;
@@ -21,7 +21,7 @@ export const crearPedido = async() => {
             },
             body:JSON.stringify(pedido)
         })
-        usuario.pedidos.push(pedido)
+        usuario.pedidos.unshift(pedido)
         usuario.carrito = []
         editarUsuario(usuario.id,usuario)
         localStorage.setItem('usuarioIniciado', JSON.stringify(usuario));
@@ -78,5 +78,32 @@ export const eliminarPedido = async (id)=>{
         return nuevoPedido;
     } catch (error) {
         return false;
+    }
+}
+
+
+export const rehacerPedido =async (productos)=>{
+    let pedido = {}
+    pedido.usuario = usuario.nombreUsuario;
+    pedido.productos = productos;
+    pedido.estado = "Pendiente";
+    pedido.fecha = `${dia}/${mes+1}/${year}`
+
+    try {
+        const nuevoPedido = await fetch(URL,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(pedido)
+        })
+        usuario.pedidos.unshift(pedido)
+        usuario.carrito = []
+        editarUsuario(usuario.id,usuario)
+        localStorage.setItem('usuarioIniciado', JSON.stringify(usuario));
+        return nuevoPedido
+    } catch (error) {
+        console.log(error)
+        return false
     }
 }
