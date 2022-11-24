@@ -1,18 +1,33 @@
 import { Button, Form } from "react-bootstrap";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { obtenerPedido, editarPedido } from "../../helpers/queriesPedido";
+import { useEffect } from "react";
 
 const ItemPedido = ({ pedido, setPedidos }) => {
+  const {register, setValue} = useForm();
+  
+  const [updatePedido, setUpdatePedido] = useState('disabled');
 
-  const [editarPedido, setEditarPedido] = useState('disabled');
+  useEffect(() => {
+    obtenerPedido(pedido.id).then((respuesta)=>{
+      if(respuesta.status === 200){
+        setValue('estado', respuesta.dato.estado)
+      }
+    })
+  }, [])
+  
 
   const actualizarPedido = ()=> {
     let estadoPedido = document.getElementById(`${pedido.id}`);
-    if(editarPedido === 'disabled'){
+    if(updatePedido === 'disabled'){
       estadoPedido.disabled = false;
-      setEditarPedido('noDisabled');
+      setUpdatePedido('noDisabled');
     }else{
       estadoPedido.disabled = true;
-      setEditarPedido('disabled');
+      setUpdatePedido('disabled');
+      pedido.estado = estadoPedido.value;
+      editarPedido(pedido.id, pedido)
     }
   }
 
@@ -34,8 +49,9 @@ const ItemPedido = ({ pedido, setPedidos }) => {
             <Form.Select
               id={`${pedido.id}`}
               className="w-select"
-              disabled 
-            >
+              disabled {...register("estado",{
+                required: true
+              })}>
               <option value="Pendiente">Pendiente</option>
               <option value="Realizado">Realizado</option>
             </Form.Select>
@@ -44,7 +60,7 @@ const ItemPedido = ({ pedido, setPedidos }) => {
       </td>
       <td>
         <div className="d-flex">
-          {editarPedido === 'disabled'? (
+          {updatePedido === 'disabled'? (
             <>
         <Button className="bg-transparent me-1 border" onClick={actualizarPedido}>
           <i className="bi bi-pencil-square text-rojo4"></i>

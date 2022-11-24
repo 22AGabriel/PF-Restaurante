@@ -58,3 +58,15 @@ export const editarPedido = async (id, producto) =>{
         return false;
     }
 }
+export const obtenerPedido = async (id) =>{
+    try {
+        const obtenerPedido = await fetch (URL + `/${id}` );
+        const pedidoEncontrado = {
+            dato : await obtenerPedido.json(),
+            status: obtenerPedido.status,
+        };
+        return pedidoEncontrado;
+    } catch (error) {
+        return false;
+    }
+}
