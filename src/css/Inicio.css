@@ -37,7 +37,7 @@
 
 .CardPP:hover{
    color:white;
-   border: 1px solid salmon;
+   border: 1px solid #c96752;
    scale: 1.02;
     transition: 0.5s ease;
 

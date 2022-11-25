@@ -10,7 +10,7 @@ import { Link, NavLink, useNavigate} from 'react-router-dom';
 import ModalCarrito from '../views/ModalCarrito';
 
 
-const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,resultado,setResultado}) => {
+const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,resultado,setResultado, setArregloPedidos}) => {
   const navigate = useNavigate();
 
   const logout = () => {
@@ -80,7 +80,7 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,result
                     ):(
                       <>
                       <div className={"nav-item nav-link align-self-center mt-2"}>
-                        <ModalCarrito usuario={usuarioLogueado} carrito={carrito} setCarrito={setCarrito} resultado={resultado} setResultado={setResultado}></ModalCarrito>
+                        <ModalCarrito usuario={usuarioLogueado} carrito={carrito} setCarrito={setCarrito} resultado={resultado} setResultado={setResultado} setArregloPedidos={setArregloPedidos}></ModalCarrito>
                       </div>
                       <NavLink end
                         to="/usuario/pedidos"

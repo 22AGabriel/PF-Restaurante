@@ -21,10 +21,11 @@ function App() {
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
   const [resultado, setResultado] = useState(0);
   const [carrito, setCarrito] = useState(usuario.carrito);
+  const [arregloPedidos, setArregloPedidos] = useState(usuarioLogueado.pedidos);
 
   return (
     <BrowserRouter>
-     <NavBar usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} carrito={carrito} setCarrito={setCarrito} resultado={resultado} setResultado={setResultado}></NavBar>
+     <NavBar usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} carrito={carrito} setCarrito={setCarrito} resultado={resultado} setResultado={setResultado} setArregloPedidos={setArregloPedidos}></NavBar>
      <Routes>
       <Route exact path="/" element={<Inicio  carrito={carrito} setCarrito={setCarrito} usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Inicio>}/>
       <Route exact path="/detalle/:id" element={<DetalleProducto/>}/>
@@ -33,7 +34,7 @@ function App() {
       <Route exact path="/nosotros" element={<Nosotros/>}/>
      <Route path="/usuario/*" element={
       <RutasProtegidasUsuario>
-        <RutasUsuarios usuarioLogueado={usuarioLogueado}></RutasUsuarios>
+        <RutasUsuarios usuarioLogueado={usuarioLogueado} arregloPedidos={arregloPedidos} setArregloPedidos={setArregloPedidos}></RutasUsuarios>
       </RutasProtegidasUsuario>
      }></Route>
       <Route path="/administrar/*" element={

@@ -24,7 +24,7 @@ const Admin = () => {
     listarPedidos().then((respuesta)=>{
       setPedidos(respuesta)
      })
-  }, []);
+  }, [productos, usuarios, pedidos]);
 
   return (
     <Container className="my-5 bajarFooter">
@@ -52,7 +52,7 @@ const Admin = () => {
             </thead>
             <tbody>
               {
-                productos.map((producto)=><ItemProducto key={producto.id} producto={producto} setProductos={setProductos}></ItemProducto> )
+                productos.map((producto)=><ItemProducto key={producto._id} producto={producto} setProductos={setProductos}></ItemProducto> )
               }
             </tbody>
           </Table>
@@ -70,7 +70,7 @@ const Admin = () => {
               </tr>
             </thead>
             <tbody>
-              {usuarios.map((usuario)=><ItemUsuario key={usuario.id} usuario={usuario} setUsuarios={setUsuarios}></ItemUsuario>)}
+              {usuarios.map((usuario)=><ItemUsuario key={usuario._id} usuario={usuario} setUsuarios={setUsuarios}></ItemUsuario>)}
             </tbody>
           </Table>
         </Tab>
@@ -88,7 +88,7 @@ const Admin = () => {
             <tbody>
               {
                 pedidos.map((pedido)=>
-                <ItemPedido key={pedido.id} pedido={pedido} setPedidos={setPedidos}></ItemPedido>
+                <ItemPedido key={pedido._id} pedido={pedido} setPedidos={setPedidos}></ItemPedido>
                 )
               }
             </tbody>

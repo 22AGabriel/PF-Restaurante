@@ -1,7 +1,7 @@
 import { Button, Form } from "react-bootstrap";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { obtenerPedido, editarPedido, eliminarPedido } from "../../helpers/queriesPedido";
+import { obtenerPedido, editarPedido, eliminarPedido, listarPedidos } from "../../helpers/queriesPedido";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
 
@@ -11,7 +11,7 @@ const ItemPedido = ({ pedido, setPedidos }) => {
   const [updatePedido, setUpdatePedido] = useState('disabled');
 
   useEffect(() => {
-    obtenerPedido(pedido.id).then((respuesta)=>{
+    obtenerPedido(pedido._id).then((respuesta)=>{
       if(respuesta.status === 200){
         setValue('estado', respuesta.dato.estado)
       }
@@ -20,7 +20,7 @@ const ItemPedido = ({ pedido, setPedidos }) => {
   
 
   const actualizarPedido = ()=> {
-    let estadoPedido = document.getElementById(`${pedido.id}`);
+    let estadoPedido = document.getElementById(`${pedido._id}`);
     if(updatePedido === 'disabled'){
       estadoPedido.disabled = false;
       setUpdatePedido('noDisabled');
@@ -28,7 +28,7 @@ const ItemPedido = ({ pedido, setPedidos }) => {
       estadoPedido.disabled = true;
       setUpdatePedido('disabled');
       pedido.estado = estadoPedido.value;
-      editarPedido(pedido.id, pedido)
+      editarPedido(pedido._id, pedido)
     }
   }
   
@@ -55,9 +55,9 @@ const ItemPedido = ({ pedido, setPedidos }) => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          eliminarPedido(pedido.id).then((respuesta) => {
+          eliminarPedido(pedido._id).then((respuesta) => {
             if (respuesta.status === 200) {
-              obtenerPedido().then((respuesta) => {
+              listarPedidos().then((respuesta) => {
                 setPedidos(respuesta);
                 swalWithBootstrapButtons.fire({
                   color: "#fff",
@@ -102,7 +102,7 @@ const ItemPedido = ({ pedido, setPedidos }) => {
         <Form>
           <Form.Group>
             <Form.Select
-              id={`${pedido.id}`}
+              id={`${pedido._id}`}
               className="w-select"
               disabled {...register("estado",{
                 required: true
