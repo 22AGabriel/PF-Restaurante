@@ -26,6 +26,7 @@ const Registro = ({setUsuarioLogueado}) => {
     data.estado = "Activo";
     crearUsuario(data).then((respuesta) => {
       if (respuesta.status === 201) {
+        console.log(data)
         Swal.fire({
           color: "#fff",
           background: "#292929", 

@@ -6,10 +6,10 @@ const ItemModal = ({producto, setCarrito}) => {
   
     const borrarProductosCarrito = (producto)=>{
       let usuario = JSON.parse(localStorage.getItem("usuarioIniciado"))
-      let carritoNuevo = usuario.carrito.filter((item)=>item.id !== producto.id);
+      let carritoNuevo = usuario.carrito.filter((item)=>item._id !== producto._id);
       usuario.carrito = carritoNuevo
       setCarrito(usuario.carrito)
-      editarUsuario(usuario.id,usuario)
+      editarUsuario(usuario._id,usuario)
       localStorage.setItem('usuarioIniciado', JSON.stringify(usuario));
   }
 

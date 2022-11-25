@@ -27,7 +27,7 @@ const ItemProducto = ({producto, setProductos}) => {
           })
           .then((result) => {
             if (result.isConfirmed) {
-              borrarProducto(producto.id).then((respuesta) => {
+              borrarProducto(producto._id).then((respuesta) => {
                 if (respuesta.status === 200) {
                   consultarProducto().then((respuesta) => {
                     setProductos(respuesta);
@@ -61,7 +61,7 @@ const ItemProducto = ({producto, setProductos}) => {
       };
     return (
         <tr>
-            <td>{producto.id}</td>
+            <td>{producto._id}</td>
             <td>{producto.nombreProducto}</td>
             <td>{producto.precio}</td>
             <td>{producto.detalle}</td>
@@ -69,7 +69,7 @@ const ItemProducto = ({producto, setProductos}) => {
             <td className="text-truncate w-url">{producto.imagen}</td>
             <td>
                 <div className="d-flex">
-                    <Link to={`/administrar/editar/${producto.id}`} className="me-1 btn border">
+                    <Link to={`/administrar/editar/${producto._id}`} className="me-1 btn border">
                         <i className="bi bi-pencil-square text-rojo4"></i>
                     </Link>
                     <Button className="bg-transparent border" onClick={borrarUnProducto}>
