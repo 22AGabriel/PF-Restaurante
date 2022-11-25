@@ -7,7 +7,7 @@ const CardProducto = ({ producto, carrito, setCarrito, usuarioLogueado }) => {
   
   const editarCarrito = (producto) => {
     const existeProducto = usuarioLogueado.carrito.find(
-      (item) => item.id === producto.id
+      (item) => item._id === producto._id
     );
     if (existeProducto) {
       existeProducto.cantidad += 1;
@@ -16,7 +16,7 @@ const CardProducto = ({ producto, carrito, setCarrito, usuarioLogueado }) => {
       setCarrito([...carrito, producto]);
       usuarioLogueado.carrito.push(producto);
     }
-    editarUsuario(usuarioLogueado.id, usuarioLogueado);
+    editarUsuario(usuarioLogueado._id, usuarioLogueado);
     localStorage.setItem("usuarioIniciado", JSON.stringify(usuarioLogueado));
   };
 
@@ -39,7 +39,7 @@ const CardProducto = ({ producto, carrito, setCarrito, usuarioLogueado }) => {
             <Button
               className=" bg-rojo2 text-light buttonCard"
               as={Link}
-              to={`/detalle/${producto.id}`}
+              to={`/detalle/${producto._id}`}
             >
               Ver mas
             </Button>

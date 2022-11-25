@@ -7,7 +7,7 @@ import { Suma } from "../helpers/queriesCarrito";
 import { crearPedido } from "../helpers/queriesPedido";
 import Swal from "sweetalert2";
 
-const ModalCarrito = ({usuario, carrito,setCarrito,resultado,setResultado }) => {
+const ModalCarrito = ({usuario, carrito,setCarrito,resultado,setResultado, setArregloPedidos}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -43,11 +43,14 @@ const ModalCarrito = ({usuario, carrito,setCarrito,resultado,setResultado }) => 
           title: 'Primero debes agregar productos al carrito'
         })
       } else {
-        crearPedido()
-        setCarrito([])
-        Toast.fire({
-          icon: 'success',
-          title: '¡Tu pedido fue enviado con éxito!'
+        crearPedido().then(() =>{
+            let usuario = JSON.parse(localStorage.getItem("usuarioIniciado"))
+            setArregloPedidos(usuario.pedidos)
+            setCarrito([])
+            Toast.fire({
+              icon: 'success',
+              title: '¡Tu pedido fue enviado con éxito!'
+            })
         })
       }
     }
@@ -84,7 +87,7 @@ const ModalCarrito = ({usuario, carrito,setCarrito,resultado,setResultado }) => 
                       {carrito.map((item) => (
                         <ItemModal
                           producto={item}
-                          key={item.id}
+                          key={item._id}
                           carrito={carrito}
                           setCarrito={setCarrito}
                         ></ItemModal>

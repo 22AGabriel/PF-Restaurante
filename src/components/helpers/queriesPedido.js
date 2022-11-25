@@ -9,10 +9,11 @@ let usuario = JSON.parse(localStorage.getItem("usuarioIniciado"))
 export const crearPedido = async() => {
     let pedido = {}
     pedido.usuario = usuario.nombreUsuario;
+    console.log(usuario.carrito)
     pedido.productos = usuario.carrito;
     pedido.estado = "Pendiente";
     pedido.fecha = `${dia}/${mes+1}/${year}`
-
+    console.log(pedido)
     try {
         const nuevoPedido = await fetch(URL,{
             method:"POST",
@@ -23,7 +24,7 @@ export const crearPedido = async() => {
         })
         usuario.pedidos.unshift(pedido)
         usuario.carrito = []
-        editarUsuario(usuario.id,usuario)
+        editarUsuario(usuario._id,usuario)
         localStorage.setItem('usuarioIniciado', JSON.stringify(usuario));
         return nuevoPedido
     } catch (error) {
@@ -99,7 +100,7 @@ export const rehacerPedido =async (productos)=>{
         })
         usuario.pedidos.unshift(pedido)
         usuario.carrito = []
-        editarUsuario(usuario.id,usuario)
+        editarUsuario(usuario._id,usuario)
         localStorage.setItem('usuarioIniciado', JSON.stringify(usuario));
         return nuevoPedido
     } catch (error) {

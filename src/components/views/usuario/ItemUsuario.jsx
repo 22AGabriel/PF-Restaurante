@@ -9,7 +9,7 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
   const [editar, setEditar] = useState("disabled")
   
   useEffect(() => {
-    obtenerUsuario(usuario.id).then((respuesta)=>{
+    obtenerUsuario(usuario._id).then((respuesta)=>{
       if(respuesta.status === 200){
         setValue('estado', respuesta.dato.estado)
         setValue('perfil', respuesta.dato.perfil)
@@ -18,8 +18,8 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
   }, [])
   
   const updateUser = () => {
-    let estado = document.getElementById(`${usuario.id}estado`)
-    let perfil = document.getElementById(`${usuario.id}perfil`)
+    let estado = document.getElementById(`${usuario._id}estado`)
+    let perfil = document.getElementById(`${usuario._id}perfil`)
     if(editar === "disabled"){
       estado.disabled = false
       perfil.disabled = false
@@ -30,7 +30,7 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
       setEditar("disabled")
       usuario.estado = estado.value
       usuario.perfil = perfil.value
-      editarUsuario(usuario.id, usuario)
+      editarUsuario(usuario._id, usuario)
     }
   }
   
@@ -57,7 +57,7 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          borrarUsuario(usuario.id).then((respuesta) => {
+          borrarUsuario(usuario._id).then((respuesta) => {
             if (respuesta.status === 200) {
               consultarUsuario().then((respuesta) => {
                 setUsuarios(respuesta);
@@ -90,13 +90,13 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
 
   return (
     <tr>
-      <td>{usuario.id}</td>
+      <td>{usuario._id}</td>
       <td>{usuario.nombreUsuario}</td>
       <td>{usuario.email}</td>
       <td>
         <Form>
           <Form.Group>
-            <Form.Select id={`${usuario.id}perfil`} className="w-select" disabled {...register("perfil",{
+            <Form.Select id={`${usuario._id}perfil`} className="w-select" disabled {...register("perfil",{
                 required: true
                })}>
                 <option value="Administrador">Administrador</option>
@@ -108,7 +108,7 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
       <td>
         <Form>
           <Form.Group>
-            <Form.Select id={`${usuario.id}estado`} className="w-select" disabled {...register("estado",{
+            <Form.Select id={`${usuario._id}estado`} className="w-select" disabled {...register("estado",{
                 required: true
                })}>
                 <option value="Activo">Activo</option>
