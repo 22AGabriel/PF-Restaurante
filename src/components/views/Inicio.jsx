@@ -61,7 +61,7 @@ const Inicio = ({
                   Llamanos a nuestros telefonos fijos y registramos tu pedido
                 </p>
                 <a href="#whats" className="btn bg-rojo3 text-light btnLink">
-                  Nuestros telefono
+                  Nuestros teléfonos
                 </a>
               </div>
             </Col>
@@ -74,11 +74,11 @@ const Inicio = ({
               <div className="d-flex flex-column text-center mx-auto  mt-3">
                 <h4 className="text-center">Consultá precios</h4>
                 <p>
-                  sumanos a tus contactos y te asesoramos sobre los costos de
-                  envio
+                  Sumanos a tus contactos y te asesoramos sobre los costos de
+                  envío
                 </p>
                 <a href="#whats" className="btn bg-rojo3 text-light btnLink">
-                  Nuestros telefono
+                  Nuestros teléfonos
                 </a>
               </div>
             </Col>
@@ -91,7 +91,7 @@ const Inicio = ({
               <div className="d-flex flex-column text-center mx-auto  mt-3">
                 <h4 className="text-center">Visitanos</h4>
                 <p>
-                  Visitanos en nuestro local y conocenos te estamos esperando
+                  Visitanos en nuestro local y conocenos, te estamos esperando
                 </p>
                 <a
                   href="#ubicacion"
@@ -138,7 +138,7 @@ const Inicio = ({
       <div className="portada3  mt-5">
         <div className="divPortada3">
           <h1 className="display-5 text-light">
-            Descubri nuestras especialidades
+            Descubrí nuestras especialidades
           </h1>
           <h2 className="tituloCel display-3">Haz tu pedido</h2>
         </div>

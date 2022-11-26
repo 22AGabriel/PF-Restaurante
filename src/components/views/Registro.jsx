@@ -51,7 +51,7 @@ const Registro = ({setUsuarioLogueado}) => {
   return (
     <Container className="bajarFooter">
       <div className="text-center mt-3">
-          <p>Si ya estas registrado <Button className="bg-rojo3 borde-rojo3"><Login></Login></Button></p>
+          <p>Si ya estás registrado <Button className="bg-rojo3 borde-rojo3"><Login></Login></Button></p>
           </div>
       <div className="text-center my-5">
         <h1 className="display-4">Registrarse</h1>
@@ -66,13 +66,13 @@ const Registro = ({setUsuarioLogueado}) => {
                 type="text"
                 placeholder="Ej: Juan Martin"
                 {...register("nombreUsuario", {
-                  required: "el nombre de usuario es obligatoria",
+                  required: "El nombre de usuario es obligatorio",
                   minLength: {
                     value: 3,
-                    message: "la cantidad minima de caracteres es de 3",
+                    message: "La cantidad mínima de caracteres es de 3",
                   },
                   maxLength: 30,
-                  message: "la cantidad maxima de caracteres es de 30",
+                  message: "La cantidad máxima de caracteres es de 30",
                 })}
               />
               <Form.Text className="text-danger">
@@ -87,13 +87,13 @@ const Registro = ({setUsuarioLogueado}) => {
                 type="text"
                 placeholder="Ej: Ponce"
                 {...register("apellidoUsuario", {
-                  required: "el apellido es obligatoria",
+                  required: "El apellido es obligatorio",
                   minLength: {
                     value: 3,
-                    message: "la cantidad minima de caracteres es de 3",
+                    message: "La cantidad mínima de caracteres es de 3",
                   },
                   maxLength: 30,
-                  message: "la cantidad maxima de caracteres es de 30",
+                  message: "La cantidad máxima de caracteres es de 30",
                 })}
               />
               <Form.Text className="text-danger">
@@ -108,13 +108,15 @@ const Registro = ({setUsuarioLogueado}) => {
                 type="email"
                 placeholder="Ej: comida@gmail.com"
                 {...register("email", {
-                  required: "el email debe ser valido",
+                  required: "El email debe ser válido",
                   pattern: {
                     value: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
                   },
                 })}
               />
-              <Form.Text>{errors.email?.message}</Form.Text>
+              <Form.Text className="text-danger">
+                {errors.email?.message}
+              </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Contraseña</Form.Label>
@@ -123,7 +125,7 @@ const Registro = ({setUsuarioLogueado}) => {
                 type="password"
                 placeholder="Ingrese una contraseña"
                 {...register("password", {
-                  required: "la contraseña es obligatoria",
+                  required: "La contraseña es obligatoria",
                   pattern: {
                     value:
                     /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
@@ -132,7 +134,9 @@ const Registro = ({setUsuarioLogueado}) => {
                   },
                 })}
               />
-              <Form.Text>{errors.password?.message}</Form.Text>
+              <Form.Text className="text-danger">
+                {errors.password?.message}
+              </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Confirmar contraseña</Form.Label>
@@ -152,7 +156,9 @@ const Registro = ({setUsuarioLogueado}) => {
                     value === password || "Las contraseñas no coinciden",
                 })}
               />
-              <Form.Text>{errors.confirmPassword?.message}</Form.Text>
+              <Form.Text className="text-danger">
+                {errors.confirmPassword?.message}
+              </Form.Text>
             </Form.Group>
             <Button className="bg-rojo2 border-white w-100" type="submit">
               Registrar

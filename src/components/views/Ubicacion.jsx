@@ -13,7 +13,7 @@ const Ubicacion = () => {
                     <li>Pedidos hasta las 00:00hs</li>
                     <li>Domingos de 10hs a 14 hs</li>
                     <li>
-                      Lunes a sabados hasta las 02:00
+                      Lunes a sábados hasta las 02:00
                     </li>
                   </ul>
             </div>

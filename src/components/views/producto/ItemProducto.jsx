@@ -58,10 +58,10 @@ const ItemProducto = ({ producto, setProductos }) => {
   };
   return (
     <tr>
-      <td>{producto._id}</td>
+      <td className="w-id text-truncate">{producto._id}</td>
       <td>{producto.nombreProducto}</td>
       <td>{producto.precio}</td>
-      <td>{producto.detalle}</td>
+      <td className="w-detalle">{producto.detalle}</td>
       <td>{producto.categoria}</td>
       <td className="text-truncate w-url">{producto.imagen}</td>
       <td>

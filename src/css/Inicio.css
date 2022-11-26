@@ -1,303 +1,257 @@
-
-
-.portada3{
-    height: 500px;
-    width: 100%;
-   background-image: url(https://img.freepik.com/foto-gratis/deliciosas-brochetas-comida-rapida-arabe-rodajas-pepino_23-2148651116.jpg?w=1800&t=st=1668129781~exp=1668130381~hmac=a2580021dda8d6ab21c7b510b2a0f072025b3c71dcf9fab06fe45ffa7e4833a9);
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-attachment: fixed;
-
+.portada3 {
+  height: 500px;
+  width: 100%;
+  background-image: url(https://img.freepik.com/foto-gratis/deliciosas-brochetas-comida-rapida-arabe-rodajas-pepino_23-2148651116.jpg?w=1800&t=st=1668129781~exp=1668130381~hmac=a2580021dda8d6ab21c7b510b2a0f072025b3c71dcf9fab06fe45ffa7e4833a9);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.divPortada3{
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.514);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.divPortada3 {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.514);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.divPortada3 .tituloCel{
-    display: none;
+.divPortada3 .tituloCel {
+  display: none;
 }
 
-
-
-
-.CardPP{
-    background-color:  #292929;
-    color: white;
-    border: 1px solid transparent;
+.CardPP {
+  background-color: #292929;
+  color: white;
+  border: 1px solid transparent;
 }
 
-
-
-.CardPP:hover{
-   color:white;
-   border: 1px solid #c96752;
-   scale: 1.02;
-    transition: 0.5s ease;
-
+.CardPP:hover {
+  color: white;
+  border: 1px solid #c96752;
+  scale: 1.05;
+  transition: 0.5s ease;
 }
 
-.CardPP .buttonCard{
-    border:white;
+.CardPP .buttonCard {
+  border: white;
 }
 
-
-
-.buttonCard:hover{
- background-color:salmon;
- scale: 1.07;
- transition: 0.5s ease;
+.buttonCard:hover {
+  background-color: #c96752;
+  scale: 1.05;
+  transition: 0.1s ease;
 }
 
-
-.imgCardProducto{
-    height: 200px;
-    width: 100%;
+.imgCardProducto {
+  height: 200px;
+  width: 100%;
 }
 
-.imgCardProducto .imgDiv{
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
+.imgCardProducto .imgDiv {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
 }
-
 
 /* ***************************** */
-.divSearch{
-    height: 40px;
-    width: 500px;
+.divSearch {
+  height: 40px;
+  width: 500px;
 }
 
-.divSearch button{
-    height: 40px;
+.divSearch button {
+  height: 40px;
+  width: 100%;
+}
+
+.divSearch button .iconSearch {
+  height: 10px;
+}
+
+.divCirculo {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+}
+
+.divCirculo:hover a {
+  background-color: #db8d7b;
+  color: rgb(17, 17, 17);
+  transition: 0.5s ease;
+  scale: 1.07;
+}
+
+.divCirculo a {
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  background-color: rgb(23, 24, 24);
+  color: gray;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnLink {
+  background-color: #db8d7b;
+}
+
+.btnLink:hover {
+  background-color: #c96752;
+  scale: 1.04;
+  transition: 0.5s ease;
+}
+
+.divWhatsApp {
+  background-color: black;
+  height: 100px;
+  width: 100%;
+}
+
+.ulUbicacion {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 15px;
+}
+
+.divisorContacto {
+  background-image: url(https://img.freepik.com/foto-gratis/deliciosas-brochetas-comida-rapida-arabe-rodajas-pepino_23-2148651116.jpg?w=1800&t=st=1668129781~exp=1668130381~hmac=a2580021dda8d6ab21c7b510b2a0f072025b3c71dcf9fab06fe45ffa7e4833a9);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.colContacto {
+  border-right: 2px solid rgba(255, 253, 253, 0.671);
+}
+
+.contenerdorPedidos {
+  border-radius: 10px;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.cardPedidos div {
+  margin-top: 50px;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardPedidos2 {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  height: 200%;
+}
+
+@media all and (max-width: 540px) {
+  .divSearch {
     width: 100%;
-}
-
-.divSearch button .iconSearch{
-    height: 10px;
-}
-
-.divCirculo{
-    height: 200px;
-    width: 200px;
-    border-radius: 100%;
-}
-
-.divCirculo:hover a{
-    background-color:  #db8d7b;
-    color: rgb(17, 17, 17);
-    transition: 0.5s ease;
-    scale: 1.07;
-    
-}
-
-.divCirculo a{
-    height: 100%;
-    width: 100%;
-    border-radius: 100%;
-    background-color: rgb(23, 24, 24);
-    color: gray;
-    border: 1px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.btnLink{
-    background-color: #db8d7b;
-}
-
-.btnLink:hover{
-    background-color: #c96752;
-    scale: 1.04;
-    transition: 0.5s ease;
-}
-
-.divWhatsApp{
-    background-color:black;
-    height: 100px;
-    width: 100%;
-   
-}
-
-.ulUbicacion{
- list-style: none;
- display: flex;
- justify-content: center;
- align-items: center;
- flex-direction: column;
- margin-right:15px;
-}
-
-
-.divisorContacto{
-    background-image: url(https://img.freepik.com/foto-gratis/deliciosas-brochetas-comida-rapida-arabe-rodajas-pepino_23-2148651116.jpg?w=1800&t=st=1668129781~exp=1668130381~hmac=a2580021dda8d6ab21c7b510b2a0f072025b3c71dcf9fab06fe45ffa7e4833a9);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.colContacto{
-    border-right: 2px solid rgba(255, 253, 253, 0.671); 
-}
-
-.contenerdorPedidos{
-    border-radius: 10px;
-    width: 700px;
-    margin: 0 auto;
-}
-
-.cardPedidos div{
-    margin-top: 50px;
-    height: 200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.cardPedidos2{
-    margin: 0 auto;
-    margin-bottom: 10px;
-    width: 50%;
-    display: flex;
-    justify-content:flex-end; 
-    height: 200%;
-}
-
-
-
-
-@media all and (max-width:540px){
-    
-   .divSearch{
-    width: 100%;
-   }
-
-   .divPortada3 h1{
+  }
+  .divPortada3 h1 {
     display: none;
-   }
-
-   .divPortada3 .tituloCel{
+  }
+  .divPortada3 .tituloCel {
     display: block;
     color: white;
-   }
-
-   .divSearch{
+  }
+  .divSearch {
     width: 300px;
-   }
-
-   .whatsapp p{
+  }
+  .whatsapp p {
     display: none;
-   }
-
-   .visitanos{
+  }
+  .visitanos {
     display: none;
-   }
-
-   .celContacto{
+  }
+  .celContacto {
     text-align: center;
-   }
-
-    .portada3{
-        height: 300px;
-    }
-   .divPortada3{
+  }
+  .portada3 {
     height: 300px;
-   }
-
-   .contenerdorPedidos{
+  }
+  .divPortada3 {
+    height: 300px;
+  }
+  .contenerdorPedidos {
     border-radius: 10px;
     width: 100%;
     margin: 0 auto;
-    }
-
-    .colContacto{
-        border-right: 2px solid rgba(255, 253, 253, 0); 
-    }
-    .cardPedidos2{
-        margin: 0 auto;
-        margin-bottom: 10px;
-        width: 100%;
-        display: flex;
-        justify-content: end; 
-        height: 200%;
-    }
-
+  }
+  .colContacto {
+    border-right: 2px solid rgba(255, 253, 253, 0);
+  }
+  .cardPedidos2 {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    height: 200%;
+  }
 }
 
-
-@media all and (max-width:991px){
-    .portada3{
-         background-image: url(https://img.freepik.com/foto-gratis/desayuno-turco-shakshuka-aceitunas-queso-fruta_2829-11305.jpg?w=1060&t=st=1668133102~exp=1668133702~hmac=fa536a96e6e727f89777e13d5c738b021581b15f9f3e40e6eceab43254c54a34);
-        background-attachment: fixed;
-        background-repeat: no-repeat; 
-        background-size: cover; 
-    }
-
-    .divPortada3{
-        background-color: rgba(0, 0, 0, 0.514);
-    }
-    
-    .divPortada3 h1{
-        display: none;
-    }
-    
-    .divPortada3 .tituloCel{
-        display: block;
-        color: white;
-    }
-
-    .divPedidos{
-        display: none;
-    }
-
-    .portada3{
-        height: 300px;
-    }
-   .divPortada3{
+@media all and (max-width: 991px) {
+  .portada3 {
+    background-image: url(https://img.freepik.com/foto-gratis/desayuno-turco-shakshuka-aceitunas-queso-fruta_2829-11305.jpg?w=1060&t=st=1668133102~exp=1668133702~hmac=fa536a96e6e727f89777e13d5c738b021581b15f9f3e40e6eceab43254c54a34);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .divPortada3 {
+    background-color: rgba(0, 0, 0, 0.514);
+  }
+  .divPortada3 h1 {
+    display: none;
+  }
+  .divPortada3 .tituloCel {
+    display: block;
+    color: white;
+  }
+  .divPedidos {
+    display: none;
+  }
+  .portada3 {
     height: 300px;
-   }
-
-   .divisorContacto{
+  }
+  .divPortada3 {
+    height: 300px;
+  }
+  .divisorContacto {
     background-image: url(https://img.freepik.com/foto-gratis/desayuno-turco-shakshuka-aceitunas-queso-fruta_2829-11305.jpg?w=1060&t=st=1668133102~exp=1668133702~hmac=fa536a96e6e727f89777e13d5c738b021581b15f9f3e40e6eceab43254c54a34);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-}
-
-.contenerdorPedidos{
+  }
+  .contenerdorPedidos {
     border-radius: 10px;
     width: 100%;
     margin: 0 auto;
-}
-    
-}
-
-@media all and (max-width:360px){
-
-    .divSearch{
-        width: 100%;
-    }
-
-    .input{
-        height: 40px;
-        width: 100%;
-    }
-
-    .portada3{
-        height: 250px;
-    }
-
-    .divPortada3{
-        height: 250px;
-        margin-bottom: 100px;
-    }
+  }
 }
 
-
+@media all and (max-width: 360px) {
+  .divSearch {
+    width: 100%;
+  }
+  .input {
+    height: 40px;
+    width: 100%;
+  }
+  .portada3 {
+    height: 250px;
+  }
+  .divPortada3 {
+    height: 250px;
+    margin-bottom: 100px;
+  }
+}
