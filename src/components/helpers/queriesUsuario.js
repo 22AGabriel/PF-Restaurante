@@ -1,4 +1,5 @@
 const URL = process.env.REACT_APP_API_USUARIOS;
+const URLLogin = process.env.REACT_APP_API_USUARIOSlogin
 
 export const crearUsuario = async (usuario) => {
   try {
@@ -43,7 +44,7 @@ export const editarUsuario = async(id, usuario) => {
       const respuesta = await fetch(URL+`/${id}`, {
           method: "PUT",
           headers:{
-              "Content-Type": "application/json"
+            "Content-Type": "application/json"
           },
           body: JSON.stringify(usuario)
       });
@@ -54,10 +55,13 @@ export const editarUsuario = async(id, usuario) => {
   }
 }
 
-export const borrarUsuario = async(id)=>{
+export const borrarUsuario = async(id, token)=>{
   try{
     const respuesta = await fetch(URL+'/'+id,{
       method: 'DELETE',
+      headers:{
+        "x-token": token
+      }
     });
     return respuesta;
   }catch(error){
@@ -68,18 +72,18 @@ export const borrarUsuario = async(id)=>{
 
 export const login = async (usuario) => {
   try {
-    const respuesta = await fetch(URL);
-    const listaUsuarios = await respuesta.json();
-    const usuarioBuscado = listaUsuarios.find((itemUsuario) => itemUsuario.email === usuario.email);
-    if(usuarioBuscado){
-      if(usuarioBuscado.password === usuario.password){
-        return usuarioBuscado
-      } else {
-        return false
-      }
-    } else {
-      return false 
-    }
+    const respuesta = await fetch(URLLogin, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    const usuarioEncontrado = {
+      dato: await respuesta.json(),
+      status: respuesta.status,
+    };
+    return usuarioEncontrado;
   } catch (error) {
     console.log(error) 
     return false

@@ -1,4 +1,3 @@
-
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -8,7 +7,6 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import Login from '../views/Login'
 import { Link, NavLink, useNavigate} from 'react-router-dom';
 import ModalCarrito from '../views/ModalCarrito';
-
 
 const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,resultado,setResultado, setArregloPedidos}) => {
   const navigate = useNavigate();

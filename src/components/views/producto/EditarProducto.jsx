@@ -6,8 +6,9 @@ import { editarProducto, obtenerProducto } from "../../helpers/queriesProducto";
 import Swal from "sweetalert2";
 
 const EditarProducto = () => {
+  const usuario = JSON.parse(localStorage.getItem("usuarioIniciado")) || {};
   const { id } = useParams();
-  
+  const {register, handleSubmit, formState: { errors }, setValue} = useForm();
   const navegacion = useNavigate();
   
   useEffect(() => {
@@ -21,15 +22,29 @@ const EditarProducto = () => {
       }
     })
   }, []);
-  const {register, handleSubmit, formState: { errors }, setValue} = useForm();
   
   const onSubmit = (datos) =>{
-    editarProducto(id, datos).then((respuesta)=>{
+    editarProducto(id, datos, usuario.token).then((respuesta)=>{
       if(respuesta.status === 200){
-        Swal.fire('Producto Modificado', 'El producto fue modificado correctamente','success');
+        Swal.fire({
+          color: "#fff",
+          background: "#292929", 
+          confirmButtonColor: "#c96752",
+          title: 'Producto Modificado', 
+          text: 
+          'El producto fue modificado correctamente',
+          icon:'success'
+          });
         navegacion('/administrar')
       }else{
-        Swal.fire('Ocurrion un error', 'El producto no pudo ser modificado','error')
+        Swal.fire({
+          color: "#fff",
+          background: "#292929", 
+          confirmButtonColor: "#c96752",
+          title:'Ocurrion un error', 
+          text:'El producto no pudo ser modificado',
+          icon:'error'
+      })
       }
     });
   }

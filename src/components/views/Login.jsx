@@ -20,8 +20,8 @@ const Login = ({setUsuarioLogueado}) => {
         reset()
         navegate("/")
         setShow(false)
-        localStorage.setItem('usuarioIniciado', JSON.stringify(respuesta))
-        setUsuarioLogueado(respuesta);
+        localStorage.setItem('usuarioIniciado', JSON.stringify(respuesta.dato))
+        setUsuarioLogueado(respuesta.dato);
       }
     })
   };

@@ -24,7 +24,7 @@ const Admin = () => {
     listarPedidos().then((respuesta)=>{
       setPedidos(respuesta)
      })
-  }, [productos, usuarios, pedidos]);
+  }, []);
 
   return (
     <Container className="my-5 bajarFooter">
