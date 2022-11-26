@@ -4,16 +4,13 @@ const fecha = new Date();
 const dia = fecha.getDate()
 const mes = fecha.getMonth()
 const year = fecha.getFullYear()
-let usuario = JSON.parse(localStorage.getItem("usuarioIniciado"))
 
-export const crearPedido = async() => {
+export const crearPedido = async(usuario) => {
     let pedido = {}
     pedido.usuario = usuario.nombreUsuario;
-    console.log(usuario.carrito)
     pedido.productos = usuario.carrito;
     pedido.estado = "Pendiente";
     pedido.fecha = `${dia}/${mes+1}/${year}`
-    console.log(pedido)
     try {
         const nuevoPedido = await fetch(URL,{
             method:"POST",
@@ -25,7 +22,6 @@ export const crearPedido = async() => {
         usuario.pedidos.unshift(pedido)
         usuario.carrito = []
         editarUsuario(usuario._id,usuario)
-        localStorage.setItem('usuarioIniciado', JSON.stringify(usuario));
         return nuevoPedido
     } catch (error) {
         console.log(error)
@@ -83,7 +79,7 @@ export const eliminarPedido = async (id)=>{
 }
 
 
-export const rehacerPedido =async (productos)=>{
+export const rehacerPedido =async (productos, usuario)=>{
     let pedido = {}
     pedido.usuario = usuario.nombreUsuario;
     pedido.productos = productos;
@@ -101,7 +97,6 @@ export const rehacerPedido =async (productos)=>{
         usuario.pedidos.unshift(pedido)
         usuario.carrito = []
         editarUsuario(usuario._id,usuario)
-        localStorage.setItem('usuarioIniciado', JSON.stringify(usuario));
         return nuevoPedido
     } catch (error) {
         console.log(error)

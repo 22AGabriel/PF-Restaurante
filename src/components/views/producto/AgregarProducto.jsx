@@ -10,8 +10,9 @@ const AgregarProducto = () => {
   const navigate = useNavigate();
 
   const onSubmit =(producto)=>{
+    const usuario = JSON.parse(localStorage.getItem("usuarioIniciado")) || {};
     producto.cantidad = 1
-    crearProducto(producto).then((respuesta)=>{
+    crearProducto(producto, usuario.token).then((respuesta)=>{
       if(respuesta.status === 201){
         Swal.fire({
           color: "#fff",
@@ -39,7 +40,7 @@ const AgregarProducto = () => {
   return (
     <Container>
       <div className=" my-5">
-        <h1 className="text-center my-5">Agregar Productos</h1>
+        <h1 className="text-center my-5">Agregar Producto</h1>
         <div className="shadow py-5 w-100 mx-auto">
           <Form className="w-75 mx-auto" onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -49,9 +50,9 @@ const AgregarProducto = () => {
                placeholder="Producto"
                {...register("nombreProducto",{
                  required:"es nombre del producto es obligatorio",
-                 minLenght:{
-                  value:5,
-                  message:"la cantidad minima de caracteres es de 5"
+                 minLenght: {
+                  value: 5,
+                  message: "la cantidad minima de caracteres es de 5"
                  },
                  maxLength:{
                   value:50,
@@ -92,8 +93,8 @@ const AgregarProducto = () => {
                placeholder="detalle"
                {...register("detalle",{
                 required:"el detalle del producto es obligatorio",
-                 minLenght:{
-                  value:25,
+                 minLenght: {
+                  value: 25,
                   message:"el numero de caracteres minimo es de 25"
                  },
                  maxLength:{

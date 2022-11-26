@@ -43,8 +43,7 @@ const ModalCarrito = ({usuario, carrito,setCarrito,resultado,setResultado, setAr
           title: 'Primero debes agregar productos al carrito'
         })
       } else {
-        crearPedido().then(() =>{
-            let usuario = JSON.parse(localStorage.getItem("usuarioIniciado"))
+        crearPedido(usuario).then(() =>{
             setArregloPedidos(usuario.pedidos)
             setCarrito([])
             Toast.fire({
@@ -90,6 +89,7 @@ const ModalCarrito = ({usuario, carrito,setCarrito,resultado,setResultado, setAr
                           key={item._id}
                           carrito={carrito}
                           setCarrito={setCarrito}
+                          usuario={usuario}
                         ></ItemModal>
                       ))}
                     </>

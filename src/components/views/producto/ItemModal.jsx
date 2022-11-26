@@ -2,15 +2,13 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { editarUsuario } from '../../helpers/queriesUsuario';
 
-const ItemModal = ({producto, setCarrito}) => {
+const ItemModal = ({producto, setCarrito, usuario}) => {
   
     const borrarProductosCarrito = (producto)=>{
-      let usuario = JSON.parse(localStorage.getItem("usuarioIniciado"))
       let carritoNuevo = usuario.carrito.filter((item)=>item._id !== producto._id);
       usuario.carrito = carritoNuevo
       setCarrito(usuario.carrito)
       editarUsuario(usuario._id,usuario)
-      localStorage.setItem('usuarioIniciado', JSON.stringify(usuario));
   }
 
     return (
