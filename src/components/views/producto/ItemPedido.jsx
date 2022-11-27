@@ -7,7 +7,6 @@ import Swal from "sweetalert2";
 
 const ItemPedido = ({ pedido, setPedidos }) => {
   const {register, setValue} = useForm();
-  
   const [updatePedido, setUpdatePedido] = useState('disabled');
 
   useEffect(() => {
@@ -17,7 +16,15 @@ const ItemPedido = ({ pedido, setPedidos }) => {
       }
     })
   }, [])
-  
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    color: "#fff",
+    background: "#292929",
+    timer: 5000
+  })
 
   const actualizarPedido = ()=> {
     let estadoPedido = document.getElementById(`${pedido._id}`);
@@ -27,8 +34,14 @@ const ItemPedido = ({ pedido, setPedidos }) => {
     }else{
       estadoPedido.disabled = true;
       setUpdatePedido('disabled');
-      pedido.estado = estadoPedido.value;
-      editarPedido(pedido._id, pedido)
+      if(pedido.estado !== estadoPedido.value){
+        pedido.estado = estadoPedido.value;
+        editarPedido(pedido._id, pedido)
+        Toast.fire({
+          icon: 'success',
+          title: 'Estado del pedido modificado'
+        })
+      }
     }
   }
   
@@ -42,49 +55,49 @@ const ItemPedido = ({ pedido, setPedidos }) => {
     });
 
     swalWithBootstrapButtons
-      .fire({
-        title: "Estas Seguro?",
-        text: "Los cambios seran irreversibles!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonText: "Borrar!",
-        color: "#fff",
-        background: "#292929",
-        cancelButtonText: "Cancelar!",
-        reverseButtons: true,
-      })
-      .then((result) => {
-        if (result.isConfirmed) {
-          eliminarPedido(pedido._id).then((respuesta) => {
-            if (respuesta.status === 200) {
-              listarPedidos().then((respuesta) => {
-                setPedidos(respuesta);
-                swalWithBootstrapButtons.fire({
-                  color: "#fff",
-                  background: "#292929", 
-                  confirmButtonColor: "#c96752",
-                  title: "Borrado!",
-                  text: "El pedido ha sido borrado con éxito",
-                  icon: "success"
-              })
-              });
-            } 
-          });
-        }
-        else if (
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
-          swalWithBootstrapButtons.fire({
-            color: "#fff",
-            background: "#292929", 
-            confirmButtonColor: "#c96752",
-            title: "Cancelado",
-            text: "Los cambios no fueron realizados",
-            icon: "info"
+    .fire({
+      title: "Estas Seguro?",
+      text: "Los cambios seran irreversibles!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Borrar!",
+      color: "#fff",
+      background: "#292929",
+      cancelButtonText: "Cancelar!",
+      reverseButtons: true,
+    })
+    .then((result) => {
+      if (result.isConfirmed) {
+        eliminarPedido(pedido._id).then((respuesta) => {
+          if (respuesta.status === 200) {
+            listarPedidos().then((respuesta) => {
+              setPedidos(respuesta);
+              swalWithBootstrapButtons.fire({
+                color: "#fff",
+                background: "#292929", 
+                confirmButtonColor: "#c96752",
+                title: "Borrado!",
+                text: "El pedido ha sido borrado con éxito",
+                icon: "success"
+            })
+            });
+          } 
         });
-        }
+      }
+      else if (
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire({
+          color: "#fff",
+          background: "#292929", 
+          confirmButtonColor: "#c96752",
+          title: "Cancelado",
+          text: "Los cambios no fueron realizados",
+          icon: "info"
       });
-}
+      }
+    });
+  }
 
   return (
     <tr>
