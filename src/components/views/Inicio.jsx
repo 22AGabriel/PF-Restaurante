@@ -121,17 +121,28 @@ const Inicio = ({
           </div>
         <div>
           <Row>
-            {resultado.map((producto) => (
-              <CardProducto
-                key={producto._id}
-                producto={producto}
-                mostrarProducto={mostrarProducto}
-                carrito={carrito}
-                setCarrito={setCarrito}
-                usuarioLogueado={usuarioLogueado}
-                setUsuarioLogueado={setUsuarioLogueado}
-              ></CardProducto>
-            ))}
+            {
+            resultado.length > 0?(
+              <>
+                {resultado.map((producto) => (
+                  <CardProducto
+                    key={producto._id}
+                    producto={producto}
+                    mostrarProducto={mostrarProducto}
+                    carrito={carrito}
+                    setCarrito={setCarrito}
+                    usuarioLogueado={usuarioLogueado}
+                    setUsuarioLogueado={setUsuarioLogueado}
+                  ></CardProducto>
+                ))}
+              </>
+            ) : (
+              <>
+                <div className="text-center my-5">
+                  <h4>Tu busqueda no coincide con ninguno de nuestros productos</h4>
+                </div>
+              </>
+            )}
           </Row>
         </div>
       </div>

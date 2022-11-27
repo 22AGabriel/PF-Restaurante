@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Modal, Button, Table } from "react-bootstrap";
@@ -23,11 +23,7 @@ const ModalCarrito = ({usuario, carrito,setCarrito,resultado,setResultado, setAr
     showConfirmButton: false,
     color: "#fff",
     background: "#292929",
-    timer: 5000,
-    didOpen: (toast) => {
-      toast.addEventListener('mouseenter', Swal.stopTimer)
-      toast.addEventListener('mouseleave', Swal.resumeTimer)
-    }
+    timer: 5000
   })
 
   const verificarUsuario = () => {
@@ -37,21 +33,14 @@ const ModalCarrito = ({usuario, carrito,setCarrito,resultado,setResultado, setAr
         title: 'Usuario suspendido, no puedes realizar esta acción'
       })
     } else {
-      if(carrito.length < 1){
+      crearPedido(usuario).then(() =>{
+        setArregloPedidos(usuario.pedidos)
+        setCarrito([])
         Toast.fire({
-          icon: 'error',
-          title: 'Primero debes agregar productos al carrito'
+          icon: 'success',
+          title: '¡Tu pedido fue enviado con éxito!'
         })
-      } else {
-        crearPedido(usuario).then(() =>{
-            setArregloPedidos(usuario.pedidos)
-            setCarrito([])
-            Toast.fire({
-              icon: 'success',
-              title: '¡Tu pedido fue enviado con éxito!'
-            })
-        })
-      }
+      })
     }
   }
  
@@ -69,47 +58,39 @@ const ModalCarrito = ({usuario, carrito,setCarrito,resultado,setResultado, setAr
           <Modal.Title>Carrito de Compra</Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-rojo2">
-          <Table className="text-center" striped bordered hover responsive>
-            <thead>
-              <tr>
-                <th>Producto</th>
-                <th>Cantidad</th>
-                <th>Precio</th>
-                <th>Eliminar</th>
-              </tr>
-            </thead>
-            <tbody>
-              {carrito ? (
-                <>
-                  {carrito.lenght !== 0 ? (
-                    <>
-                      {carrito.map((item) => (
-                        <ItemModal
-                          producto={item}
-                          key={item._id}
-                          carrito={carrito}
-                          setCarrito={setCarrito}
-                          usuario={usuario}
-                        ></ItemModal>
-                      ))}
-                    </>
-                  ) : (
-                    <>
-                      <p>No hay productos cargados en el carrito aun</p>
-                    </>
-                  )}
-                </>
-              ) : (
-                <>
-                  <div></div>
-                </>
-              )}
-            </tbody>
-          </Table>
-          <p>Total del pedido: {resultado}</p>
+          {carrito.length > 0?(
+            <>
+              <Table className="text-center" striped bordered hover responsive>
+                <thead>
+                  <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Eliminar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {carrito.map((item) => (
+                    <ItemModal
+                      producto={item}
+                      key={item._id}
+                      carrito={carrito}
+                      setCarrito={setCarrito}
+                      usuario={usuario}
+                    ></ItemModal>
+                  ))}
+                </tbody>
+              </Table>
+              <p>Total del pedido: {resultado}</p>
           <Button className="w-100 my-2" variant="danger" onClick={verificarUsuario}>
             Enviar pedido
           </Button>
+            </>
+          ):(
+            <div className="text-center">
+              <p>No hay productos cargados aún</p>
+            </div>
+          )}
           <Button className="w-100 mt-2" variant="dark" onClick={handleClose}>
             Cerrar
           </Button>
