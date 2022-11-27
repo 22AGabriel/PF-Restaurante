@@ -79,6 +79,9 @@ export const login = async (usuario) => {
       },
       body: JSON.stringify(usuario),
     });
+    if(respuesta.status !== 200){
+      return false
+    }
     const usuarioEncontrado = {
       dato: await respuesta.json(),
       status: respuesta.status,

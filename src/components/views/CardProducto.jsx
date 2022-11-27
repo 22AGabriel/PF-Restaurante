@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { editarUsuario, obtenerUsuario } from "../helpers/queriesUsuario";
+import { editarUsuario } from "../helpers/queriesUsuario";
 
 const CardProducto = ({ producto, carrito, setCarrito, usuarioLogueado }) => {
   
