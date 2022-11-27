@@ -19,9 +19,11 @@ const Admin = () => {
       setProductos(respuesta)
     })
     consultarUsuario().then((respuesta)=>{
+      respuesta.sort((unUsuario, otroUsuario) => unUsuario.perfil.localeCompare(otroUsuario.perfil));
       setUsuarios(respuesta)
     })
     listarPedidos().then((respuesta)=>{
+      respuesta.sort((pedidoUno, pedidoDos) => pedidoUno.estado.localeCompare(pedidoDos.estado));
       setPedidos(respuesta)
      })
   }, []);

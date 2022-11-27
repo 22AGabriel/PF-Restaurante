@@ -16,6 +16,15 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
       }
     })
   }, [])
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    color: "#fff",
+    background: "#292929",
+    timer: 5000
+  })
   
   const updateUser = () => {
     let estado = document.getElementById(`${usuario._id}estado`)
@@ -28,9 +37,15 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
       estado.disabled = true
       perfil.disabled = true
       setEditar("disabled")
-      usuario.estado = estado.value
-      usuario.perfil = perfil.value
-      editarUsuario(usuario._id, usuario)
+      if(usuario.estado !== estado.value || usuario.perfil !== perfil.value){
+        usuario.estado = estado.value
+        usuario.perfil = perfil.value
+        editarUsuario(usuario._id, usuario)
+        Toast.fire({
+          icon: 'success',
+          title: 'Usuario modificado'
+        })
+      }
     }
   }
   
@@ -42,7 +57,6 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
       },
       buttonsStyling: false,
     });
-
     swalWithBootstrapButtons
       .fire({
         title: "Estas Seguro?",
