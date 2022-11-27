@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Button, Container, Card, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { crearUsuario } from "../helpers/queriesUsuario";
 import Login from "../views/Login";
@@ -46,7 +46,19 @@ const Registro = ({setUsuarioLogueado}) => {
         );
       }
     });
+    const config ={
+      SecureToken: 'faed1da8-899f-43f3-8468-567dff7e046f',
+      To : data.email,
+      From : "shamrestaurante2022@gmail.com",
+      Subject : "Bienvenidos a Sham!",
+      Body : `Te damos la bienvenida a nuestro Restaurante`,
+    
+    }
+    if(window.Email){
+      window.Email.send(config);
+    }
   };
+
 
   return (
     <Container className="bajarFooter">
