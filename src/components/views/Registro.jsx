@@ -51,11 +51,10 @@ const Registro = ({setUsuarioLogueado}) => {
       To : data.email,
       From : "shamrestaurante2022@gmail.com",
       Subject : "Bienvenidos a Sham!",
-      Body : `Te damos la bienvenida a nuestro Restaurante`,
-    
+      Body : `Te damos la bienvenida a nuestro Restaurante, entra en el siguiente link para ingresar! https://shamrestaurante.netlify.app/`,
     }
     if(window.Email){
-      window.Email.send(config);
+      window.Email.send(config).then((menssage)=>('Te enviamos un email'));
     }
   };
 
