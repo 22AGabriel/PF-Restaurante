@@ -15,7 +15,6 @@ const Inicio = ({
   const [mostrarProducto, setMostrarProducto] = useState([]);
   const [busqueda, setBusqueda] = useState("");
   let resultado = [];
-  let busquedaExistente = ["No se encontro un resultado de la busqueda"]
 
   useEffect(() => {
     consultarProducto().then((respuesta) => {
