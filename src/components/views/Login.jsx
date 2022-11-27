@@ -1,16 +1,25 @@
 import { Modal, Button, Form } from "react-bootstrap";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { login } from "../helpers/queriesUsuario"
 import "../../css/login.css";
+import Swal from "sweetalert2";
 
 const Login = ({setUsuarioLogueado}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const {register, handleSubmit, formState: { errors }, setError, reset} = useForm();
-  const navegate = useNavigate();
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    color: "#fff",
+    background: "#292929",
+    timer: 3000
+  })
 
   const onSubmit = (usuario) => {
     login(usuario).then((respuesta) => {
@@ -18,10 +27,13 @@ const Login = ({setUsuarioLogueado}) => {
         setError("password", {message: "Email o contraseña incorrecta, intenta nuevamente"})
       } else {
         reset()
-        navegate("/")
         setShow(false)
         localStorage.setItem('usuarioIniciado', JSON.stringify(respuesta.dato))
         setUsuarioLogueado(respuesta.dato);
+        Toast.fire({
+          icon: 'success',
+          title: `¡Hola ${respuesta.dato.nombreUsuario}!`
+        })
       }
     })
   };
