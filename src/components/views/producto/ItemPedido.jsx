@@ -17,6 +17,15 @@ const ItemPedido = ({ pedido, setPedidos }) => {
     })
   }, [])
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    color: "#fff",
+    background: "#292929",
+    timer: 5000
+  })
+
   const actualizarPedido = ()=> {
     let estadoPedido = document.getElementById(`${pedido._id}`);
     if(updatePedido === 'disabled'){
@@ -25,8 +34,14 @@ const ItemPedido = ({ pedido, setPedidos }) => {
     }else{
       estadoPedido.disabled = true;
       setUpdatePedido('disabled');
-      pedido.estado = estadoPedido.value;
-      editarPedido(pedido._id, pedido)
+      if(pedido.estado !== estadoPedido.value){
+        pedido.estado = estadoPedido.value;
+        editarPedido(pedido._id, pedido)
+        Toast.fire({
+          icon: 'success',
+          title: 'Estado del pedido modificado'
+        })
+      }
     }
   }
   
