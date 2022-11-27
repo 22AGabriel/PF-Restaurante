@@ -90,7 +90,7 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
 
   return (
     <tr>
-      <td>{usuario._id}</td>
+      <td className="w-id text-truncate">{usuario._id}</td>
       <td>{usuario.nombreUsuario}</td>
       <td>{usuario.email}</td>
       <td>

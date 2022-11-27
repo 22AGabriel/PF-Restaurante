@@ -10,18 +10,27 @@ import Nosotros from "./components/views/Nosotros";
 import Registro from "./components/views/Registro";
 import Error404 from "./components/views/Error404";
 import "./css/app.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
 import RutasUsuarios from "./components/routes/RutasUsuarios";
 import RutasProtegidasUsuario from "./components/routes/RutasProtegidasUsuario";
+import { obtenerUsuario } from "./components/helpers/queriesUsuario";
 
 function App() {
   const usuario = JSON.parse(localStorage.getItem("usuarioIniciado")) || {};
-  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
+  const [usuarioLogueado, setUsuarioLogueado] = useState({});
   const [resultado, setResultado] = useState(0);
-  const [carrito, setCarrito] = useState(usuario.carrito);
+  const [carrito, setCarrito] = useState([]);
   const [arregloPedidos, setArregloPedidos] = useState(usuarioLogueado.pedidos);
+
+  useEffect(()=> {
+    obtenerUsuario(usuario.uid).then((respuesta) => {
+      setCarrito(respuesta.dato.carrito)
+      setArregloPedidos(respuesta.dato.pedidos)
+      setUsuarioLogueado(respuesta.dato)
+    })
+  },[])
 
   return (
     <BrowserRouter>
@@ -33,12 +42,12 @@ function App() {
       <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>}/>
       <Route exact path="/nosotros" element={<Nosotros/>}/>
      <Route path="/usuario/*" element={
-      <RutasProtegidasUsuario>
-        <RutasUsuarios usuarioLogueado={usuarioLogueado} arregloPedidos={arregloPedidos} setArregloPedidos={setArregloPedidos}></RutasUsuarios>
+      <RutasProtegidasUsuario usuario={usuarioLogueado}>
+        <RutasUsuarios usuario={usuarioLogueado} arregloPedidos={arregloPedidos} setArregloPedidos={setArregloPedidos}></RutasUsuarios>
       </RutasProtegidasUsuario>
      }></Route>
       <Route path="/administrar/*" element={
-        <RutasProtegidas>
+        <RutasProtegidas usuario={usuarioLogueado}>
           <RutasAdmin></RutasAdmin>
         </RutasProtegidas>
       }>

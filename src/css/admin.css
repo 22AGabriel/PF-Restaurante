@@ -40,3 +40,13 @@
 .w-url{
     max-width: 250px;
 }
+
+.w-id{
+    min-width: 80px;
+    max-width: 80px;
+}
+
+.w-detalle{
+    min-width: 350px;
+    max-width: 350px;
+}

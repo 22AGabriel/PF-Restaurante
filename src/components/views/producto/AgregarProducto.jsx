@@ -10,8 +10,9 @@ const AgregarProducto = () => {
   const navigate = useNavigate();
 
   const onSubmit =(producto)=>{
+    const usuario = JSON.parse(localStorage.getItem("usuarioIniciado")) || {};
     producto.cantidad = 1
-    crearProducto(producto).then((respuesta)=>{
+    crearProducto(producto, usuario.token).then((respuesta)=>{
       if(respuesta.status === 201){
         Swal.fire({
           color: "#fff",
@@ -39,7 +40,7 @@ const AgregarProducto = () => {
   return (
     <Container>
       <div className=" my-5">
-        <h1 className="text-center my-5">Agregar Productos</h1>
+        <h1 className="text-center my-5">Agregar Producto</h1>
         <div className="shadow py-5 w-100 mx-auto">
           <Form className="w-75 mx-auto" onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -49,9 +50,9 @@ const AgregarProducto = () => {
                placeholder="Producto"
                {...register("nombreProducto",{
                  required:"es nombre del producto es obligatorio",
-                 minLenght:{
-                  value:5,
-                  message:"la cantidad minima de caracteres es de 5"
+                 minLength: {
+                  value: 5,
+                  message: "la cantidad minima de caracteres es de 5"
                  },
                  maxLength:{
                   value:50,
@@ -67,12 +68,12 @@ const AgregarProducto = () => {
               <Form.Label>Precio</Form.Label>
               <Form.Control 
               type="number"
-               placeholder="00,00"
+               placeholder="$00"
                {...register("precio",{
                 required:"es nombre del producto es obligatorio",
                  min:{
-                  value:100,
-                  message:"el precio minimo es de 100"
+                  value:50,
+                  message:"el precio minimo es de 50"
                  },
                  max:{
                   value:10000,
@@ -89,11 +90,11 @@ const AgregarProducto = () => {
               <Form.Control 
               type="text"
               as="textarea"
-               placeholder="detalle"
+               placeholder="Detalle"
                {...register("detalle",{
                 required:"el detalle del producto es obligatorio",
-                 minLenght:{
-                  value:25,
+                 minLength: {
+                  value: 25,
                   message:"el numero de caracteres minimo es de 25"
                  },
                  maxLength:{
@@ -107,7 +108,7 @@ const AgregarProducto = () => {
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>imagen</Form.Label>
+              <Form.Label>Imagen</Form.Label>
               <Form.Control 
               type="text" 
               placeholder="URL"
@@ -125,26 +126,26 @@ const AgregarProducto = () => {
             </Form.Group>
              
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Categoria</Form.Label>
+              <Form.Label>Categoría</Form.Label>
               <Form.Select aria-label="Default select example"
                {...register("categoria",{
-                require:"el campo de la categoria es obligatorio",
+                required:"el campo de la categoria es obligatorio",
                })}>
                 <option value="">Menu</option>
                 <option value="Sandwich">Sandwich</option>
                 <option value="Al plato">Al plato</option>
                 <option value="Pures">Pures</option>
+                <option value="Dulces típicos">Dulces típicos</option>
                 <option value="Agregados">Agregados</option>
                 <option value="Bebida sin alcohol">Bebidas sin alcohol</option>
-                <option value="Bebidas con alcohol">Bebidas con alcohol</option>
+                <option value="Bebida con alcohol">Bebidas con alcohol</option>
               </Form.Select>
               <Form.Text className="text-danger">
               {errors.categoria?.message}
               </Form.Text>
             </Form.Group>
-
-            <Button variant="danger" type="submit">
-              crear
+            <Button className="borde-rojo3 bg-rojo2" type="submit">
+              Crear
             </Button>
           </Form>
         </div>

@@ -6,18 +6,17 @@ import { editarUsuario } from "../helpers/queriesUsuario";
 const CardProducto = ({ producto, carrito, setCarrito, usuarioLogueado }) => {
   
   const editarCarrito = (producto) => {
-    const existeProducto = usuarioLogueado.carrito.find(
-      (item) => item._id === producto._id
-    );
-    if (existeProducto) {
-      existeProducto.cantidad += 1;
-      existeProducto.precio = producto.precio * existeProducto.cantidad;
-    } else {
-      setCarrito([...carrito, producto]);
-      usuarioLogueado.carrito.push(producto);
-    }
-    editarUsuario(usuarioLogueado._id, usuarioLogueado);
-    localStorage.setItem("usuarioIniciado", JSON.stringify(usuarioLogueado));
+      const existeProducto = usuarioLogueado.carrito.find(
+        (item) => item._id === producto._id
+      );
+      if (existeProducto) {
+        existeProducto.cantidad += 1;
+        existeProducto.precio = producto.precio * existeProducto.cantidad;
+      } else {
+        setCarrito([...carrito, producto]);
+        usuarioLogueado.carrito.push(producto);
+      }
+      editarUsuario(usuarioLogueado._id, usuarioLogueado);
   };
 
   return (
