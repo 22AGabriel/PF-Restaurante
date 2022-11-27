@@ -33,14 +33,17 @@
   transition: 0.5s ease;
 }
 
-.CardPP .buttonCard {
-  border: white;
+.buttonCard {
+  border:1px black;
+  
 }
 
 .buttonCard:hover {
   background-color: #c96752;
   scale: 1.05;
   transition: 0.1s ease;
+  
+  
 }
 
 .imgCardProducto {
@@ -153,6 +156,23 @@
   height: 200%;
 }
 
+
+.detalleProductoDiv{
+  width: 75%;
+  margin: 0 auto;
+}
+
+.divImgDetalle{
+  height:400px;
+  width: 100%;
+}
+
+.divImgDetalle img{
+  height: 100%;
+  object-fit:cover;
+  width: 100%;
+}
+
 @media all and (max-width: 540px) {
   .divSearch {
     width: 100%;
@@ -198,6 +218,17 @@
     justify-content: end;
     height: 200%;
   }
+
+  .detalleProductoDiv{
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .divImgDetalle{
+    height:300px;
+    width: 100%;
+  }
+  
 }
 
 @media all and (max-width: 991px) {
