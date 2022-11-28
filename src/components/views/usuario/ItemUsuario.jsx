@@ -5,6 +5,7 @@ import {borrarUsuario, consultarUsuario, editarUsuario, obtenerUsuario} from "..
 import Swal from "sweetalert2";
 
 const ItemUsuario = ({setUsuarios, usuario}) => {
+  const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioIniciado")) || {};
   const {register, setValue} = useForm();
   const [editar, setEditar] = useState("disabled")
   
@@ -71,7 +72,7 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          borrarUsuario(usuario._id).then((respuesta) => {
+          borrarUsuario(usuario._id, usuarioLogueado.token).then((respuesta) => {
             if (respuesta.status === 200) {
               consultarUsuario().then((respuesta) => {
                 setUsuarios(respuesta);

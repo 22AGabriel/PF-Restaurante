@@ -1,5 +1,5 @@
 const URL = process.env.REACT_APP_API_USUARIOS;
-const URLLogin = process.env.REACT_APP_API_USUARIOSlogin
+const URLlogin = process.env.REACT_APP_API_USUARIOSlogin
 
 export const crearUsuario = async (usuario) => {
   try {
@@ -72,7 +72,7 @@ export const borrarUsuario = async(id, token)=>{
 
 export const login = async (usuario) => {
   try {
-    const respuesta = await fetch(URLLogin, {
+    const respuesta = await fetch(URLlogin, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -32,7 +32,7 @@ export const borrarProducto = async(id, token)=>{
     try{
         const nuevoProducto = await fetch(URL+'/'+id,{
             method: 'DELETE',
-            headers:{
+            headers: {
                 "x-token": token
             }
         });

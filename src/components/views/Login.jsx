@@ -40,8 +40,8 @@ const Login = ({setUsuarioLogueado}) => {
   
   return (
     <>
-      <NavLink
-        className={"nav-item nav-link"}
+      <NavLink 
+        className={"text-dark text-decoration-none"}
         onClick={handleShow}>
         Iniciar sesión
       </NavLink>

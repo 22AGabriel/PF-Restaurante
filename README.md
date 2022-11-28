@@ -21,6 +21,6 @@ Proyecto grupal N° 3 de RollingCode School
 - Uncos Javier
 - Azubel Cristian Gabriel
 
-- ## Comandos para ejecutar JSON-Server
+## Demo del proyecto
 
-`json-server --watch db.json --port 4010`
+Para entrar en nuestra página hace click en el siguiente [link](https://shamrestaurante.netlify.app/)

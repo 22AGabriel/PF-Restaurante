@@ -7,6 +7,8 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import Login from '../views/Login'
 import { Link, NavLink, useNavigate} from 'react-router-dom';
 import ModalCarrito from '../views/ModalCarrito';
+import Logo_Sham from '../../img/Logo_Sham.png'
+import Logo_S from '../../img/Logo_S.png'
 
 const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,resultado,setResultado, setArregloPedidos}) => {
   const navigate = useNavigate();
@@ -24,7 +26,7 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,result
           <Container>
             <Navbar.Brand as={Link} to="/">
               <img
-                src="https://trello.com/1/cards/636987e596b2de018dfa4d9c/attachments/636bbf6a4fc778028d53781f/previews/636bbf6a4fc778028d537889/download/Logo_Sham.png"
+                src={Logo_Sham}
                 alt="sham logo"
                 width="60"
                 height="40"
@@ -40,7 +42,7 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,result
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                   <img
-                    src="https://trello.com/1/cards/636987e596b2de018dfa4d9c/attachments/636bbf6ba9c237020ff18570/previews/636bbf6ba9c237020ff18576/download/Letra_S_Logo.png"
+                    src={Logo_S}
                     alt="sham logo"
                     width="60"
                     height="40"
@@ -64,8 +66,8 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,result
                       <>
                       <NavLink end
                         to="/administrar"
-                        className={"nav-item nav-link d-flex align-self-center my-2"}>
-                        Administrador
+                        className={"nav-item nav-link d-flex justify-content-center btn border-dark text-dark w-100 my-2"}>
+                        Administrar
                       </NavLink>
                       <Button
                         variant={"danger"}
@@ -82,7 +84,7 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,result
                       </div>
                       <NavLink end
                         to="/usuario/pedidos"
-                        className={"nav-item nav-link d-flex align-self-center mb-2"}>
+                        className={"nav-item nav-link d-flex justify-content-center btn border-dark text-dark w-100 my-2"}>
                         Mis pedidos
                       </NavLink>
                       <Button
@@ -99,10 +101,10 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,result
                     <>
                       <NavLink end
                         to="/registro"
-                        className={"nav-item nav-link align-self-center mt-2"}>
+                        className={"nav-item nav-link d-flex justify-content-center btn border-dark text-dark w-100 my-2"}>
                         Registrar
                       </NavLink>
-                      <div className={"nav-item nav-link align-self-center"}>
+                      <div className={"nav-item nav-link d-flex justify-content-center btn border-dark text-dark w-100 my-2"}>
                         <Login setUsuarioLogueado={setUsuarioLogueado}></Login>
                       </div>
                     </>

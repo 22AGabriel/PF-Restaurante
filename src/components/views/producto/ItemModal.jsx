@@ -16,7 +16,8 @@ const ItemModal = ({producto, setCarrito, usuario}) => {
           <tr>
                 <td>{producto.nombreProducto}</td>
                 <td>{producto.cantidad}</td>
-                <td>{producto.precio}</td>
+                <td>${producto.precio}</td>
+                <td>${producto.precio * producto.cantidad}</td>
                 <td>
                   <Button variant='danger' onClick={()=>{borrarProductosCarrito(producto)}}>
                     <i className="bi bi-trash"></i>

@@ -1,13 +1,14 @@
 import {Card, Container, Button, Breadcrumb} from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { obtenerProducto } from "../helpers/queriesProducto";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { editarUsuario } from "../helpers/queriesUsuario";
 import "../../css/app.css";
 
 const DetalleProducto = ({carrito, setCarrito, usuarioLogueado}) => {
   const [producto, setProducto] = useState({});
   const { id } = useParams();
+  const navigate = useNavigate()
 
   useEffect(() => {
     obtenerProducto(id).then((respuesta) => {
@@ -18,17 +19,20 @@ const DetalleProducto = ({carrito, setCarrito, usuarioLogueado}) => {
   }, []);
 
   const editarCarrito = (producto) => {
-    const existeProducto = usuarioLogueado.carrito.find(
-      (item) => item._id === producto._id
-    );
-    if (existeProducto) {
-      existeProducto.cantidad += 1;
-      existeProducto.precio = producto.precio * existeProducto.cantidad;
+    if(usuarioLogueado.perfil){
+      const existeProducto = usuarioLogueado.carrito.find(
+        (item) => item._id === producto._id
+      );
+      if (existeProducto) {
+        existeProducto.cantidad += 1;
+      } else {
+        setCarrito([...carrito, producto]);
+        usuarioLogueado.carrito.push(producto);
+      }
+      editarUsuario(usuarioLogueado._id, usuarioLogueado);
     } else {
-      setCarrito([...carrito, producto]);
-      usuarioLogueado.carrito.push(producto);
+      navigate("/registro")
     }
-    editarUsuario(usuarioLogueado._id, usuarioLogueado);
 };
 
   return (
@@ -36,7 +40,7 @@ const DetalleProducto = ({carrito, setCarrito, usuarioLogueado}) => {
       <Container className="my-5 bajarFooter">
         <Breadcrumb>
           <Breadcrumb.Item><Link className="text-rojo2" to={"/"}>Inicio</Link></Breadcrumb.Item>
-          <Breadcrumb.Item><Link className="text-rojo2" to={"*"}>{producto.categoria}</Link></Breadcrumb.Item>
+          <Breadcrumb.Item><Link className="text-rojo2" to={`/categoria/${producto.categoria}`}>{producto.categoria}</Link></Breadcrumb.Item>
           <Breadcrumb.Item active>{producto.nombreProducto}</Breadcrumb.Item>
         </Breadcrumb>
         <div className="text-center">
