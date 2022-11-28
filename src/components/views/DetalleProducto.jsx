@@ -40,7 +40,7 @@ const DetalleProducto = ({carrito, setCarrito, usuarioLogueado}) => {
       <Container className="my-5 bajarFooter">
         <Breadcrumb>
           <Breadcrumb.Item><Link className="text-rojo2" to={"/"}>Inicio</Link></Breadcrumb.Item>
-          <Breadcrumb.Item><Link className="text-rojo2" to={"*"}>{producto.categoria}</Link></Breadcrumb.Item>
+          <Breadcrumb.Item><Link className="text-rojo2" to={`/categoria/${producto.categoria}`}>{producto.categoria}</Link></Breadcrumb.Item>
           <Breadcrumb.Item active>{producto.nombreProducto}</Breadcrumb.Item>
         </Breadcrumb>
         <div className="text-center">
