@@ -24,7 +24,7 @@ const EditarProducto = () => {
   }, []);
   
   const onSubmit = (datos) =>{
-    editarProducto(id, datos).then((respuesta)=>{
+    editarProducto(id, datos, usuario.token).then((respuesta)=>{
       if(respuesta.status === 200){
         Swal.fire({
           color: "#fff",
