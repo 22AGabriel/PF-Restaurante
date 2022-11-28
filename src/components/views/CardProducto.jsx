@@ -16,7 +16,7 @@ const CardProducto = ({ producto, carrito, setCarrito, usuarioLogueado }) => {
   })
   
   const editarCarrito = (producto) => {
-    if(usuarioLogueado.perfil){
+    if(usuarioLogueado.perfil === "Usuario"){
       let existeProducto = carrito.find(
         (item) => item._id === producto._id
       );
@@ -31,7 +31,7 @@ const CardProducto = ({ producto, carrito, setCarrito, usuarioLogueado }) => {
         icon: 'success',
         title: 'Producto agregado al carrito'
       })
-    } else {
+    } else if(!usuarioLogueado.perfil){
       navigate("/registro")
     }
   };
