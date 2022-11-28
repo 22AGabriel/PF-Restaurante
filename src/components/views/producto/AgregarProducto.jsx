@@ -94,8 +94,8 @@ const AgregarProducto = () => {
                {...register("detalle",{
                 required:"el detalle del producto es obligatorio",
                  minLength: {
-                  value: 25,
-                  message:"el numero de caracteres minimo es de 25"
+                  value: 5,
+                  message:"el numero de caracteres minimo es de 5"
                  },
                  maxLength:{
                   value:300,
