@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 
 const Contacto = () => {
+  
   return (
     <>
     <div className="container" id="whats">

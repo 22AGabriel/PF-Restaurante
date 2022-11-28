@@ -4,8 +4,16 @@ import JavierUncos from "../../img/JavierUncos.jpg";
 import GabrielAzubel from "../../img/GabrielAzubel.jpg";
 import JosefinaDaoua from "../../img/JosefinaDaoua.jpg";
 import VictoriaPalacio from "../../img/VictoriaPalacio.jpg";
+import { useForm } from "react-hook-form";
 
 const Nosotros = () => {
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   return (
     <Container className="my-5">
       <div className="text-center text-white mb-5">
@@ -97,20 +105,25 @@ const Nosotros = () => {
         <div className="my-3">
           <h3>Nos interesa tu opinión.</h3>
         </div>
-        <Form>
+        <Form noValidate onSubmit={handleSubmit}>
           <Form.Group>
             <Row>
               <Col md={6} className="mb-2">
-               <Form.Control type="text" className="bg-contacto bg-rojo2" placeholder="Nombre y apellido"></Form.Control>
+               <Form.Control type="text" className="bg-contacto bg-rojo2" placeholder="Nombre y apellido" {...register('Nombre', {required:'el nombre y apellido son obligatorios'})}></Form.Control>
               </Col>
               <Col md={6} className="mb-2">
-               <Form.Control type="email" className="bg-contacto bg-rojo2" placeholder="Email"></Form.Control>
+               <Form.Control type="email" className="bg-contacto bg-rojo2" placeholder="Email"{...register("email", {
+                  required: 'el email es obligatorio',
+                  pattern: {
+                    value: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
+                  },
+                })}></Form.Control>
               </Col>
               <Col md={6} className="mb-2">
-               <Form.Control type="number" className="bg-contacto bg-rojo2" placeholder="Teléfono de contacto"></Form.Control>
+               <Form.Control type="number" className="bg-contacto bg-rojo2" placeholder="Teléfono de contacto" {...register('telefono',{required: 'el telefono es obligatorio'})}></Form.Control>
               </Col>
               <Col md={6} className="mb-2">
-               <Form.Select className="bg-contacto bg-rojo2">
+               <Form.Select className="bg-contacto bg-rojo2" {...register ('motivo',{required: 'el motivo es obligatorio'})}>
                 <option value="">Motivo de la consulta</option>
                 <option value="Marketing">Marketing</option>
                 <option value="Administración y Finanzas">Aministración y Finanzas</option>
@@ -118,10 +131,21 @@ const Nosotros = () => {
                </Form.Select>
               </Col>
               <Col md={12} className="mb-2">
-               <Form.Control as="textarea" className="bg-contacto bg-rojo2" placeholder="Mensaje"></Form.Control>
+               <Form.Control as="textarea" className="bg-contacto bg-rojo2" placeholder="Mensaje" {...register("consulta",{
+                required:'la consulta es obligatoria',
+                 minLength: {
+                  value: 25},
+                 maxLength:{
+                  value:300 }
+              })}></Form.Control>
               </Col>
             </Row>
-          </Form.Group>
+            <Form.Text className="text-danger">
+                {errors.nombre?.message}      {errors.email?.message}
+                {errors.telefono?.message}
+                      {errors.motivo?.message}
+                      {errors.consulta?.message}
+              </Form.Text>          </Form.Group>
           <div className="text-center">
           <Button type="submit" variant="dark" className="w-100">Enviar</Button>
           </div>
