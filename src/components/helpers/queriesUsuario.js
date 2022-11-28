@@ -55,10 +55,13 @@ export const editarUsuario = async(id, usuario) => {
   }
 }
 
-export const borrarUsuario = async(id)=>{
+export const borrarUsuario = async(id, token)=>{
   try{
     const respuesta = await fetch(URL+'/'+id,{
-      method: 'DELETE'
+      method: 'DELETE',
+      headers:{
+        "x-token": token
+      }
     });
     return respuesta;
   }catch(error){
