@@ -3,14 +3,27 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { Button, Container } from "react-bootstrap";
 import { rehacerPedido } from "../helpers/queriesPedido";
+import Swal from "sweetalert2";
 
 const CardPedido = ({ pedido,setArregloPedidos, usuario }) => {
-  
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'bottom-end',
+    showConfirmButton: false,
+    color: "#fff",
+    background: "#c96752",
+    timer: 5000
+  })
+
    const reciclarPedido = ()=>{
     rehacerPedido(pedido.productos, usuario).then((respuesta)=>{
       console.log(respuesta)
       if(respuesta.status === 201){
         setArregloPedidos(usuario.pedidos)
+        Toast.fire({
+          icon: 'success',
+          title: 'Pedido enviado'
+        })
       }
     })
    }
