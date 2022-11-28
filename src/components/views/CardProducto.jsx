@@ -8,12 +8,14 @@ const CardProducto = ({ producto, carrito, setCarrito, usuarioLogueado }) => {
   
   const editarCarrito = (producto) => {
     if(usuarioLogueado.perfil){
-      const existeProducto = usuarioLogueado.carrito.find(
+      let existeProducto = carrito.find(
         (item) => item._id === producto._id
       );
+      console.log(existeProducto)
       if (existeProducto) {
         existeProducto.cantidad += 1;
-        existeProducto.precio = producto.precio * existeProducto.cantidad;
+        // existeProducto.precio = producto.precio * existeProducto.cantidad;
+
       } else {
         setCarrito([...carrito, producto]);
         usuarioLogueado.carrito.push(producto);
