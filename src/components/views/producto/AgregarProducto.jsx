@@ -12,7 +12,7 @@ const AgregarProducto = () => {
   const onSubmit =(producto)=>{
     const usuario = JSON.parse(localStorage.getItem("usuarioIniciado")) || {};
     producto.cantidad = 1
-    crearProducto(producto, usuario.token).then((respuesta)=>{
+    crearProducto(producto).then((respuesta)=>{
       if(respuesta.status === 201){
         Swal.fire({
           color: "#fff",

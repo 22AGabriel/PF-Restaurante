@@ -29,7 +29,7 @@ const ItemProducto = ({ producto, setProductos }) => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          borrarProducto(producto._id, usuario.token).then((respuesta) => {
+          borrarProducto(producto._id).then((respuesta) => {
             if (respuesta.status === 200) {
               consultarProducto().then((respuesta) => {
                 setProductos(respuesta);

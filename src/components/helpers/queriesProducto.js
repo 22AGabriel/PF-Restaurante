@@ -1,12 +1,11 @@
 const URL = process.env.REACT_APP_API_PRODUCTOS;
 
-export const crearProducto = async(producto, token)=>{
+export const crearProducto = async(producto)=>{
     try {
         const nuevoProducto = await fetch(URL,{
             method:"POST",
             headers:{
-                "Content-Type":"application/json",
-                "x-token": token
+                "Content-Type":"application/json"
             },
             body:JSON.stringify(producto)
         })
@@ -28,13 +27,10 @@ export const consultarProducto = async()=>{
     }
 }
 
-export const borrarProducto = async(id, token)=>{
+export const borrarProducto = async(id)=>{
     try{
         const nuevoProducto = await fetch(URL+'/'+id,{
-            method: 'DELETE',
-            headers: {
-                "x-token": token
-            }
+            method: 'DELETE'
         });
         return nuevoProducto;
     }catch(error){
@@ -55,13 +51,12 @@ export const obtenerProducto = async(id)=> {
         return false;
     }
 }
-export const editarProducto = async (id, producto, token) =>{
+export const editarProducto = async (id, producto) =>{
     try {
         const respuesta = await fetch (URL+ '/' + id,{
             method: "PUT",
             headers:{
-                "Content-Type":"application/json",
-                "x-token": token
+                "Content-Type":"application/json"
             },
             body: JSON.stringify(producto)
         });

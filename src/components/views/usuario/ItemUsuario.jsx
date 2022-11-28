@@ -7,7 +7,6 @@ import Swal from "sweetalert2";
 const ItemUsuario = ({setUsuarios, usuario}) => {
   const {register, setValue} = useForm();
   const [editar, setEditar] = useState("disabled")
-  const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioIniciado")) || {};
   
   useEffect(() => {
     obtenerUsuario(usuario._id).then((respuesta)=>{
@@ -72,7 +71,7 @@ const ItemUsuario = ({setUsuarios, usuario}) => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          borrarUsuario(usuario._id, usuarioLogueado.token).then((respuesta) => {
+          borrarUsuario(usuario._id).then((respuesta) => {
             if (respuesta.status === 200) {
               consultarUsuario().then((respuesta) => {
                 setUsuarios(respuesta);
