@@ -4,11 +4,20 @@ import { obtenerProducto } from "../helpers/queriesProducto";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { editarUsuario } from "../helpers/queriesUsuario";
 import "../../css/app.css";
+import Swal from "sweetalert2";
 
 const DetalleProducto = ({carrito, setCarrito, usuarioLogueado}) => {
   const [producto, setProducto] = useState({});
   const { id } = useParams();
   const navigate = useNavigate()
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'bottom-end',
+    showConfirmButton: false,
+    color: "#fff",
+    background: "#c96752",
+    timer: 5000
+  })
 
   useEffect(() => {
     obtenerProducto(id).then((respuesta) => {
@@ -30,6 +39,10 @@ const DetalleProducto = ({carrito, setCarrito, usuarioLogueado}) => {
         usuarioLogueado.carrito.push(producto);
       }
       editarUsuario(usuarioLogueado._id, usuarioLogueado);
+      Toast.fire({
+        icon: 'success',
+        title: 'Producto agregado al carrito'
+      })
     } else {
       navigate("/registro")
     }

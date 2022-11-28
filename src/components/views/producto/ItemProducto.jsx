@@ -9,8 +9,8 @@ const ItemProducto = ({ producto, setProductos }) => {
   const borrarUnProducto = () => {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
-        confirmButton: "btn bg-rojo2 mx-2",
-        cancelButton: "btn btn-danger",
+        confirmButton: "btn btn-danger mx-2",
+        cancelButton: "btn bg-rojo2",
       },
       buttonsStyling: false,
     });

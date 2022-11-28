@@ -1,10 +1,19 @@
 import React from "react";
 import { Col, Card, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { editarUsuario } from "../helpers/queriesUsuario";
 
 const CardProducto = ({ producto, carrito, setCarrito, usuarioLogueado }) => {
   const navigate = useNavigate()
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'bottom-end',
+    showConfirmButton: false,
+    color: "#fff",
+    background: "#c96752",
+    timer: 5000
+  })
   
   const editarCarrito = (producto) => {
     if(usuarioLogueado.perfil){
@@ -18,6 +27,10 @@ const CardProducto = ({ producto, carrito, setCarrito, usuarioLogueado }) => {
         usuarioLogueado.carrito.push(producto);
       }
       editarUsuario(usuarioLogueado._id, usuarioLogueado);
+      Toast.fire({
+        icon: 'success',
+        title: 'Producto agregado al carrito'
+      })
     } else {
       navigate("/registro")
     }
