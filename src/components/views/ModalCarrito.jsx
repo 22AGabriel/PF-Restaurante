@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Modal, Button, Table } from "react-bootstrap";
 import ItemModal from "./producto/ItemModal";
-import { Suma } from "../helpers/queriesCarrito";
+import { Suma, sumaCantidad } from "../helpers/queriesCarrito";
 import { crearPedido } from "../helpers/queriesPedido";
 import Swal from "sweetalert2";
 
@@ -11,9 +11,11 @@ const ModalCarrito = ({usuario, carrito,setCarrito,resultado,setResultado, setAr
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [badgeCantidad, setBadgeCantidad] = useState(0)
 
   useEffect(()=>{
     setResultado(Suma(carrito))
+    setBadgeCantidad(sumaCantidad(carrito))
     setCarrito(carrito)
   },[carrito])
 
@@ -51,7 +53,13 @@ const ModalCarrito = ({usuario, carrito,setCarrito,resultado,setResultado, setAr
         variant="dark"
         onClick={handleShow}
       >
-        Carrito <i className="bi bi-cart-plus-fill fs-4 text-light"></i>
+        <Button variant="outline-dark">
+        <i className="position-relative bi bi-cart-plus-fill fs-4">
+          <span className="position-absolute ms-3 start-100 translate-middle badge rounded-pill bg-danger">
+            {badgeCantidad}
+          </span>
+        </i>
+        </Button> 
       </NavLink>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton className="bg-rojo2">

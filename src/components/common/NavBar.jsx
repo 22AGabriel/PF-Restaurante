@@ -66,8 +66,8 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,result
                       <>
                       <NavLink end
                         to="/administrar"
-                        className={"nav-item nav-link d-flex align-self-center my-2"}>
-                        Administrador
+                        className={"nav-item nav-link d-flex justify-content-center btn border-dark text-dark w-100 my-2"}>
+                        Administrar
                       </NavLink>
                       <Button
                         variant={"danger"}
@@ -84,7 +84,7 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,result
                       </div>
                       <NavLink end
                         to="/usuario/pedidos"
-                        className={"nav-item nav-link d-flex align-self-center mb-2"}>
+                        className={"nav-item nav-link d-flex justify-content-center btn border-dark text-dark w-100 my-2"}>
                         Mis pedidos
                       </NavLink>
                       <Button
@@ -101,10 +101,10 @@ const NavBar = ({ usuarioLogueado, setUsuarioLogueado ,carrito,setCarrito,result
                     <>
                       <NavLink end
                         to="/registro"
-                        className={"nav-item nav-link align-self-center mt-2"}>
+                        className={"nav-item nav-link d-flex justify-content-center btn border-dark text-dark w-100 my-2"}>
                         Registrar
                       </NavLink>
-                      <div className={"nav-item nav-link align-self-center"}>
+                      <div className={"nav-item nav-link d-flex justify-content-center btn border-dark text-dark w-100 my-2"}>
                         <Login setUsuarioLogueado={setUsuarioLogueado}></Login>
                       </div>
                     </>
