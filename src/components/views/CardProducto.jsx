@@ -1,11 +1,13 @@
 import React from "react";
 import { Col, Card, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { editarUsuario } from "../helpers/queriesUsuario";
 
 const CardProducto = ({ producto, carrito, setCarrito, usuarioLogueado }) => {
+  const navigate = useNavigate()
   
   const editarCarrito = (producto) => {
+    if(usuarioLogueado.perfil){
       const existeProducto = usuarioLogueado.carrito.find(
         (item) => item._id === producto._id
       );
@@ -17,6 +19,9 @@ const CardProducto = ({ producto, carrito, setCarrito, usuarioLogueado }) => {
         usuarioLogueado.carrito.push(producto);
       }
       editarUsuario(usuarioLogueado._id, usuarioLogueado);
+    } else {
+      navigate("/registro")
+    }
   };
 
   return (

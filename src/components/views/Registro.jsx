@@ -31,7 +31,7 @@ const Registro = ({setUsuarioLogueado}) => {
           background: "#292929", 
           confirmButtonColor: "#c96752",
           title: `Bienvenido ${data.nombreUsuario}`,
-          text: "¡ya puedes comprar libremente en nuestra pagina!",
+          text: "Revisa tu correo para validar tu mail y poder comprar en nuestra página",
           icon: "success"
       });
         localStorage.setItem('usuarioIniciado', JSON.stringify(respuesta))
